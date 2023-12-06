@@ -43,10 +43,9 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(424, 1017);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSave.Location = new System.Drawing.Point(283, 661);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(303, 86);
+            this.buttonSave.Size = new System.Drawing.Size(202, 56);
             this.buttonSave.TabIndex = 11;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -56,10 +55,9 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTitle.Location = new System.Drawing.Point(312, 14);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTitle.Location = new System.Drawing.Point(208, 9);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(267, 40);
+            this.labelTitle.Size = new System.Drawing.Size(175, 25);
             this.labelTitle.TabIndex = 20;
             this.labelTitle.Text = "Создание записи:";
             // 
@@ -67,94 +65,85 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(314, 52);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(209, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 32);
+            this.label1.Size = new System.Drawing.Size(67, 21);
             this.label1.TabIndex = 21;
             this.label1.Text = "Клиент";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(280, 668);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Location = new System.Drawing.Point(187, 440);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(83, 20);
+            this.label19.Size = new System.Drawing.Size(55, 13);
             this.label19.TabIndex = 31;
             this.label19.Text = "Телефон:";
             // 
             // textBoxPhoneNumberClients
             // 
             this.textBoxPhoneNumberClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhoneNumberClients.Location = new System.Drawing.Point(371, 649);
-            this.textBoxPhoneNumberClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxPhoneNumberClients.Location = new System.Drawing.Point(247, 428);
             this.textBoxPhoneNumberClients.Name = "textBoxPhoneNumberClients";
-            this.textBoxPhoneNumberClients.Size = new System.Drawing.Size(584, 45);
+            this.textBoxPhoneNumberClients.Size = new System.Drawing.Size(391, 33);
             this.textBoxPhoneNumberClients.TabIndex = 30;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(311, 723);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(207, 479);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 20);
+            this.label16.Size = new System.Drawing.Size(35, 13);
             this.label16.TabIndex = 29;
             this.label16.Text = "Email:";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(278, 613);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(185, 401);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 20);
+            this.label17.Size = new System.Drawing.Size(59, 13);
             this.label17.TabIndex = 28;
             this.label17.Text = "Фамилия:";
             // 
             // textBoxEmailClients
             // 
             this.textBoxEmailClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmailClients.Location = new System.Drawing.Point(371, 704);
-            this.textBoxEmailClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxEmailClients.Location = new System.Drawing.Point(247, 467);
             this.textBoxEmailClients.Name = "textBoxEmailClients";
-            this.textBoxEmailClients.Size = new System.Drawing.Size(584, 45);
+            this.textBoxEmailClients.Size = new System.Drawing.Size(391, 33);
             this.textBoxEmailClients.TabIndex = 27;
             // 
             // textBoxLastNameClients
             // 
             this.textBoxLastNameClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxLastNameClients.Location = new System.Drawing.Point(371, 594);
-            this.textBoxLastNameClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxLastNameClients.Location = new System.Drawing.Point(247, 389);
             this.textBoxLastNameClients.Name = "textBoxLastNameClients";
-            this.textBoxLastNameClients.Size = new System.Drawing.Size(584, 45);
+            this.textBoxLastNameClients.Size = new System.Drawing.Size(391, 33);
             this.textBoxLastNameClients.TabIndex = 26;
             // 
             // labelProdukciya
             // 
             this.labelProdukciya.AutoSize = true;
-            this.labelProdukciya.Location = new System.Drawing.Point(319, 558);
-            this.labelProdukciya.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelProdukciya.Location = new System.Drawing.Point(213, 363);
             this.labelProdukciya.Name = "labelProdukciya";
-            this.labelProdukciya.Size = new System.Drawing.Size(44, 20);
+            this.labelProdukciya.Size = new System.Drawing.Size(32, 13);
             this.labelProdukciya.TabIndex = 25;
             this.labelProdukciya.Text = "Имя:";
             // 
             // textBoxFirstNameClients
             // 
             this.textBoxFirstNameClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxFirstNameClients.Location = new System.Drawing.Point(371, 539);
-            this.textBoxFirstNameClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxFirstNameClients.Location = new System.Drawing.Point(247, 350);
             this.textBoxFirstNameClients.Name = "textBoxFirstNameClients";
-            this.textBoxFirstNameClients.Size = new System.Drawing.Size(584, 45);
+            this.textBoxFirstNameClients.Size = new System.Drawing.Size(391, 33);
             this.textBoxFirstNameClients.TabIndex = 24;
             // 
             // AddFormClients
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 1122);
+            this.ClientSize = new System.Drawing.Size(768, 729);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.textBoxPhoneNumberClients);
             this.Controls.Add(this.label16);
@@ -166,7 +155,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.buttonSave);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddFormClients";
             this.Text = "Добавить клиента";
             this.ResumeLayout(false);
