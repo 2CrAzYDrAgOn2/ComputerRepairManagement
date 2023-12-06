@@ -32,13 +32,13 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.textBoxPhoneNumberClients = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.textBoxLastName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxFirstName = new System.Windows.Forms.TextBox();
+            this.textBoxEmailClients = new System.Windows.Forms.TextBox();
+            this.textBoxLastNameClients = new System.Windows.Forms.TextBox();
+            this.labelProdukciya = new System.Windows.Forms.Label();
+            this.textBoxFirstNameClients = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonSave
@@ -77,78 +77,78 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(288, 728);
+            this.label19.Location = new System.Drawing.Point(280, 668);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(74, 20);
-            this.label19.TabIndex = 29;
-            this.label19.Text = "Телфон:";
+            this.label19.Size = new System.Drawing.Size(83, 20);
+            this.label19.TabIndex = 31;
+            this.label19.Text = "Телефон:";
             // 
-            // textBoxPhone
+            // textBoxPhoneNumberClients
             // 
-            this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhone.Location = new System.Drawing.Point(370, 709);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(584, 45);
-            this.textBoxPhone.TabIndex = 28;
+            this.textBoxPhoneNumberClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPhoneNumberClients.Location = new System.Drawing.Point(371, 649);
+            this.textBoxPhoneNumberClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxPhoneNumberClients.Name = "textBoxPhoneNumberClients";
+            this.textBoxPhoneNumberClients.Size = new System.Drawing.Size(584, 45);
+            this.textBoxPhoneNumberClients.TabIndex = 30;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(310, 673);
+            this.label16.Location = new System.Drawing.Point(311, 723);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 20);
-            this.label16.TabIndex = 27;
+            this.label16.TabIndex = 29;
             this.label16.Text = "Email:";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(277, 613);
+            this.label17.Location = new System.Drawing.Point(278, 613);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(85, 20);
-            this.label17.TabIndex = 26;
+            this.label17.TabIndex = 28;
             this.label17.Text = "Фамилия:";
             // 
-            // textBoxEmail
+            // textBoxEmailClients
             // 
-            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmail.Location = new System.Drawing.Point(370, 654);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(584, 45);
-            this.textBoxEmail.TabIndex = 25;
+            this.textBoxEmailClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEmailClients.Location = new System.Drawing.Point(371, 704);
+            this.textBoxEmailClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxEmailClients.Name = "textBoxEmailClients";
+            this.textBoxEmailClients.Size = new System.Drawing.Size(584, 45);
+            this.textBoxEmailClients.TabIndex = 27;
             // 
-            // textBoxLastName
+            // textBoxLastNameClients
             // 
-            this.textBoxLastName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxLastName.Location = new System.Drawing.Point(370, 594);
-            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(584, 45);
-            this.textBoxLastName.TabIndex = 24;
+            this.textBoxLastNameClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLastNameClients.Location = new System.Drawing.Point(371, 594);
+            this.textBoxLastNameClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxLastNameClients.Name = "textBoxLastNameClients";
+            this.textBoxLastNameClients.Size = new System.Drawing.Size(584, 45);
+            this.textBoxLastNameClients.TabIndex = 26;
             // 
-            // label2
+            // labelProdukciya
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(318, 558);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 20);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Имя:";
+            this.labelProdukciya.AutoSize = true;
+            this.labelProdukciya.Location = new System.Drawing.Point(319, 558);
+            this.labelProdukciya.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelProdukciya.Name = "labelProdukciya";
+            this.labelProdukciya.Size = new System.Drawing.Size(44, 20);
+            this.labelProdukciya.TabIndex = 25;
+            this.labelProdukciya.Text = "Имя:";
             // 
-            // textBoxFirstName
+            // textBoxFirstNameClients
             // 
-            this.textBoxFirstName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxFirstName.Location = new System.Drawing.Point(370, 539);
-            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(584, 45);
-            this.textBoxFirstName.TabIndex = 22;
+            this.textBoxFirstNameClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxFirstNameClients.Location = new System.Drawing.Point(371, 539);
+            this.textBoxFirstNameClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxFirstNameClients.Name = "textBoxFirstNameClients";
+            this.textBoxFirstNameClients.Size = new System.Drawing.Size(584, 45);
+            this.textBoxFirstNameClients.TabIndex = 24;
             // 
             // AddFormClients
             // 
@@ -156,13 +156,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 1122);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBoxPhone);
+            this.Controls.Add(this.textBoxPhoneNumberClients);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBoxEmail);
-            this.Controls.Add(this.textBoxLastName);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxFirstName);
+            this.Controls.Add(this.textBoxEmailClients);
+            this.Controls.Add(this.textBoxLastNameClients);
+            this.Controls.Add(this.labelProdukciya);
+            this.Controls.Add(this.textBoxFirstNameClients);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.buttonSave);
@@ -179,12 +179,12 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBoxPhone;
+        private System.Windows.Forms.TextBox textBoxPhoneNumberClients;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.TextBox textBoxLastName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxFirstName;
+        private System.Windows.Forms.TextBox textBoxEmailClients;
+        private System.Windows.Forms.TextBox textBoxLastNameClients;
+        private System.Windows.Forms.Label labelProdukciya;
+        private System.Windows.Forms.TextBox textBoxFirstNameClients;
     }
 }

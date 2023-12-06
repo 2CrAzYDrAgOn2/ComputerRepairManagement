@@ -33,16 +33,25 @@
             this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panelControl = new System.Windows.Forms.Panel();
+            this.buttonPDFClients = new System.Windows.Forms.Button();
             this.buttonSaveClients = new System.Windows.Forms.Button();
+            this.buttonExcelClients = new System.Windows.Forms.Button();
             this.buttonChangeClients = new System.Windows.Forms.Button();
+            this.buttonWordClients = new System.Windows.Forms.Button();
             this.buttonDeleteClients = new System.Windows.Forms.Button();
             this.buttonNewClients = new System.Windows.Forms.Button();
             this.labelControl = new System.Windows.Forms.Label();
             this.panelRecord = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBoxPhoneNumberClients = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBoxEmailClients = new System.Windows.Forms.TextBox();
+            this.textBoxLastNameClients = new System.Windows.Forms.TextBox();
             this.labelProdukciya = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
-            this.textBoxFirstName = new System.Windows.Forms.TextBox();
-            this.textBoxClientID = new System.Windows.Forms.TextBox();
+            this.textBoxFirstNameClients = new System.Windows.Forms.TextBox();
+            this.textBoxClientIDClients = new System.Windows.Forms.TextBox();
             this.labelRecord = new System.Windows.Forms.Label();
             this.dataGridViewClients = new System.Windows.Forms.DataGridView();
             this.panelTitle = new System.Windows.Forms.Panel();
@@ -52,104 +61,97 @@
             this.textBoxSearchClients = new System.Windows.Forms.TextBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.buttonPDFClients = new System.Windows.Forms.Button();
-            this.buttonExcelClients = new System.Windows.Forms.Button();
-            this.buttonWordClients = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonPDFTours = new System.Windows.Forms.Button();
-            this.buttonSaveTours = new System.Windows.Forms.Button();
-            this.buttonExcelTours = new System.Windows.Forms.Button();
-            this.buttonChangeTours = new System.Windows.Forms.Button();
-            this.buttonWordTours = new System.Windows.Forms.Button();
-            this.buttonDeleteTours = new System.Windows.Forms.Button();
-            this.buttonNewTours = new System.Windows.Forms.Button();
+            this.buttonPDFTechnicians = new System.Windows.Forms.Button();
+            this.buttonSaveTechnicians = new System.Windows.Forms.Button();
+            this.buttonExcelTechnicians = new System.Windows.Forms.Button();
+            this.buttonChangeTechnicians = new System.Windows.Forms.Button();
+            this.buttonWordTechnicians = new System.Windows.Forms.Button();
+            this.buttonDeleteTechnicians = new System.Windows.Forms.Button();
+            this.buttonNewTechnicians = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBoxEmailTechnicians = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBoxPhoneNumberTechnicians = new System.Windows.Forms.TextBox();
+            this.textBoxLastNameTechnicians = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxTourName = new System.Windows.Forms.TextBox();
-            this.textBoxTourID = new System.Windows.Forms.TextBox();
+            this.textBoxFirstNameTechnicians = new System.Windows.Forms.TextBox();
+            this.textBoxTechnicianID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridViewTours = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTechnicians = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonSearchTours = new System.Windows.Forms.Button();
-            this.buttonClearTours = new System.Windows.Forms.Button();
-            this.buttonRefreshTours = new System.Windows.Forms.Button();
-            this.textBoxSearchTours = new System.Windows.Forms.TextBox();
+            this.buttonSearchTechnicians = new System.Windows.Forms.Button();
+            this.buttonClearTechnicians = new System.Windows.Forms.Button();
+            this.buttonRefreshTechnicians = new System.Windows.Forms.Button();
+            this.textBoxSearchTechnicians = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.buttonPDFBookings = new System.Windows.Forms.Button();
-            this.buttonSaveBookings = new System.Windows.Forms.Button();
-            this.buttonExcelBookings = new System.Windows.Forms.Button();
-            this.buttonChangeBookings = new System.Windows.Forms.Button();
-            this.buttonWordBookings = new System.Windows.Forms.Button();
-            this.buttonDeleteBookings = new System.Windows.Forms.Button();
-            this.buttonNewBookings = new System.Windows.Forms.Button();
+            this.buttonPDFRepairOrders = new System.Windows.Forms.Button();
+            this.buttonSaveRepairOrders = new System.Windows.Forms.Button();
+            this.buttonExcelRepairOrders = new System.Windows.Forms.Button();
+            this.buttonChangeRepairOrders = new System.Windows.Forms.Button();
+            this.buttonWordRepairOrders = new System.Windows.Forms.Button();
+            this.buttonDeleteRepairOrders = new System.Windows.Forms.Button();
+            this.buttonNewRepairOrders = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBoxStatus = new System.Windows.Forms.TextBox();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBoxOrderDate = new System.Windows.Forms.TextBox();
+            this.textBoxTechnicianIDRepairOrders = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBoxClientIDBookings = new System.Windows.Forms.TextBox();
-            this.textBoxBookingID = new System.Windows.Forms.TextBox();
+            this.textBoxClientIDRepairOrders = new System.Windows.Forms.TextBox();
+            this.textBoxOrderID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridViewBookings = new System.Windows.Forms.DataGridView();
+            this.dataGridViewRepairOrders = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.buttonSearchBookings = new System.Windows.Forms.Button();
-            this.buttonClearBookings = new System.Windows.Forms.Button();
-            this.buttonRefreshBookings = new System.Windows.Forms.Button();
-            this.textBoxSearchBookings = new System.Windows.Forms.TextBox();
+            this.buttonSearchRepairOrders = new System.Windows.Forms.Button();
+            this.buttonClearRepairOrders = new System.Windows.Forms.Button();
+            this.buttonRefreshRepairOrders = new System.Windows.Forms.Button();
+            this.textBoxSearchRepairOrders = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.buttonPDFPayments = new System.Windows.Forms.Button();
-            this.buttonSavePayments = new System.Windows.Forms.Button();
-            this.buttonExcelPayments = new System.Windows.Forms.Button();
-            this.buttonChangePayments = new System.Windows.Forms.Button();
-            this.buttonWordPayments = new System.Windows.Forms.Button();
-            this.buttonDeletePayments = new System.Windows.Forms.Button();
-            this.buttonNewPayments = new System.Windows.Forms.Button();
+            this.buttonPDFSoftwareInstallation = new System.Windows.Forms.Button();
+            this.buttonSaveSoftwareInstallation = new System.Windows.Forms.Button();
+            this.buttonExcelSoftwareInstallation = new System.Windows.Forms.Button();
+            this.buttonChangeSoftwareInstallation = new System.Windows.Forms.Button();
+            this.buttonWordSoftwareInstallation = new System.Windows.Forms.Button();
+            this.buttonDeleteSoftwareInstallation = new System.Windows.Forms.Button();
+            this.buttonNewSoftwareInstallation = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBoxBookingIDPayments = new System.Windows.Forms.TextBox();
-            this.textBoxPaymentID = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.dataGridViewPayments = new System.Windows.Forms.DataGridView();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.buttonSearchPayments = new System.Windows.Forms.Button();
-            this.buttonClearPayments = new System.Windows.Forms.Button();
-            this.buttonRefreshPayments = new System.Windows.Forms.Button();
-            this.textBoxSearchPayments = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.textBoxLastName = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBoxStartDate = new System.Windows.Forms.TextBox();
-            this.textBoxDestination = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBoxPrice = new System.Windows.Forms.TextBox();
-            this.textBoxEndDate = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.textBoxBookingDate = new System.Windows.Forms.TextBox();
-            this.textBoxTourIDBookings = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBoxTotalAmount = new System.Windows.Forms.TextBox();
-            this.textBoxNumberOfPersons = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBoxAmount = new System.Windows.Forms.TextBox();
-            this.textBoxPaymentDate = new System.Windows.Forms.TextBox();
+            this.textBoxInstallationDate = new System.Windows.Forms.TextBox();
+            this.textBoxTechnicianIDSoftwareInstallation = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBoxClientIDSoftwareInstallation = new System.Windows.Forms.TextBox();
+            this.textBoxInstallationID = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dataGridViewSoftwareInstallation = new System.Windows.Forms.DataGridView();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.buttonSearchSoftwareInstallation = new System.Windows.Forms.Button();
+            this.buttonClearSoftwareInstallation = new System.Windows.Forms.Button();
+            this.buttonRefreshSoftwareInstallation = new System.Windows.Forms.Button();
+            this.textBoxSearchSoftwareInstallation = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBoxLicenseKey = new System.Windows.Forms.TextBox();
+            this.textBoxSoftwareName = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panelControl.SuspendLayout();
@@ -160,17 +162,17 @@
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTechnicians)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBookings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRepairOrders)).BeginInit();
             this.panel6.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPayments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSoftwareInstallation)).BeginInit();
             this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -230,6 +232,16 @@
             this.panelControl.Size = new System.Drawing.Size(312, 697);
             this.panelControl.TabIndex = 4;
             // 
+            // buttonPDFClients
+            // 
+            this.buttonPDFClients.Location = new System.Drawing.Point(4, 599);
+            this.buttonPDFClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonPDFClients.Name = "buttonPDFClients";
+            this.buttonPDFClients.Size = new System.Drawing.Size(303, 89);
+            this.buttonPDFClients.TabIndex = 4;
+            this.buttonPDFClients.Text = "Вывод в PDF";
+            this.buttonPDFClients.UseVisualStyleBackColor = true;
+            // 
             // buttonSaveClients
             // 
             this.buttonSaveClients.Location = new System.Drawing.Point(4, 302);
@@ -241,6 +253,16 @@
             this.buttonSaveClients.UseVisualStyleBackColor = true;
             this.buttonSaveClients.Click += new System.EventHandler(this.ButtonSaveDormitories_Click);
             // 
+            // buttonExcelClients
+            // 
+            this.buttonExcelClients.Location = new System.Drawing.Point(4, 500);
+            this.buttonExcelClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonExcelClients.Name = "buttonExcelClients";
+            this.buttonExcelClients.Size = new System.Drawing.Size(303, 89);
+            this.buttonExcelClients.TabIndex = 5;
+            this.buttonExcelClients.Text = "Вывод в Excel";
+            this.buttonExcelClients.UseVisualStyleBackColor = true;
+            // 
             // buttonChangeClients
             // 
             this.buttonChangeClients.Location = new System.Drawing.Point(4, 203);
@@ -251,6 +273,16 @@
             this.buttonChangeClients.Text = "Изменить";
             this.buttonChangeClients.UseVisualStyleBackColor = true;
             this.buttonChangeClients.Click += new System.EventHandler(this.ButtonChangeDormitories_Click);
+            // 
+            // buttonWordClients
+            // 
+            this.buttonWordClients.Location = new System.Drawing.Point(4, 401);
+            this.buttonWordClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonWordClients.Name = "buttonWordClients";
+            this.buttonWordClients.Size = new System.Drawing.Size(303, 89);
+            this.buttonWordClients.TabIndex = 6;
+            this.buttonWordClients.Text = "Вывод в Word";
+            this.buttonWordClients.UseVisualStyleBackColor = true;
             // 
             // buttonDeleteClients
             // 
@@ -288,21 +320,78 @@
             // panelRecord
             // 
             this.panelRecord.Controls.Add(this.label19);
-            this.panelRecord.Controls.Add(this.textBoxPhone);
+            this.panelRecord.Controls.Add(this.textBoxPhoneNumberClients);
             this.panelRecord.Controls.Add(this.label16);
             this.panelRecord.Controls.Add(this.label17);
-            this.panelRecord.Controls.Add(this.textBoxEmail);
-            this.panelRecord.Controls.Add(this.textBoxLastName);
+            this.panelRecord.Controls.Add(this.textBoxEmailClients);
+            this.panelRecord.Controls.Add(this.textBoxLastNameClients);
             this.panelRecord.Controls.Add(this.labelProdukciya);
             this.panelRecord.Controls.Add(this.labelNumber);
-            this.panelRecord.Controls.Add(this.textBoxFirstName);
-            this.panelRecord.Controls.Add(this.textBoxClientID);
+            this.panelRecord.Controls.Add(this.textBoxFirstNameClients);
+            this.panelRecord.Controls.Add(this.textBoxClientIDClients);
             this.panelRecord.Controls.Add(this.labelRecord);
             this.panelRecord.Location = new System.Drawing.Point(12, 600);
             this.panelRecord.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelRecord.Name = "panelRecord";
             this.panelRecord.Size = new System.Drawing.Size(786, 740);
             this.panelRecord.TabIndex = 2;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(104, 280);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(83, 20);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "Телефон:";
+            // 
+            // textBoxPhoneNumberClients
+            // 
+            this.textBoxPhoneNumberClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPhoneNumberClients.Location = new System.Drawing.Point(195, 261);
+            this.textBoxPhoneNumberClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxPhoneNumberClients.Name = "textBoxPhoneNumberClients";
+            this.textBoxPhoneNumberClients.Size = new System.Drawing.Size(584, 45);
+            this.textBoxPhoneNumberClients.TabIndex = 12;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(135, 335);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 20);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "Email:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(102, 225);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(85, 20);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "Фамилия:";
+            // 
+            // textBoxEmailClients
+            // 
+            this.textBoxEmailClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEmailClients.Location = new System.Drawing.Point(195, 316);
+            this.textBoxEmailClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxEmailClients.Name = "textBoxEmailClients";
+            this.textBoxEmailClients.Size = new System.Drawing.Size(584, 45);
+            this.textBoxEmailClients.TabIndex = 9;
+            // 
+            // textBoxLastNameClients
+            // 
+            this.textBoxLastNameClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLastNameClients.Location = new System.Drawing.Point(195, 206);
+            this.textBoxLastNameClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxLastNameClients.Name = "textBoxLastNameClients";
+            this.textBoxLastNameClients.Size = new System.Drawing.Size(584, 45);
+            this.textBoxLastNameClients.TabIndex = 8;
             // 
             // labelProdukciya
             // 
@@ -324,23 +413,23 @@
             this.labelNumber.TabIndex = 6;
             this.labelNumber.Text = "Номер:";
             // 
-            // textBoxFirstName
+            // textBoxFirstNameClients
             // 
-            this.textBoxFirstName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxFirstName.Location = new System.Drawing.Point(195, 151);
-            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(584, 45);
-            this.textBoxFirstName.TabIndex = 5;
+            this.textBoxFirstNameClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxFirstNameClients.Location = new System.Drawing.Point(195, 151);
+            this.textBoxFirstNameClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxFirstNameClients.Name = "textBoxFirstNameClients";
+            this.textBoxFirstNameClients.Size = new System.Drawing.Size(584, 45);
+            this.textBoxFirstNameClients.TabIndex = 5;
             // 
-            // textBoxClientID
+            // textBoxClientIDClients
             // 
-            this.textBoxClientID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxClientID.Location = new System.Drawing.Point(195, 91);
-            this.textBoxClientID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxClientID.Name = "textBoxClientID";
-            this.textBoxClientID.Size = new System.Drawing.Size(584, 45);
-            this.textBoxClientID.TabIndex = 1;
+            this.textBoxClientIDClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxClientIDClients.Location = new System.Drawing.Point(195, 91);
+            this.textBoxClientIDClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxClientIDClients.Name = "textBoxClientIDClients";
+            this.textBoxClientIDClients.Size = new System.Drawing.Size(584, 45);
+            this.textBoxClientIDClients.TabIndex = 1;
             // 
             // labelRecord
             // 
@@ -450,42 +539,12 @@
             this.tabControl1.TabIndex = 3;
             this.tabControl1.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
-            // buttonPDFClients
-            // 
-            this.buttonPDFClients.Location = new System.Drawing.Point(4, 599);
-            this.buttonPDFClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonPDFClients.Name = "buttonPDFClients";
-            this.buttonPDFClients.Size = new System.Drawing.Size(303, 89);
-            this.buttonPDFClients.TabIndex = 4;
-            this.buttonPDFClients.Text = "Вывод в PDF";
-            this.buttonPDFClients.UseVisualStyleBackColor = true;
-            // 
-            // buttonExcelClients
-            // 
-            this.buttonExcelClients.Location = new System.Drawing.Point(4, 500);
-            this.buttonExcelClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonExcelClients.Name = "buttonExcelClients";
-            this.buttonExcelClients.Size = new System.Drawing.Size(303, 89);
-            this.buttonExcelClients.TabIndex = 5;
-            this.buttonExcelClients.Text = "Вывод в Excel";
-            this.buttonExcelClients.UseVisualStyleBackColor = true;
-            // 
-            // buttonWordClients
-            // 
-            this.buttonWordClients.Location = new System.Drawing.Point(4, 401);
-            this.buttonWordClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonWordClients.Name = "buttonWordClients";
-            this.buttonWordClients.Size = new System.Drawing.Size(303, 89);
-            this.buttonWordClients.TabIndex = 6;
-            this.buttonWordClients.Text = "Вывод в Word";
-            this.buttonWordClients.UseVisualStyleBackColor = true;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Controls.Add(this.dataGridViewTours);
+            this.tabPage2.Controls.Add(this.dataGridViewTechnicians);
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -493,93 +552,93 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage2.Size = new System.Drawing.Size(1146, 1351);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Туры";
+            this.tabPage2.Text = "Техники";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonPDFTours);
-            this.panel1.Controls.Add(this.buttonSaveTours);
-            this.panel1.Controls.Add(this.buttonExcelTours);
-            this.panel1.Controls.Add(this.buttonChangeTours);
-            this.panel1.Controls.Add(this.buttonWordTours);
-            this.panel1.Controls.Add(this.buttonDeleteTours);
-            this.panel1.Controls.Add(this.buttonNewTours);
+            this.panel1.Controls.Add(this.buttonPDFTechnicians);
+            this.panel1.Controls.Add(this.buttonSaveTechnicians);
+            this.panel1.Controls.Add(this.buttonExcelTechnicians);
+            this.panel1.Controls.Add(this.buttonChangeTechnicians);
+            this.panel1.Controls.Add(this.buttonWordTechnicians);
+            this.panel1.Controls.Add(this.buttonDeleteTechnicians);
+            this.panel1.Controls.Add(this.buttonNewTechnicians);
             this.panel1.Location = new System.Drawing.Point(814, 643);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(312, 697);
             this.panel1.TabIndex = 4;
             // 
-            // buttonPDFTours
+            // buttonPDFTechnicians
             // 
-            this.buttonPDFTours.Location = new System.Drawing.Point(4, 599);
-            this.buttonPDFTours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonPDFTours.Name = "buttonPDFTours";
-            this.buttonPDFTours.Size = new System.Drawing.Size(303, 89);
-            this.buttonPDFTours.TabIndex = 4;
-            this.buttonPDFTours.Text = "Вывод в PDF";
-            this.buttonPDFTours.UseVisualStyleBackColor = true;
+            this.buttonPDFTechnicians.Location = new System.Drawing.Point(4, 599);
+            this.buttonPDFTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonPDFTechnicians.Name = "buttonPDFTechnicians";
+            this.buttonPDFTechnicians.Size = new System.Drawing.Size(303, 89);
+            this.buttonPDFTechnicians.TabIndex = 4;
+            this.buttonPDFTechnicians.Text = "Вывод в PDF";
+            this.buttonPDFTechnicians.UseVisualStyleBackColor = true;
             // 
-            // buttonSaveTours
+            // buttonSaveTechnicians
             // 
-            this.buttonSaveTours.Location = new System.Drawing.Point(4, 302);
-            this.buttonSaveTours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonSaveTours.Name = "buttonSaveTours";
-            this.buttonSaveTours.Size = new System.Drawing.Size(303, 89);
-            this.buttonSaveTours.TabIndex = 3;
-            this.buttonSaveTours.Text = "Сохранить";
-            this.buttonSaveTours.UseVisualStyleBackColor = true;
+            this.buttonSaveTechnicians.Location = new System.Drawing.Point(4, 302);
+            this.buttonSaveTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSaveTechnicians.Name = "buttonSaveTechnicians";
+            this.buttonSaveTechnicians.Size = new System.Drawing.Size(303, 89);
+            this.buttonSaveTechnicians.TabIndex = 3;
+            this.buttonSaveTechnicians.Text = "Сохранить";
+            this.buttonSaveTechnicians.UseVisualStyleBackColor = true;
             // 
-            // buttonExcelTours
+            // buttonExcelTechnicians
             // 
-            this.buttonExcelTours.Location = new System.Drawing.Point(4, 500);
-            this.buttonExcelTours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonExcelTours.Name = "buttonExcelTours";
-            this.buttonExcelTours.Size = new System.Drawing.Size(303, 89);
-            this.buttonExcelTours.TabIndex = 5;
-            this.buttonExcelTours.Text = "Вывод в Excel";
-            this.buttonExcelTours.UseVisualStyleBackColor = true;
+            this.buttonExcelTechnicians.Location = new System.Drawing.Point(4, 500);
+            this.buttonExcelTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonExcelTechnicians.Name = "buttonExcelTechnicians";
+            this.buttonExcelTechnicians.Size = new System.Drawing.Size(303, 89);
+            this.buttonExcelTechnicians.TabIndex = 5;
+            this.buttonExcelTechnicians.Text = "Вывод в Excel";
+            this.buttonExcelTechnicians.UseVisualStyleBackColor = true;
             // 
-            // buttonChangeTours
+            // buttonChangeTechnicians
             // 
-            this.buttonChangeTours.Location = new System.Drawing.Point(4, 203);
-            this.buttonChangeTours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonChangeTours.Name = "buttonChangeTours";
-            this.buttonChangeTours.Size = new System.Drawing.Size(303, 89);
-            this.buttonChangeTours.TabIndex = 2;
-            this.buttonChangeTours.Text = "Изменить";
-            this.buttonChangeTours.UseVisualStyleBackColor = true;
+            this.buttonChangeTechnicians.Location = new System.Drawing.Point(4, 203);
+            this.buttonChangeTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonChangeTechnicians.Name = "buttonChangeTechnicians";
+            this.buttonChangeTechnicians.Size = new System.Drawing.Size(303, 89);
+            this.buttonChangeTechnicians.TabIndex = 2;
+            this.buttonChangeTechnicians.Text = "Изменить";
+            this.buttonChangeTechnicians.UseVisualStyleBackColor = true;
             // 
-            // buttonWordTours
+            // buttonWordTechnicians
             // 
-            this.buttonWordTours.Location = new System.Drawing.Point(4, 401);
-            this.buttonWordTours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonWordTours.Name = "buttonWordTours";
-            this.buttonWordTours.Size = new System.Drawing.Size(303, 89);
-            this.buttonWordTours.TabIndex = 6;
-            this.buttonWordTours.Text = "Вывод в Word";
-            this.buttonWordTours.UseVisualStyleBackColor = true;
+            this.buttonWordTechnicians.Location = new System.Drawing.Point(4, 401);
+            this.buttonWordTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonWordTechnicians.Name = "buttonWordTechnicians";
+            this.buttonWordTechnicians.Size = new System.Drawing.Size(303, 89);
+            this.buttonWordTechnicians.TabIndex = 6;
+            this.buttonWordTechnicians.Text = "Вывод в Word";
+            this.buttonWordTechnicians.UseVisualStyleBackColor = true;
             // 
-            // buttonDeleteTours
+            // buttonDeleteTechnicians
             // 
-            this.buttonDeleteTours.Location = new System.Drawing.Point(4, 104);
-            this.buttonDeleteTours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonDeleteTours.Name = "buttonDeleteTours";
-            this.buttonDeleteTours.Size = new System.Drawing.Size(303, 89);
-            this.buttonDeleteTours.TabIndex = 1;
-            this.buttonDeleteTours.Text = "Удалить";
-            this.buttonDeleteTours.UseVisualStyleBackColor = true;
+            this.buttonDeleteTechnicians.Location = new System.Drawing.Point(4, 104);
+            this.buttonDeleteTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonDeleteTechnicians.Name = "buttonDeleteTechnicians";
+            this.buttonDeleteTechnicians.Size = new System.Drawing.Size(303, 89);
+            this.buttonDeleteTechnicians.TabIndex = 1;
+            this.buttonDeleteTechnicians.Text = "Удалить";
+            this.buttonDeleteTechnicians.UseVisualStyleBackColor = true;
             // 
-            // buttonNewTours
+            // buttonNewTechnicians
             // 
-            this.buttonNewTours.Location = new System.Drawing.Point(4, 5);
-            this.buttonNewTours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonNewTours.Name = "buttonNewTours";
-            this.buttonNewTours.Size = new System.Drawing.Size(303, 89);
-            this.buttonNewTours.TabIndex = 0;
-            this.buttonNewTours.Text = "Новая запись";
-            this.buttonNewTours.UseVisualStyleBackColor = true;
+            this.buttonNewTechnicians.Location = new System.Drawing.Point(4, 5);
+            this.buttonNewTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonNewTechnicians.Name = "buttonNewTechnicians";
+            this.buttonNewTechnicians.Size = new System.Drawing.Size(303, 89);
+            this.buttonNewTechnicians.TabIndex = 0;
+            this.buttonNewTechnicians.Text = "Новая запись";
+            this.buttonNewTechnicians.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -594,18 +653,16 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label22);
-            this.panel2.Controls.Add(this.textBoxPrice);
-            this.panel2.Controls.Add(this.textBoxEndDate);
+            this.panel2.Controls.Add(this.textBoxEmailTechnicians);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.textBoxStartDate);
-            this.panel2.Controls.Add(this.textBoxDestination);
+            this.panel2.Controls.Add(this.textBoxPhoneNumberTechnicians);
+            this.panel2.Controls.Add(this.textBoxLastNameTechnicians);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBoxTourName);
-            this.panel2.Controls.Add(this.textBoxTourID);
+            this.panel2.Controls.Add(this.textBoxFirstNameTechnicians);
+            this.panel2.Controls.Add(this.textBoxTechnicianID);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(12, 600);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -613,15 +670,72 @@
             this.panel2.Size = new System.Drawing.Size(786, 740);
             this.panel2.TabIndex = 2;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(135, 335);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(52, 20);
+            this.label22.TabIndex = 14;
+            this.label22.Text = "Email:";
+            // 
+            // textBoxEmailTechnicians
+            // 
+            this.textBoxEmailTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEmailTechnicians.Location = new System.Drawing.Point(195, 316);
+            this.textBoxEmailTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxEmailTechnicians.Name = "textBoxEmailTechnicians";
+            this.textBoxEmailTechnicians.Size = new System.Drawing.Size(584, 45);
+            this.textBoxEmailTechnicians.TabIndex = 12;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(104, 280);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(83, 20);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "Телефон:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(102, 225);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(85, 20);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "Фамилия:";
+            // 
+            // textBoxPhoneNumberTechnicians
+            // 
+            this.textBoxPhoneNumberTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPhoneNumberTechnicians.Location = new System.Drawing.Point(195, 261);
+            this.textBoxPhoneNumberTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxPhoneNumberTechnicians.Name = "textBoxPhoneNumberTechnicians";
+            this.textBoxPhoneNumberTechnicians.Size = new System.Drawing.Size(584, 45);
+            this.textBoxPhoneNumberTechnicians.TabIndex = 9;
+            // 
+            // textBoxLastNameTechnicians
+            // 
+            this.textBoxLastNameTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLastNameTechnicians.Location = new System.Drawing.Point(195, 206);
+            this.textBoxLastNameTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxLastNameTechnicians.Name = "textBoxLastNameTechnicians";
+            this.textBoxLastNameTechnicians.Size = new System.Drawing.Size(584, 45);
+            this.textBoxLastNameTechnicians.TabIndex = 8;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 170);
+            this.label2.Location = new System.Drawing.Point(143, 170);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 20);
+            this.label2.Size = new System.Drawing.Size(44, 20);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Название тура:";
+            this.label2.Text = "Имя:";
             // 
             // label3
             // 
@@ -633,23 +747,23 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Номер:";
             // 
-            // textBoxTourName
+            // textBoxFirstNameTechnicians
             // 
-            this.textBoxTourName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxTourName.Location = new System.Drawing.Point(195, 151);
-            this.textBoxTourName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxTourName.Name = "textBoxTourName";
-            this.textBoxTourName.Size = new System.Drawing.Size(584, 45);
-            this.textBoxTourName.TabIndex = 5;
+            this.textBoxFirstNameTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxFirstNameTechnicians.Location = new System.Drawing.Point(195, 151);
+            this.textBoxFirstNameTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxFirstNameTechnicians.Name = "textBoxFirstNameTechnicians";
+            this.textBoxFirstNameTechnicians.Size = new System.Drawing.Size(584, 45);
+            this.textBoxFirstNameTechnicians.TabIndex = 5;
             // 
-            // textBoxTourID
+            // textBoxTechnicianID
             // 
-            this.textBoxTourID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxTourID.Location = new System.Drawing.Point(195, 91);
-            this.textBoxTourID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxTourID.Name = "textBoxTourID";
-            this.textBoxTourID.Size = new System.Drawing.Size(584, 45);
-            this.textBoxTourID.TabIndex = 1;
+            this.textBoxTechnicianID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxTechnicianID.Location = new System.Drawing.Point(195, 91);
+            this.textBoxTechnicianID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxTechnicianID.Name = "textBoxTechnicianID";
+            this.textBoxTechnicianID.Size = new System.Drawing.Size(584, 45);
+            this.textBoxTechnicianID.TabIndex = 1;
             // 
             // label4
             // 
@@ -662,25 +776,25 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Запись:";
             // 
-            // dataGridViewTours
+            // dataGridViewTechnicians
             // 
-            this.dataGridViewTours.AllowUserToAddRows = false;
-            this.dataGridViewTours.AllowUserToDeleteRows = false;
-            this.dataGridViewTours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTours.Location = new System.Drawing.Point(12, 122);
-            this.dataGridViewTours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridViewTours.Name = "dataGridViewTours";
-            this.dataGridViewTours.ReadOnly = true;
-            this.dataGridViewTours.RowHeadersWidth = 62;
-            this.dataGridViewTours.Size = new System.Drawing.Size(1114, 469);
-            this.dataGridViewTours.TabIndex = 1;
+            this.dataGridViewTechnicians.AllowUserToAddRows = false;
+            this.dataGridViewTechnicians.AllowUserToDeleteRows = false;
+            this.dataGridViewTechnicians.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTechnicians.Location = new System.Drawing.Point(12, 122);
+            this.dataGridViewTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridViewTechnicians.Name = "dataGridViewTechnicians";
+            this.dataGridViewTechnicians.ReadOnly = true;
+            this.dataGridViewTechnicians.RowHeadersWidth = 62;
+            this.dataGridViewTechnicians.Size = new System.Drawing.Size(1114, 469);
+            this.dataGridViewTechnicians.TabIndex = 1;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.buttonSearchTours);
-            this.panel3.Controls.Add(this.buttonClearTours);
-            this.panel3.Controls.Add(this.buttonRefreshTours);
-            this.panel3.Controls.Add(this.textBoxSearchTours);
+            this.panel3.Controls.Add(this.buttonSearchTechnicians);
+            this.panel3.Controls.Add(this.buttonClearTechnicians);
+            this.panel3.Controls.Add(this.buttonRefreshTechnicians);
+            this.panel3.Controls.Add(this.textBoxSearchTechnicians);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -688,47 +802,47 @@
             this.panel3.Size = new System.Drawing.Size(1126, 112);
             this.panel3.TabIndex = 0;
             // 
-            // buttonSearchTours
+            // buttonSearchTechnicians
             // 
-            this.buttonSearchTours.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchTours.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchTours.Location = new System.Drawing.Point(789, 5);
-            this.buttonSearchTours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonSearchTours.Name = "buttonSearchTours";
-            this.buttonSearchTours.Size = new System.Drawing.Size(100, 103);
-            this.buttonSearchTours.TabIndex = 4;
-            this.buttonSearchTours.UseVisualStyleBackColor = true;
+            this.buttonSearchTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearchTechnicians.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
+            this.buttonSearchTechnicians.Location = new System.Drawing.Point(789, 5);
+            this.buttonSearchTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSearchTechnicians.Name = "buttonSearchTechnicians";
+            this.buttonSearchTechnicians.Size = new System.Drawing.Size(100, 103);
+            this.buttonSearchTechnicians.TabIndex = 4;
+            this.buttonSearchTechnicians.UseVisualStyleBackColor = true;
             // 
-            // buttonClearTours
+            // buttonClearTechnicians
             // 
-            this.buttonClearTours.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonClearTours.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearTours.Location = new System.Drawing.Point(570, 5);
-            this.buttonClearTours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonClearTours.Name = "buttonClearTours";
-            this.buttonClearTours.Size = new System.Drawing.Size(100, 103);
-            this.buttonClearTours.TabIndex = 3;
-            this.buttonClearTours.UseVisualStyleBackColor = true;
+            this.buttonClearTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonClearTechnicians.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
+            this.buttonClearTechnicians.Location = new System.Drawing.Point(570, 5);
+            this.buttonClearTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonClearTechnicians.Name = "buttonClearTechnicians";
+            this.buttonClearTechnicians.Size = new System.Drawing.Size(100, 103);
+            this.buttonClearTechnicians.TabIndex = 3;
+            this.buttonClearTechnicians.UseVisualStyleBackColor = true;
             // 
-            // buttonRefreshTours
+            // buttonRefreshTechnicians
             // 
-            this.buttonRefreshTours.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRefreshTours.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshTours.Location = new System.Drawing.Point(680, 5);
-            this.buttonRefreshTours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonRefreshTours.Name = "buttonRefreshTours";
-            this.buttonRefreshTours.Size = new System.Drawing.Size(100, 103);
-            this.buttonRefreshTours.TabIndex = 2;
-            this.buttonRefreshTours.UseVisualStyleBackColor = true;
+            this.buttonRefreshTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonRefreshTechnicians.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
+            this.buttonRefreshTechnicians.Location = new System.Drawing.Point(680, 5);
+            this.buttonRefreshTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonRefreshTechnicians.Name = "buttonRefreshTechnicians";
+            this.buttonRefreshTechnicians.Size = new System.Drawing.Size(100, 103);
+            this.buttonRefreshTechnicians.TabIndex = 2;
+            this.buttonRefreshTechnicians.UseVisualStyleBackColor = true;
             // 
-            // textBoxSearchTours
+            // textBoxSearchTechnicians
             // 
-            this.textBoxSearchTours.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSearchTours.Location = new System.Drawing.Point(898, 49);
-            this.textBoxSearchTours.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxSearchTours.Name = "textBoxSearchTours";
-            this.textBoxSearchTours.Size = new System.Drawing.Size(222, 45);
-            this.textBoxSearchTours.TabIndex = 1;
+            this.textBoxSearchTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSearchTechnicians.Location = new System.Drawing.Point(898, 49);
+            this.textBoxSearchTechnicians.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxSearchTechnicians.Name = "textBoxSearchTechnicians";
+            this.textBoxSearchTechnicians.Size = new System.Drawing.Size(222, 45);
+            this.textBoxSearchTechnicians.TabIndex = 1;
             // 
             // label5
             // 
@@ -737,16 +851,16 @@
             this.label5.Location = new System.Drawing.Point(4, 5);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(206, 96);
+            this.label5.Size = new System.Drawing.Size(311, 96);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Туры";
+            this.label5.Text = "Техники";
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.panel4);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.panel5);
-            this.tabPage3.Controls.Add(this.dataGridViewBookings);
+            this.tabPage3.Controls.Add(this.dataGridViewRepairOrders);
             this.tabPage3.Controls.Add(this.panel6);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -754,93 +868,93 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage3.Size = new System.Drawing.Size(1146, 1351);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Бронирования";
+            this.tabPage3.Text = "Заказы на рем.";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.buttonPDFBookings);
-            this.panel4.Controls.Add(this.buttonSaveBookings);
-            this.panel4.Controls.Add(this.buttonExcelBookings);
-            this.panel4.Controls.Add(this.buttonChangeBookings);
-            this.panel4.Controls.Add(this.buttonWordBookings);
-            this.panel4.Controls.Add(this.buttonDeleteBookings);
-            this.panel4.Controls.Add(this.buttonNewBookings);
+            this.panel4.Controls.Add(this.buttonPDFRepairOrders);
+            this.panel4.Controls.Add(this.buttonSaveRepairOrders);
+            this.panel4.Controls.Add(this.buttonExcelRepairOrders);
+            this.panel4.Controls.Add(this.buttonChangeRepairOrders);
+            this.panel4.Controls.Add(this.buttonWordRepairOrders);
+            this.panel4.Controls.Add(this.buttonDeleteRepairOrders);
+            this.panel4.Controls.Add(this.buttonNewRepairOrders);
             this.panel4.Location = new System.Drawing.Point(814, 643);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(312, 697);
             this.panel4.TabIndex = 4;
             // 
-            // buttonPDFBookings
+            // buttonPDFRepairOrders
             // 
-            this.buttonPDFBookings.Location = new System.Drawing.Point(4, 599);
-            this.buttonPDFBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonPDFBookings.Name = "buttonPDFBookings";
-            this.buttonPDFBookings.Size = new System.Drawing.Size(303, 89);
-            this.buttonPDFBookings.TabIndex = 4;
-            this.buttonPDFBookings.Text = "Вывод в PDF";
-            this.buttonPDFBookings.UseVisualStyleBackColor = true;
+            this.buttonPDFRepairOrders.Location = new System.Drawing.Point(4, 599);
+            this.buttonPDFRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonPDFRepairOrders.Name = "buttonPDFRepairOrders";
+            this.buttonPDFRepairOrders.Size = new System.Drawing.Size(303, 89);
+            this.buttonPDFRepairOrders.TabIndex = 4;
+            this.buttonPDFRepairOrders.Text = "Вывод в PDF";
+            this.buttonPDFRepairOrders.UseVisualStyleBackColor = true;
             // 
-            // buttonSaveBookings
+            // buttonSaveRepairOrders
             // 
-            this.buttonSaveBookings.Location = new System.Drawing.Point(4, 302);
-            this.buttonSaveBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonSaveBookings.Name = "buttonSaveBookings";
-            this.buttonSaveBookings.Size = new System.Drawing.Size(303, 89);
-            this.buttonSaveBookings.TabIndex = 3;
-            this.buttonSaveBookings.Text = "Сохранить";
-            this.buttonSaveBookings.UseVisualStyleBackColor = true;
+            this.buttonSaveRepairOrders.Location = new System.Drawing.Point(4, 302);
+            this.buttonSaveRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSaveRepairOrders.Name = "buttonSaveRepairOrders";
+            this.buttonSaveRepairOrders.Size = new System.Drawing.Size(303, 89);
+            this.buttonSaveRepairOrders.TabIndex = 3;
+            this.buttonSaveRepairOrders.Text = "Сохранить";
+            this.buttonSaveRepairOrders.UseVisualStyleBackColor = true;
             // 
-            // buttonExcelBookings
+            // buttonExcelRepairOrders
             // 
-            this.buttonExcelBookings.Location = new System.Drawing.Point(4, 500);
-            this.buttonExcelBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonExcelBookings.Name = "buttonExcelBookings";
-            this.buttonExcelBookings.Size = new System.Drawing.Size(303, 89);
-            this.buttonExcelBookings.TabIndex = 5;
-            this.buttonExcelBookings.Text = "Вывод в Excel";
-            this.buttonExcelBookings.UseVisualStyleBackColor = true;
+            this.buttonExcelRepairOrders.Location = new System.Drawing.Point(4, 500);
+            this.buttonExcelRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonExcelRepairOrders.Name = "buttonExcelRepairOrders";
+            this.buttonExcelRepairOrders.Size = new System.Drawing.Size(303, 89);
+            this.buttonExcelRepairOrders.TabIndex = 5;
+            this.buttonExcelRepairOrders.Text = "Вывод в Excel";
+            this.buttonExcelRepairOrders.UseVisualStyleBackColor = true;
             // 
-            // buttonChangeBookings
+            // buttonChangeRepairOrders
             // 
-            this.buttonChangeBookings.Location = new System.Drawing.Point(4, 203);
-            this.buttonChangeBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonChangeBookings.Name = "buttonChangeBookings";
-            this.buttonChangeBookings.Size = new System.Drawing.Size(303, 89);
-            this.buttonChangeBookings.TabIndex = 2;
-            this.buttonChangeBookings.Text = "Изменить";
-            this.buttonChangeBookings.UseVisualStyleBackColor = true;
+            this.buttonChangeRepairOrders.Location = new System.Drawing.Point(4, 203);
+            this.buttonChangeRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonChangeRepairOrders.Name = "buttonChangeRepairOrders";
+            this.buttonChangeRepairOrders.Size = new System.Drawing.Size(303, 89);
+            this.buttonChangeRepairOrders.TabIndex = 2;
+            this.buttonChangeRepairOrders.Text = "Изменить";
+            this.buttonChangeRepairOrders.UseVisualStyleBackColor = true;
             // 
-            // buttonWordBookings
+            // buttonWordRepairOrders
             // 
-            this.buttonWordBookings.Location = new System.Drawing.Point(4, 401);
-            this.buttonWordBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonWordBookings.Name = "buttonWordBookings";
-            this.buttonWordBookings.Size = new System.Drawing.Size(303, 89);
-            this.buttonWordBookings.TabIndex = 6;
-            this.buttonWordBookings.Text = "Вывод в Word";
-            this.buttonWordBookings.UseVisualStyleBackColor = true;
+            this.buttonWordRepairOrders.Location = new System.Drawing.Point(4, 401);
+            this.buttonWordRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonWordRepairOrders.Name = "buttonWordRepairOrders";
+            this.buttonWordRepairOrders.Size = new System.Drawing.Size(303, 89);
+            this.buttonWordRepairOrders.TabIndex = 6;
+            this.buttonWordRepairOrders.Text = "Вывод в Word";
+            this.buttonWordRepairOrders.UseVisualStyleBackColor = true;
             // 
-            // buttonDeleteBookings
+            // buttonDeleteRepairOrders
             // 
-            this.buttonDeleteBookings.Location = new System.Drawing.Point(4, 104);
-            this.buttonDeleteBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonDeleteBookings.Name = "buttonDeleteBookings";
-            this.buttonDeleteBookings.Size = new System.Drawing.Size(303, 89);
-            this.buttonDeleteBookings.TabIndex = 1;
-            this.buttonDeleteBookings.Text = "Удалить";
-            this.buttonDeleteBookings.UseVisualStyleBackColor = true;
+            this.buttonDeleteRepairOrders.Location = new System.Drawing.Point(4, 104);
+            this.buttonDeleteRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonDeleteRepairOrders.Name = "buttonDeleteRepairOrders";
+            this.buttonDeleteRepairOrders.Size = new System.Drawing.Size(303, 89);
+            this.buttonDeleteRepairOrders.TabIndex = 1;
+            this.buttonDeleteRepairOrders.Text = "Удалить";
+            this.buttonDeleteRepairOrders.UseVisualStyleBackColor = true;
             // 
-            // buttonNewBookings
+            // buttonNewRepairOrders
             // 
-            this.buttonNewBookings.Location = new System.Drawing.Point(4, 5);
-            this.buttonNewBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonNewBookings.Name = "buttonNewBookings";
-            this.buttonNewBookings.Size = new System.Drawing.Size(303, 89);
-            this.buttonNewBookings.TabIndex = 0;
-            this.buttonNewBookings.Text = "Новая запись";
-            this.buttonNewBookings.UseVisualStyleBackColor = true;
+            this.buttonNewRepairOrders.Location = new System.Drawing.Point(4, 5);
+            this.buttonNewRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonNewRepairOrders.Name = "buttonNewRepairOrders";
+            this.buttonNewRepairOrders.Size = new System.Drawing.Size(303, 89);
+            this.buttonNewRepairOrders.TabIndex = 0;
+            this.buttonNewRepairOrders.Text = "Новая запись";
+            this.buttonNewRepairOrders.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -857,22 +971,98 @@
             // 
             this.panel5.Controls.Add(this.label25);
             this.panel5.Controls.Add(this.label26);
-            this.panel5.Controls.Add(this.textBoxTotalAmount);
-            this.panel5.Controls.Add(this.textBoxNumberOfPersons);
+            this.panel5.Controls.Add(this.textBoxStatus);
+            this.panel5.Controls.Add(this.textBoxDescription);
             this.panel5.Controls.Add(this.label23);
             this.panel5.Controls.Add(this.label24);
-            this.panel5.Controls.Add(this.textBoxBookingDate);
-            this.panel5.Controls.Add(this.textBoxTourIDBookings);
+            this.panel5.Controls.Add(this.textBoxOrderDate);
+            this.panel5.Controls.Add(this.textBoxTechnicianIDRepairOrders);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.textBoxClientIDBookings);
-            this.panel5.Controls.Add(this.textBoxBookingID);
+            this.panel5.Controls.Add(this.textBoxClientIDRepairOrders);
+            this.panel5.Controls.Add(this.textBoxOrderID);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Location = new System.Drawing.Point(12, 600);
             this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(786, 740);
             this.panel5.TabIndex = 2;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(121, 395);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(66, 20);
+            this.label25.TabIndex = 15;
+            this.label25.Text = "Статус:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(100, 335);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(87, 20);
+            this.label26.TabIndex = 14;
+            this.label26.Text = "Описание:";
+            // 
+            // textBoxStatus
+            // 
+            this.textBoxStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxStatus.Location = new System.Drawing.Point(195, 376);
+            this.textBoxStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxStatus.Name = "textBoxStatus";
+            this.textBoxStatus.Size = new System.Drawing.Size(584, 45);
+            this.textBoxStatus.TabIndex = 13;
+            // 
+            // textBoxDescription
+            // 
+            this.textBoxDescription.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxDescription.Location = new System.Drawing.Point(195, 316);
+            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.Size = new System.Drawing.Size(584, 45);
+            this.textBoxDescription.TabIndex = 12;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(80, 280);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(107, 20);
+            this.label23.TabIndex = 11;
+            this.label23.Text = "Дата заказа:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(60, 225);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(127, 20);
+            this.label24.TabIndex = 10;
+            this.label24.Text = "Номер техника:";
+            // 
+            // textBoxOrderDate
+            // 
+            this.textBoxOrderDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxOrderDate.Location = new System.Drawing.Point(195, 261);
+            this.textBoxOrderDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxOrderDate.Name = "textBoxOrderDate";
+            this.textBoxOrderDate.Size = new System.Drawing.Size(584, 45);
+            this.textBoxOrderDate.TabIndex = 9;
+            // 
+            // textBoxTechnicianIDRepairOrders
+            // 
+            this.textBoxTechnicianIDRepairOrders.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxTechnicianIDRepairOrders.Location = new System.Drawing.Point(195, 206);
+            this.textBoxTechnicianIDRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxTechnicianIDRepairOrders.Name = "textBoxTechnicianIDRepairOrders";
+            this.textBoxTechnicianIDRepairOrders.Size = new System.Drawing.Size(584, 45);
+            this.textBoxTechnicianIDRepairOrders.TabIndex = 8;
             // 
             // label7
             // 
@@ -894,23 +1084,23 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "Номер:";
             // 
-            // textBoxClientIDBookings
+            // textBoxClientIDRepairOrders
             // 
-            this.textBoxClientIDBookings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxClientIDBookings.Location = new System.Drawing.Point(195, 151);
-            this.textBoxClientIDBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxClientIDBookings.Name = "textBoxClientIDBookings";
-            this.textBoxClientIDBookings.Size = new System.Drawing.Size(584, 45);
-            this.textBoxClientIDBookings.TabIndex = 5;
+            this.textBoxClientIDRepairOrders.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxClientIDRepairOrders.Location = new System.Drawing.Point(195, 151);
+            this.textBoxClientIDRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxClientIDRepairOrders.Name = "textBoxClientIDRepairOrders";
+            this.textBoxClientIDRepairOrders.Size = new System.Drawing.Size(584, 45);
+            this.textBoxClientIDRepairOrders.TabIndex = 5;
             // 
-            // textBoxBookingID
+            // textBoxOrderID
             // 
-            this.textBoxBookingID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxBookingID.Location = new System.Drawing.Point(195, 91);
-            this.textBoxBookingID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxBookingID.Name = "textBoxBookingID";
-            this.textBoxBookingID.Size = new System.Drawing.Size(584, 45);
-            this.textBoxBookingID.TabIndex = 1;
+            this.textBoxOrderID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxOrderID.Location = new System.Drawing.Point(195, 91);
+            this.textBoxOrderID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxOrderID.Name = "textBoxOrderID";
+            this.textBoxOrderID.Size = new System.Drawing.Size(584, 45);
+            this.textBoxOrderID.TabIndex = 1;
             // 
             // label9
             // 
@@ -923,25 +1113,25 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Запись:";
             // 
-            // dataGridViewBookings
+            // dataGridViewRepairOrders
             // 
-            this.dataGridViewBookings.AllowUserToAddRows = false;
-            this.dataGridViewBookings.AllowUserToDeleteRows = false;
-            this.dataGridViewBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBookings.Location = new System.Drawing.Point(12, 122);
-            this.dataGridViewBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridViewBookings.Name = "dataGridViewBookings";
-            this.dataGridViewBookings.ReadOnly = true;
-            this.dataGridViewBookings.RowHeadersWidth = 62;
-            this.dataGridViewBookings.Size = new System.Drawing.Size(1114, 469);
-            this.dataGridViewBookings.TabIndex = 1;
+            this.dataGridViewRepairOrders.AllowUserToAddRows = false;
+            this.dataGridViewRepairOrders.AllowUserToDeleteRows = false;
+            this.dataGridViewRepairOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRepairOrders.Location = new System.Drawing.Point(12, 122);
+            this.dataGridViewRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridViewRepairOrders.Name = "dataGridViewRepairOrders";
+            this.dataGridViewRepairOrders.ReadOnly = true;
+            this.dataGridViewRepairOrders.RowHeadersWidth = 62;
+            this.dataGridViewRepairOrders.Size = new System.Drawing.Size(1114, 469);
+            this.dataGridViewRepairOrders.TabIndex = 1;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.buttonSearchBookings);
-            this.panel6.Controls.Add(this.buttonClearBookings);
-            this.panel6.Controls.Add(this.buttonRefreshBookings);
-            this.panel6.Controls.Add(this.textBoxSearchBookings);
+            this.panel6.Controls.Add(this.buttonSearchRepairOrders);
+            this.panel6.Controls.Add(this.buttonClearRepairOrders);
+            this.panel6.Controls.Add(this.buttonRefreshRepairOrders);
+            this.panel6.Controls.Add(this.textBoxSearchRepairOrders);
             this.panel6.Controls.Add(this.label10);
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -949,47 +1139,47 @@
             this.panel6.Size = new System.Drawing.Size(1126, 112);
             this.panel6.TabIndex = 0;
             // 
-            // buttonSearchBookings
+            // buttonSearchRepairOrders
             // 
-            this.buttonSearchBookings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchBookings.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchBookings.Location = new System.Drawing.Point(789, 5);
-            this.buttonSearchBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonSearchBookings.Name = "buttonSearchBookings";
-            this.buttonSearchBookings.Size = new System.Drawing.Size(100, 103);
-            this.buttonSearchBookings.TabIndex = 4;
-            this.buttonSearchBookings.UseVisualStyleBackColor = true;
+            this.buttonSearchRepairOrders.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearchRepairOrders.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
+            this.buttonSearchRepairOrders.Location = new System.Drawing.Point(789, 5);
+            this.buttonSearchRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSearchRepairOrders.Name = "buttonSearchRepairOrders";
+            this.buttonSearchRepairOrders.Size = new System.Drawing.Size(100, 103);
+            this.buttonSearchRepairOrders.TabIndex = 4;
+            this.buttonSearchRepairOrders.UseVisualStyleBackColor = true;
             // 
-            // buttonClearBookings
+            // buttonClearRepairOrders
             // 
-            this.buttonClearBookings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonClearBookings.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearBookings.Location = new System.Drawing.Point(570, 5);
-            this.buttonClearBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonClearBookings.Name = "buttonClearBookings";
-            this.buttonClearBookings.Size = new System.Drawing.Size(100, 103);
-            this.buttonClearBookings.TabIndex = 3;
-            this.buttonClearBookings.UseVisualStyleBackColor = true;
+            this.buttonClearRepairOrders.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonClearRepairOrders.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
+            this.buttonClearRepairOrders.Location = new System.Drawing.Point(570, 5);
+            this.buttonClearRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonClearRepairOrders.Name = "buttonClearRepairOrders";
+            this.buttonClearRepairOrders.Size = new System.Drawing.Size(100, 103);
+            this.buttonClearRepairOrders.TabIndex = 3;
+            this.buttonClearRepairOrders.UseVisualStyleBackColor = true;
             // 
-            // buttonRefreshBookings
+            // buttonRefreshRepairOrders
             // 
-            this.buttonRefreshBookings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRefreshBookings.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshBookings.Location = new System.Drawing.Point(680, 5);
-            this.buttonRefreshBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonRefreshBookings.Name = "buttonRefreshBookings";
-            this.buttonRefreshBookings.Size = new System.Drawing.Size(100, 103);
-            this.buttonRefreshBookings.TabIndex = 2;
-            this.buttonRefreshBookings.UseVisualStyleBackColor = true;
+            this.buttonRefreshRepairOrders.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonRefreshRepairOrders.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
+            this.buttonRefreshRepairOrders.Location = new System.Drawing.Point(680, 5);
+            this.buttonRefreshRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonRefreshRepairOrders.Name = "buttonRefreshRepairOrders";
+            this.buttonRefreshRepairOrders.Size = new System.Drawing.Size(100, 103);
+            this.buttonRefreshRepairOrders.TabIndex = 2;
+            this.buttonRefreshRepairOrders.UseVisualStyleBackColor = true;
             // 
-            // textBoxSearchBookings
+            // textBoxSearchRepairOrders
             // 
-            this.textBoxSearchBookings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSearchBookings.Location = new System.Drawing.Point(898, 49);
-            this.textBoxSearchBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxSearchBookings.Name = "textBoxSearchBookings";
-            this.textBoxSearchBookings.Size = new System.Drawing.Size(222, 45);
-            this.textBoxSearchBookings.TabIndex = 1;
+            this.textBoxSearchRepairOrders.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSearchRepairOrders.Location = new System.Drawing.Point(898, 49);
+            this.textBoxSearchRepairOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxSearchRepairOrders.Name = "textBoxSearchRepairOrders";
+            this.textBoxSearchRepairOrders.Size = new System.Drawing.Size(222, 45);
+            this.textBoxSearchRepairOrders.TabIndex = 1;
             // 
             // label10
             // 
@@ -998,16 +1188,16 @@
             this.label10.Location = new System.Drawing.Point(4, 5);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(528, 96);
+            this.label10.Size = new System.Drawing.Size(538, 96);
             this.label10.TabIndex = 0;
-            this.label10.Text = "Бронирования";
+            this.label10.Text = "Заказы на рем.";
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.panel7);
             this.tabPage4.Controls.Add(this.label11);
             this.tabPage4.Controls.Add(this.panel8);
-            this.tabPage4.Controls.Add(this.dataGridViewPayments);
+            this.tabPage4.Controls.Add(this.dataGridViewSoftwareInstallation);
             this.tabPage4.Controls.Add(this.panel9);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -1015,93 +1205,93 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage4.Size = new System.Drawing.Size(1146, 1351);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Платежи";
+            this.tabPage4.Text = "Установка ПО";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.buttonPDFPayments);
-            this.panel7.Controls.Add(this.buttonSavePayments);
-            this.panel7.Controls.Add(this.buttonExcelPayments);
-            this.panel7.Controls.Add(this.buttonChangePayments);
-            this.panel7.Controls.Add(this.buttonWordPayments);
-            this.panel7.Controls.Add(this.buttonDeletePayments);
-            this.panel7.Controls.Add(this.buttonNewPayments);
+            this.panel7.Controls.Add(this.buttonPDFSoftwareInstallation);
+            this.panel7.Controls.Add(this.buttonSaveSoftwareInstallation);
+            this.panel7.Controls.Add(this.buttonExcelSoftwareInstallation);
+            this.panel7.Controls.Add(this.buttonChangeSoftwareInstallation);
+            this.panel7.Controls.Add(this.buttonWordSoftwareInstallation);
+            this.panel7.Controls.Add(this.buttonDeleteSoftwareInstallation);
+            this.panel7.Controls.Add(this.buttonNewSoftwareInstallation);
             this.panel7.Location = new System.Drawing.Point(814, 643);
             this.panel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(312, 697);
             this.panel7.TabIndex = 4;
             // 
-            // buttonPDFPayments
+            // buttonPDFSoftwareInstallation
             // 
-            this.buttonPDFPayments.Location = new System.Drawing.Point(4, 599);
-            this.buttonPDFPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonPDFPayments.Name = "buttonPDFPayments";
-            this.buttonPDFPayments.Size = new System.Drawing.Size(303, 89);
-            this.buttonPDFPayments.TabIndex = 4;
-            this.buttonPDFPayments.Text = "Вывод в PDF";
-            this.buttonPDFPayments.UseVisualStyleBackColor = true;
+            this.buttonPDFSoftwareInstallation.Location = new System.Drawing.Point(4, 599);
+            this.buttonPDFSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonPDFSoftwareInstallation.Name = "buttonPDFSoftwareInstallation";
+            this.buttonPDFSoftwareInstallation.Size = new System.Drawing.Size(303, 89);
+            this.buttonPDFSoftwareInstallation.TabIndex = 4;
+            this.buttonPDFSoftwareInstallation.Text = "Вывод в PDF";
+            this.buttonPDFSoftwareInstallation.UseVisualStyleBackColor = true;
             // 
-            // buttonSavePayments
+            // buttonSaveSoftwareInstallation
             // 
-            this.buttonSavePayments.Location = new System.Drawing.Point(4, 302);
-            this.buttonSavePayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonSavePayments.Name = "buttonSavePayments";
-            this.buttonSavePayments.Size = new System.Drawing.Size(303, 89);
-            this.buttonSavePayments.TabIndex = 3;
-            this.buttonSavePayments.Text = "Сохранить";
-            this.buttonSavePayments.UseVisualStyleBackColor = true;
+            this.buttonSaveSoftwareInstallation.Location = new System.Drawing.Point(4, 302);
+            this.buttonSaveSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSaveSoftwareInstallation.Name = "buttonSaveSoftwareInstallation";
+            this.buttonSaveSoftwareInstallation.Size = new System.Drawing.Size(303, 89);
+            this.buttonSaveSoftwareInstallation.TabIndex = 3;
+            this.buttonSaveSoftwareInstallation.Text = "Сохранить";
+            this.buttonSaveSoftwareInstallation.UseVisualStyleBackColor = true;
             // 
-            // buttonExcelPayments
+            // buttonExcelSoftwareInstallation
             // 
-            this.buttonExcelPayments.Location = new System.Drawing.Point(4, 500);
-            this.buttonExcelPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonExcelPayments.Name = "buttonExcelPayments";
-            this.buttonExcelPayments.Size = new System.Drawing.Size(303, 89);
-            this.buttonExcelPayments.TabIndex = 5;
-            this.buttonExcelPayments.Text = "Вывод в Excel";
-            this.buttonExcelPayments.UseVisualStyleBackColor = true;
+            this.buttonExcelSoftwareInstallation.Location = new System.Drawing.Point(4, 500);
+            this.buttonExcelSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonExcelSoftwareInstallation.Name = "buttonExcelSoftwareInstallation";
+            this.buttonExcelSoftwareInstallation.Size = new System.Drawing.Size(303, 89);
+            this.buttonExcelSoftwareInstallation.TabIndex = 5;
+            this.buttonExcelSoftwareInstallation.Text = "Вывод в Excel";
+            this.buttonExcelSoftwareInstallation.UseVisualStyleBackColor = true;
             // 
-            // buttonChangePayments
+            // buttonChangeSoftwareInstallation
             // 
-            this.buttonChangePayments.Location = new System.Drawing.Point(4, 203);
-            this.buttonChangePayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonChangePayments.Name = "buttonChangePayments";
-            this.buttonChangePayments.Size = new System.Drawing.Size(303, 89);
-            this.buttonChangePayments.TabIndex = 2;
-            this.buttonChangePayments.Text = "Изменить";
-            this.buttonChangePayments.UseVisualStyleBackColor = true;
+            this.buttonChangeSoftwareInstallation.Location = new System.Drawing.Point(4, 203);
+            this.buttonChangeSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonChangeSoftwareInstallation.Name = "buttonChangeSoftwareInstallation";
+            this.buttonChangeSoftwareInstallation.Size = new System.Drawing.Size(303, 89);
+            this.buttonChangeSoftwareInstallation.TabIndex = 2;
+            this.buttonChangeSoftwareInstallation.Text = "Изменить";
+            this.buttonChangeSoftwareInstallation.UseVisualStyleBackColor = true;
             // 
-            // buttonWordPayments
+            // buttonWordSoftwareInstallation
             // 
-            this.buttonWordPayments.Location = new System.Drawing.Point(4, 401);
-            this.buttonWordPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonWordPayments.Name = "buttonWordPayments";
-            this.buttonWordPayments.Size = new System.Drawing.Size(303, 89);
-            this.buttonWordPayments.TabIndex = 6;
-            this.buttonWordPayments.Text = "Вывод в Word";
-            this.buttonWordPayments.UseVisualStyleBackColor = true;
+            this.buttonWordSoftwareInstallation.Location = new System.Drawing.Point(4, 401);
+            this.buttonWordSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonWordSoftwareInstallation.Name = "buttonWordSoftwareInstallation";
+            this.buttonWordSoftwareInstallation.Size = new System.Drawing.Size(303, 89);
+            this.buttonWordSoftwareInstallation.TabIndex = 6;
+            this.buttonWordSoftwareInstallation.Text = "Вывод в Word";
+            this.buttonWordSoftwareInstallation.UseVisualStyleBackColor = true;
             // 
-            // buttonDeletePayments
+            // buttonDeleteSoftwareInstallation
             // 
-            this.buttonDeletePayments.Location = new System.Drawing.Point(4, 104);
-            this.buttonDeletePayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonDeletePayments.Name = "buttonDeletePayments";
-            this.buttonDeletePayments.Size = new System.Drawing.Size(303, 89);
-            this.buttonDeletePayments.TabIndex = 1;
-            this.buttonDeletePayments.Text = "Удалить";
-            this.buttonDeletePayments.UseVisualStyleBackColor = true;
+            this.buttonDeleteSoftwareInstallation.Location = new System.Drawing.Point(4, 104);
+            this.buttonDeleteSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonDeleteSoftwareInstallation.Name = "buttonDeleteSoftwareInstallation";
+            this.buttonDeleteSoftwareInstallation.Size = new System.Drawing.Size(303, 89);
+            this.buttonDeleteSoftwareInstallation.TabIndex = 1;
+            this.buttonDeleteSoftwareInstallation.Text = "Удалить";
+            this.buttonDeleteSoftwareInstallation.UseVisualStyleBackColor = true;
             // 
-            // buttonNewPayments
+            // buttonNewSoftwareInstallation
             // 
-            this.buttonNewPayments.Location = new System.Drawing.Point(4, 5);
-            this.buttonNewPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonNewPayments.Name = "buttonNewPayments";
-            this.buttonNewPayments.Size = new System.Drawing.Size(303, 89);
-            this.buttonNewPayments.TabIndex = 0;
-            this.buttonNewPayments.Text = "Новая запись";
-            this.buttonNewPayments.UseVisualStyleBackColor = true;
+            this.buttonNewSoftwareInstallation.Location = new System.Drawing.Point(4, 5);
+            this.buttonNewSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonNewSoftwareInstallation.Name = "buttonNewSoftwareInstallation";
+            this.buttonNewSoftwareInstallation.Size = new System.Drawing.Size(303, 89);
+            this.buttonNewSoftwareInstallation.TabIndex = 0;
+            this.buttonNewSoftwareInstallation.Text = "Новая запись";
+            this.buttonNewSoftwareInstallation.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -1116,14 +1306,18 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.label21);
+            this.panel8.Controls.Add(this.label29);
+            this.panel8.Controls.Add(this.textBoxLicenseKey);
+            this.panel8.Controls.Add(this.textBoxSoftwareName);
             this.panel8.Controls.Add(this.label27);
             this.panel8.Controls.Add(this.label28);
-            this.panel8.Controls.Add(this.textBoxAmount);
-            this.panel8.Controls.Add(this.textBoxPaymentDate);
+            this.panel8.Controls.Add(this.textBoxInstallationDate);
+            this.panel8.Controls.Add(this.textBoxTechnicianIDSoftwareInstallation);
             this.panel8.Controls.Add(this.label12);
             this.panel8.Controls.Add(this.label13);
-            this.panel8.Controls.Add(this.textBoxBookingIDPayments);
-            this.panel8.Controls.Add(this.textBoxPaymentID);
+            this.panel8.Controls.Add(this.textBoxClientIDSoftwareInstallation);
+            this.panel8.Controls.Add(this.textBoxInstallationID);
             this.panel8.Controls.Add(this.label14);
             this.panel8.Location = new System.Drawing.Point(12, 600);
             this.panel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -1131,15 +1325,53 @@
             this.panel8.Size = new System.Drawing.Size(786, 740);
             this.panel8.TabIndex = 2;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(54, 280);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(133, 20);
+            this.label27.TabIndex = 11;
+            this.label27.Text = "Дата установки:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(60, 225);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(127, 20);
+            this.label28.TabIndex = 10;
+            this.label28.Text = "Номер техника:";
+            // 
+            // textBoxInstallationDate
+            // 
+            this.textBoxInstallationDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxInstallationDate.Location = new System.Drawing.Point(195, 261);
+            this.textBoxInstallationDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxInstallationDate.Name = "textBoxInstallationDate";
+            this.textBoxInstallationDate.Size = new System.Drawing.Size(584, 45);
+            this.textBoxInstallationDate.TabIndex = 9;
+            // 
+            // textBoxTechnicianIDSoftwareInstallation
+            // 
+            this.textBoxTechnicianIDSoftwareInstallation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxTechnicianIDSoftwareInstallation.Location = new System.Drawing.Point(195, 206);
+            this.textBoxTechnicianIDSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxTechnicianIDSoftwareInstallation.Name = "textBoxTechnicianIDSoftwareInstallation";
+            this.textBoxTechnicianIDSoftwareInstallation.Size = new System.Drawing.Size(584, 45);
+            this.textBoxTechnicianIDSoftwareInstallation.TabIndex = 8;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 170);
+            this.label12.Location = new System.Drawing.Point(57, 170);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(175, 20);
+            this.label12.Size = new System.Drawing.Size(130, 20);
             this.label12.TabIndex = 7;
-            this.label12.Text = "Номер бронирования:";
+            this.label12.Text = "Номер клиента:";
             // 
             // label13
             // 
@@ -1151,23 +1383,23 @@
             this.label13.TabIndex = 6;
             this.label13.Text = "Номер:";
             // 
-            // textBoxBookingIDPayments
+            // textBoxClientIDSoftwareInstallation
             // 
-            this.textBoxBookingIDPayments.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxBookingIDPayments.Location = new System.Drawing.Point(195, 151);
-            this.textBoxBookingIDPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxBookingIDPayments.Name = "textBoxBookingIDPayments";
-            this.textBoxBookingIDPayments.Size = new System.Drawing.Size(584, 45);
-            this.textBoxBookingIDPayments.TabIndex = 5;
+            this.textBoxClientIDSoftwareInstallation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxClientIDSoftwareInstallation.Location = new System.Drawing.Point(195, 151);
+            this.textBoxClientIDSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxClientIDSoftwareInstallation.Name = "textBoxClientIDSoftwareInstallation";
+            this.textBoxClientIDSoftwareInstallation.Size = new System.Drawing.Size(584, 45);
+            this.textBoxClientIDSoftwareInstallation.TabIndex = 5;
             // 
-            // textBoxPaymentID
+            // textBoxInstallationID
             // 
-            this.textBoxPaymentID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPaymentID.Location = new System.Drawing.Point(195, 91);
-            this.textBoxPaymentID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxPaymentID.Name = "textBoxPaymentID";
-            this.textBoxPaymentID.Size = new System.Drawing.Size(584, 45);
-            this.textBoxPaymentID.TabIndex = 1;
+            this.textBoxInstallationID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxInstallationID.Location = new System.Drawing.Point(195, 91);
+            this.textBoxInstallationID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxInstallationID.Name = "textBoxInstallationID";
+            this.textBoxInstallationID.Size = new System.Drawing.Size(584, 45);
+            this.textBoxInstallationID.TabIndex = 1;
             // 
             // label14
             // 
@@ -1180,25 +1412,25 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Запись:";
             // 
-            // dataGridViewPayments
+            // dataGridViewSoftwareInstallation
             // 
-            this.dataGridViewPayments.AllowUserToAddRows = false;
-            this.dataGridViewPayments.AllowUserToDeleteRows = false;
-            this.dataGridViewPayments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPayments.Location = new System.Drawing.Point(12, 122);
-            this.dataGridViewPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridViewPayments.Name = "dataGridViewPayments";
-            this.dataGridViewPayments.ReadOnly = true;
-            this.dataGridViewPayments.RowHeadersWidth = 62;
-            this.dataGridViewPayments.Size = new System.Drawing.Size(1114, 469);
-            this.dataGridViewPayments.TabIndex = 1;
+            this.dataGridViewSoftwareInstallation.AllowUserToAddRows = false;
+            this.dataGridViewSoftwareInstallation.AllowUserToDeleteRows = false;
+            this.dataGridViewSoftwareInstallation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSoftwareInstallation.Location = new System.Drawing.Point(12, 122);
+            this.dataGridViewSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridViewSoftwareInstallation.Name = "dataGridViewSoftwareInstallation";
+            this.dataGridViewSoftwareInstallation.ReadOnly = true;
+            this.dataGridViewSoftwareInstallation.RowHeadersWidth = 62;
+            this.dataGridViewSoftwareInstallation.Size = new System.Drawing.Size(1114, 469);
+            this.dataGridViewSoftwareInstallation.TabIndex = 1;
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.buttonSearchPayments);
-            this.panel9.Controls.Add(this.buttonClearPayments);
-            this.panel9.Controls.Add(this.buttonRefreshPayments);
-            this.panel9.Controls.Add(this.textBoxSearchPayments);
+            this.panel9.Controls.Add(this.buttonSearchSoftwareInstallation);
+            this.panel9.Controls.Add(this.buttonClearSoftwareInstallation);
+            this.panel9.Controls.Add(this.buttonRefreshSoftwareInstallation);
+            this.panel9.Controls.Add(this.textBoxSearchSoftwareInstallation);
             this.panel9.Controls.Add(this.label15);
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -1206,47 +1438,47 @@
             this.panel9.Size = new System.Drawing.Size(1126, 112);
             this.panel9.TabIndex = 0;
             // 
-            // buttonSearchPayments
+            // buttonSearchSoftwareInstallation
             // 
-            this.buttonSearchPayments.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchPayments.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchPayments.Location = new System.Drawing.Point(789, 5);
-            this.buttonSearchPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonSearchPayments.Name = "buttonSearchPayments";
-            this.buttonSearchPayments.Size = new System.Drawing.Size(100, 103);
-            this.buttonSearchPayments.TabIndex = 4;
-            this.buttonSearchPayments.UseVisualStyleBackColor = true;
+            this.buttonSearchSoftwareInstallation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearchSoftwareInstallation.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
+            this.buttonSearchSoftwareInstallation.Location = new System.Drawing.Point(789, 5);
+            this.buttonSearchSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSearchSoftwareInstallation.Name = "buttonSearchSoftwareInstallation";
+            this.buttonSearchSoftwareInstallation.Size = new System.Drawing.Size(100, 103);
+            this.buttonSearchSoftwareInstallation.TabIndex = 4;
+            this.buttonSearchSoftwareInstallation.UseVisualStyleBackColor = true;
             // 
-            // buttonClearPayments
+            // buttonClearSoftwareInstallation
             // 
-            this.buttonClearPayments.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonClearPayments.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearPayments.Location = new System.Drawing.Point(570, 5);
-            this.buttonClearPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonClearPayments.Name = "buttonClearPayments";
-            this.buttonClearPayments.Size = new System.Drawing.Size(100, 103);
-            this.buttonClearPayments.TabIndex = 3;
-            this.buttonClearPayments.UseVisualStyleBackColor = true;
+            this.buttonClearSoftwareInstallation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonClearSoftwareInstallation.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
+            this.buttonClearSoftwareInstallation.Location = new System.Drawing.Point(570, 5);
+            this.buttonClearSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonClearSoftwareInstallation.Name = "buttonClearSoftwareInstallation";
+            this.buttonClearSoftwareInstallation.Size = new System.Drawing.Size(100, 103);
+            this.buttonClearSoftwareInstallation.TabIndex = 3;
+            this.buttonClearSoftwareInstallation.UseVisualStyleBackColor = true;
             // 
-            // buttonRefreshPayments
+            // buttonRefreshSoftwareInstallation
             // 
-            this.buttonRefreshPayments.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRefreshPayments.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshPayments.Location = new System.Drawing.Point(680, 5);
-            this.buttonRefreshPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonRefreshPayments.Name = "buttonRefreshPayments";
-            this.buttonRefreshPayments.Size = new System.Drawing.Size(100, 103);
-            this.buttonRefreshPayments.TabIndex = 2;
-            this.buttonRefreshPayments.UseVisualStyleBackColor = true;
+            this.buttonRefreshSoftwareInstallation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonRefreshSoftwareInstallation.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
+            this.buttonRefreshSoftwareInstallation.Location = new System.Drawing.Point(680, 5);
+            this.buttonRefreshSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonRefreshSoftwareInstallation.Name = "buttonRefreshSoftwareInstallation";
+            this.buttonRefreshSoftwareInstallation.Size = new System.Drawing.Size(100, 103);
+            this.buttonRefreshSoftwareInstallation.TabIndex = 2;
+            this.buttonRefreshSoftwareInstallation.UseVisualStyleBackColor = true;
             // 
-            // textBoxSearchPayments
+            // textBoxSearchSoftwareInstallation
             // 
-            this.textBoxSearchPayments.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSearchPayments.Location = new System.Drawing.Point(898, 49);
-            this.textBoxSearchPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxSearchPayments.Name = "textBoxSearchPayments";
-            this.textBoxSearchPayments.Size = new System.Drawing.Size(222, 45);
-            this.textBoxSearchPayments.TabIndex = 1;
+            this.textBoxSearchSoftwareInstallation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSearchSoftwareInstallation.Location = new System.Drawing.Point(898, 49);
+            this.textBoxSearchSoftwareInstallation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxSearchSoftwareInstallation.Name = "textBoxSearchSoftwareInstallation";
+            this.textBoxSearchSoftwareInstallation.Size = new System.Drawing.Size(222, 45);
+            this.textBoxSearchSoftwareInstallation.TabIndex = 1;
             // 
             // label15
             // 
@@ -1255,256 +1487,47 @@
             this.label15.Location = new System.Drawing.Point(4, 5);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(330, 96);
+            this.label15.Size = new System.Drawing.Size(501, 96);
             this.label15.TabIndex = 0;
-            this.label15.Text = "Платежи";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(135, 285);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 20);
-            this.label16.TabIndex = 11;
-            this.label16.Text = "Email:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(102, 225);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 20);
-            this.label17.TabIndex = 10;
-            this.label17.Text = "Фамилия:";
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmail.Location = new System.Drawing.Point(195, 266);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(584, 45);
-            this.textBoxEmail.TabIndex = 9;
-            // 
-            // textBoxLastName
-            // 
-            this.textBoxLastName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxLastName.Location = new System.Drawing.Point(195, 206);
-            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(584, 45);
-            this.textBoxLastName.TabIndex = 8;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(113, 340);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(74, 20);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "Телфон:";
-            // 
-            // textBoxPhone
-            // 
-            this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhone.Location = new System.Drawing.Point(195, 321);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(584, 45);
-            this.textBoxPhone.TabIndex = 12;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(76, 285);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(111, 20);
-            this.label18.TabIndex = 11;
-            this.label18.Text = "Дата начала:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(82, 225);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(105, 20);
-            this.label20.TabIndex = 10;
-            this.label20.Text = "Назначение:";
-            // 
-            // textBoxStartDate
-            // 
-            this.textBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxStartDate.Location = new System.Drawing.Point(195, 266);
-            this.textBoxStartDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxStartDate.Name = "textBoxStartDate";
-            this.textBoxStartDate.Size = new System.Drawing.Size(584, 45);
-            this.textBoxStartDate.TabIndex = 9;
-            // 
-            // textBoxDestination
-            // 
-            this.textBoxDestination.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxDestination.Location = new System.Drawing.Point(195, 206);
-            this.textBoxDestination.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxDestination.Name = "textBoxDestination";
-            this.textBoxDestination.Size = new System.Drawing.Size(584, 45);
-            this.textBoxDestination.TabIndex = 8;
+            this.label15.Text = "Установка ПО";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(135, 400);
+            this.label21.Location = new System.Drawing.Point(19, 395);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(52, 20);
+            this.label21.Size = new System.Drawing.Size(168, 20);
             this.label21.TabIndex = 15;
-            this.label21.Text = "Цена:";
+            this.label21.Text = "Лицензионный ключ:";
             // 
-            // label22
+            // label29
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(87, 340);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(100, 20);
-            this.label22.TabIndex = 14;
-            this.label22.Text = "Дата конца:";
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(72, 335);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(115, 20);
+            this.label29.TabIndex = 14;
+            this.label29.Text = "Название ПО:";
             // 
-            // textBoxPrice
+            // textBoxLicenseKey
             // 
-            this.textBoxPrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPrice.Location = new System.Drawing.Point(195, 381);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(584, 45);
-            this.textBoxPrice.TabIndex = 13;
+            this.textBoxLicenseKey.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLicenseKey.Location = new System.Drawing.Point(195, 376);
+            this.textBoxLicenseKey.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxLicenseKey.Name = "textBoxLicenseKey";
+            this.textBoxLicenseKey.Size = new System.Drawing.Size(584, 45);
+            this.textBoxLicenseKey.TabIndex = 13;
             // 
-            // textBoxEndDate
+            // textBoxSoftwareName
             // 
-            this.textBoxEndDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEndDate.Location = new System.Drawing.Point(195, 321);
-            this.textBoxEndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxEndDate.Name = "textBoxEndDate";
-            this.textBoxEndDate.Size = new System.Drawing.Size(584, 45);
-            this.textBoxEndDate.TabIndex = 12;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(23, 285);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(164, 20);
-            this.label23.TabIndex = 11;
-            this.label23.Text = "Дата бронирования:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(86, 225);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(101, 20);
-            this.label24.TabIndex = 10;
-            this.label24.Text = "Номер тура:";
-            // 
-            // textBoxBookingDate
-            // 
-            this.textBoxBookingDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxBookingDate.Location = new System.Drawing.Point(195, 266);
-            this.textBoxBookingDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxBookingDate.Name = "textBoxBookingDate";
-            this.textBoxBookingDate.Size = new System.Drawing.Size(584, 45);
-            this.textBoxBookingDate.TabIndex = 9;
-            // 
-            // textBoxTourIDBookings
-            // 
-            this.textBoxTourIDBookings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxTourIDBookings.Location = new System.Drawing.Point(195, 206);
-            this.textBoxTourIDBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxTourIDBookings.Name = "textBoxTourIDBookings";
-            this.textBoxTourIDBookings.Size = new System.Drawing.Size(584, 45);
-            this.textBoxTourIDBookings.TabIndex = 8;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(72, 400);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(115, 20);
-            this.label25.TabIndex = 15;
-            this.label25.Text = "Общая сумма:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(16, 340);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(171, 20);
-            this.label26.TabIndex = 14;
-            this.label26.Text = "Количество человек:";
-            // 
-            // textBoxTotalAmount
-            // 
-            this.textBoxTotalAmount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxTotalAmount.Location = new System.Drawing.Point(195, 381);
-            this.textBoxTotalAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxTotalAmount.Name = "textBoxTotalAmount";
-            this.textBoxTotalAmount.Size = new System.Drawing.Size(584, 45);
-            this.textBoxTotalAmount.TabIndex = 13;
-            // 
-            // textBoxNumberOfPersons
-            // 
-            this.textBoxNumberOfPersons.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxNumberOfPersons.Location = new System.Drawing.Point(195, 321);
-            this.textBoxNumberOfPersons.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxNumberOfPersons.Name = "textBoxNumberOfPersons";
-            this.textBoxNumberOfPersons.Size = new System.Drawing.Size(584, 45);
-            this.textBoxNumberOfPersons.TabIndex = 12;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(125, 280);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(62, 20);
-            this.label27.TabIndex = 11;
-            this.label27.Text = "Сумма:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(65, 225);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(122, 20);
-            this.label28.TabIndex = 10;
-            this.label28.Text = "Дата платежа:";
-            // 
-            // textBoxAmount
-            // 
-            this.textBoxAmount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxAmount.Location = new System.Drawing.Point(195, 266);
-            this.textBoxAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxAmount.Name = "textBoxAmount";
-            this.textBoxAmount.Size = new System.Drawing.Size(584, 45);
-            this.textBoxAmount.TabIndex = 9;
-            // 
-            // textBoxPaymentDate
-            // 
-            this.textBoxPaymentDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPaymentDate.Location = new System.Drawing.Point(195, 206);
-            this.textBoxPaymentDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxPaymentDate.Name = "textBoxPaymentDate";
-            this.textBoxPaymentDate.Size = new System.Drawing.Size(584, 45);
-            this.textBoxPaymentDate.TabIndex = 8;
+            this.textBoxSoftwareName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSoftwareName.Location = new System.Drawing.Point(195, 316);
+            this.textBoxSoftwareName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxSoftwareName.Name = "textBoxSoftwareName";
+            this.textBoxSoftwareName.Size = new System.Drawing.Size(584, 45);
+            this.textBoxSoftwareName.TabIndex = 12;
             // 
             // Form1
             // 
@@ -1534,7 +1557,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTechnicians)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -1542,7 +1565,7 @@
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBookings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRepairOrders)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -1550,7 +1573,7 @@
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPayments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSoftwareInstallation)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.ResumeLayout(false);
@@ -1573,8 +1596,8 @@
         private System.Windows.Forms.Panel panelRecord;
         private System.Windows.Forms.Label labelProdukciya;
         private System.Windows.Forms.Label labelNumber;
-        private System.Windows.Forms.TextBox textBoxFirstName;
-        private System.Windows.Forms.TextBox textBoxClientID;
+        private System.Windows.Forms.TextBox textBoxFirstNameClients;
+        private System.Windows.Forms.TextBox textBoxClientIDClients;
         private System.Windows.Forms.Label labelRecord;
         private System.Windows.Forms.DataGridView dataGridViewClients;
         private System.Windows.Forms.Panel panelTitle;
@@ -1589,98 +1612,100 @@
         private System.Windows.Forms.Button buttonWordClients;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonPDFTours;
-        private System.Windows.Forms.Button buttonSaveTours;
-        private System.Windows.Forms.Button buttonExcelTours;
-        private System.Windows.Forms.Button buttonChangeTours;
-        private System.Windows.Forms.Button buttonWordTours;
-        private System.Windows.Forms.Button buttonDeleteTours;
-        private System.Windows.Forms.Button buttonNewTours;
+        private System.Windows.Forms.Button buttonPDFTechnicians;
+        private System.Windows.Forms.Button buttonSaveTechnicians;
+        private System.Windows.Forms.Button buttonExcelTechnicians;
+        private System.Windows.Forms.Button buttonChangeTechnicians;
+        private System.Windows.Forms.Button buttonWordTechnicians;
+        private System.Windows.Forms.Button buttonDeleteTechnicians;
+        private System.Windows.Forms.Button buttonNewTechnicians;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxTourName;
-        private System.Windows.Forms.TextBox textBoxTourID;
+        private System.Windows.Forms.TextBox textBoxFirstNameTechnicians;
+        private System.Windows.Forms.TextBox textBoxTechnicianID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridViewTours;
+        private System.Windows.Forms.DataGridView dataGridViewTechnicians;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button buttonSearchTours;
-        private System.Windows.Forms.Button buttonClearTours;
-        private System.Windows.Forms.Button buttonRefreshTours;
-        private System.Windows.Forms.TextBox textBoxSearchTours;
+        private System.Windows.Forms.Button buttonSearchTechnicians;
+        private System.Windows.Forms.Button buttonClearTechnicians;
+        private System.Windows.Forms.Button buttonRefreshTechnicians;
+        private System.Windows.Forms.TextBox textBoxSearchTechnicians;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button buttonPDFBookings;
-        private System.Windows.Forms.Button buttonSaveBookings;
-        private System.Windows.Forms.Button buttonExcelBookings;
-        private System.Windows.Forms.Button buttonChangeBookings;
-        private System.Windows.Forms.Button buttonWordBookings;
-        private System.Windows.Forms.Button buttonDeleteBookings;
-        private System.Windows.Forms.Button buttonNewBookings;
+        private System.Windows.Forms.Button buttonPDFRepairOrders;
+        private System.Windows.Forms.Button buttonSaveRepairOrders;
+        private System.Windows.Forms.Button buttonExcelRepairOrders;
+        private System.Windows.Forms.Button buttonChangeRepairOrders;
+        private System.Windows.Forms.Button buttonWordRepairOrders;
+        private System.Windows.Forms.Button buttonDeleteRepairOrders;
+        private System.Windows.Forms.Button buttonNewRepairOrders;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxClientIDBookings;
-        private System.Windows.Forms.TextBox textBoxBookingID;
+        private System.Windows.Forms.TextBox textBoxClientIDRepairOrders;
+        private System.Windows.Forms.TextBox textBoxOrderID;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridViewBookings;
+        private System.Windows.Forms.DataGridView dataGridViewRepairOrders;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button buttonSearchBookings;
-        private System.Windows.Forms.Button buttonClearBookings;
-        private System.Windows.Forms.Button buttonRefreshBookings;
-        private System.Windows.Forms.TextBox textBoxSearchBookings;
+        private System.Windows.Forms.Button buttonSearchRepairOrders;
+        private System.Windows.Forms.Button buttonClearRepairOrders;
+        private System.Windows.Forms.Button buttonRefreshRepairOrders;
+        private System.Windows.Forms.TextBox textBoxSearchRepairOrders;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button buttonPDFPayments;
-        private System.Windows.Forms.Button buttonSavePayments;
-        private System.Windows.Forms.Button buttonExcelPayments;
-        private System.Windows.Forms.Button buttonChangePayments;
-        private System.Windows.Forms.Button buttonWordPayments;
-        private System.Windows.Forms.Button buttonDeletePayments;
-        private System.Windows.Forms.Button buttonNewPayments;
+        private System.Windows.Forms.Button buttonPDFSoftwareInstallation;
+        private System.Windows.Forms.Button buttonSaveSoftwareInstallation;
+        private System.Windows.Forms.Button buttonExcelSoftwareInstallation;
+        private System.Windows.Forms.Button buttonChangeSoftwareInstallation;
+        private System.Windows.Forms.Button buttonWordSoftwareInstallation;
+        private System.Windows.Forms.Button buttonDeleteSoftwareInstallation;
+        private System.Windows.Forms.Button buttonNewSoftwareInstallation;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBoxBookingIDPayments;
-        private System.Windows.Forms.TextBox textBoxPaymentID;
+        private System.Windows.Forms.TextBox textBoxClientIDSoftwareInstallation;
+        private System.Windows.Forms.TextBox textBoxInstallationID;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridView dataGridViewPayments;
+        private System.Windows.Forms.DataGridView dataGridViewSoftwareInstallation;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button buttonSearchPayments;
-        private System.Windows.Forms.Button buttonClearPayments;
-        private System.Windows.Forms.Button buttonRefreshPayments;
-        private System.Windows.Forms.TextBox textBoxSearchPayments;
+        private System.Windows.Forms.Button buttonSearchSoftwareInstallation;
+        private System.Windows.Forms.Button buttonClearSoftwareInstallation;
+        private System.Windows.Forms.Button buttonRefreshSoftwareInstallation;
+        private System.Windows.Forms.TextBox textBoxSearchSoftwareInstallation;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBoxPhone;
+        private System.Windows.Forms.TextBox textBoxPhoneNumberClients;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.TextBox textBoxLastName;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBoxEmailClients;
+        private System.Windows.Forms.TextBox textBoxLastNameClients;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBoxPrice;
-        private System.Windows.Forms.TextBox textBoxEndDate;
+        private System.Windows.Forms.TextBox textBoxEmailTechnicians;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBoxStartDate;
-        private System.Windows.Forms.TextBox textBoxDestination;
+        private System.Windows.Forms.TextBox textBoxPhoneNumberTechnicians;
+        private System.Windows.Forms.TextBox textBoxLastNameTechnicians;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBoxTotalAmount;
-        private System.Windows.Forms.TextBox textBoxNumberOfPersons;
+        private System.Windows.Forms.TextBox textBoxStatus;
+        private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBoxBookingDate;
-        private System.Windows.Forms.TextBox textBoxTourIDBookings;
+        private System.Windows.Forms.TextBox textBoxOrderDate;
+        private System.Windows.Forms.TextBox textBoxTechnicianIDRepairOrders;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBoxAmount;
-        private System.Windows.Forms.TextBox textBoxPaymentDate;
+        private System.Windows.Forms.TextBox textBoxInstallationDate;
+        private System.Windows.Forms.TextBox textBoxTechnicianIDSoftwareInstallation;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBoxLicenseKey;
+        private System.Windows.Forms.TextBox textBoxSoftwareName;
     }
 }
