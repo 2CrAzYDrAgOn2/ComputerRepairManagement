@@ -1,7 +1,16 @@
-﻿using System;
+﻿using iText.IO.Font;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf;
+using iText.Layout.Properties;
+using Microsoft.Office.Interop.Word;
+using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace test_DataBase
 {
@@ -17,6 +26,7 @@ namespace test_DataBase
     public partial class Form1 : Form
     {
         private readonly DataBase dataBase = new DataBase();
+        private bool admin;
         private int selectedRow;
 
         public Form1()
@@ -33,49 +43,47 @@ namespace test_DataBase
         }
 
         /// <summary>
+        /// SetAdminStatus проверяет доступ
+        /// </summary>
+        /// <param name="isAdmin"></param>
+        public void SetAdminStatus(bool isAdmin)
+        {
+            admin = isAdmin;
+        }
+
+        /// <summary>
         /// CreateColumns вызывается при создании колонок
         /// </summary>
         private void CreateColumns()
         {
             try
             {
-                dataGridViewClients.Columns.Add("DorimitoryID", "Номер");
-                dataGridViewClients.Columns.Add("DormitoryName", "Название общежития");
+                dataGridViewClients.Columns.Add("ClientID", "Номер");
+                dataGridViewClients.Columns.Add("FirstName", "Имя");
+                dataGridViewClients.Columns.Add("LastName", "Фамилия");
+                dataGridViewClients.Columns.Add("PhoneNumber", "Телефон");
+                dataGridViewClients.Columns.Add("Email", "Email");
                 dataGridViewClients.Columns.Add("IsNew", String.Empty);
-                dataGridViewFaculties.Columns.Add("FacultyID", "Номер");
-                dataGridViewFaculties.Columns.Add("FacultyName", "Название факультета");
-                dataGridViewFaculties.Columns.Add("IsNew", String.Empty);
-                dataGridViewGroups.Columns.Add("GroupID", "Номер");
-                dataGridViewGroups.Columns.Add("GroupName", "Название группы");
-                dataGridViewGroups.Columns.Add("IsNew", String.Empty);
-                dataGridViewHousingOrders.Columns.Add("OrderID", "Номер");
-                dataGridViewHousingOrders.Columns.Add("OrderNumber", "Номер приказа");
-                dataGridViewHousingOrders.Columns.Add("FacultyID", "Номер факультета");
-                dataGridViewHousingOrders.Columns.Add("StudentID", "Номер студента");
-                dataGridViewHousingOrders.Columns.Add("IsNew", String.Empty);
-                dataGridViewHousingPayments.Columns.Add("PaymentID", "Номер");
-                dataGridViewHousingPayments.Columns.Add("PaymentDate", "Дата оплаты");
-                dataGridViewHousingPayments.Columns.Add("PaidAmount", "Сумма к оплате");
-                dataGridViewHousingPayments.Columns.Add("StudentID", "Номер студента");
-                dataGridViewHousingPayments.Columns.Add("IsNew", String.Empty);
-                dataGridViewRoomAssignment.Columns.Add("RoomAssignment", "Номер");
-                dataGridViewRoomAssignment.Columns.Add("StudentID", "Номер студента");
-                dataGridViewRoomAssignment.Columns.Add("RoomID", "Номер комнаты");
-                dataGridViewRoomAssignment.Columns.Add("IsNew", String.Empty);
-                dataGridViewRooms.Columns.Add("RoomID", "Номер");
-                dataGridViewRooms.Columns.Add("RoomNumber", "Номер комнаты");
-                dataGridViewRooms.Columns.Add("Capacity", "Вместимость");
-                dataGridViewRooms.Columns.Add("NumberOfCabinets", "Количество шкафов");
-                dataGridViewRooms.Columns.Add("NumberOfChairs", "Количество стульев");
-                dataGridViewRooms.Columns.Add("AdditionalInfo", "Доп. информация");
-                dataGridViewRooms.Columns.Add("DormitoryID", "Номер общежития");
-                dataGridViewRooms.Columns.Add("IsNew", String.Empty);
-                dataGridViewStudents.Columns.Add("StudentID", "Номер");
-                dataGridViewStudents.Columns.Add("FullName", "Полное имя");
-                dataGridViewStudents.Columns.Add("GroupID", "Номер группы");
-                dataGridViewStudents.Columns.Add("FacultyID", "Номер факультета");
-                dataGridViewStudents.Columns.Add("PassportNumber", "Номер пасспорта");
-                dataGridViewStudents.Columns.Add("IsNew", String.Empty);
+                dataGridViewTechnicians.Columns.Add("TechnicianID", "Номер");
+                dataGridViewTechnicians.Columns.Add("FistName", "Имя");
+                dataGridViewTechnicians.Columns.Add("LastName", "Фамилия");
+                dataGridViewTechnicians.Columns.Add("PhoneNumber", "Телефон");
+                dataGridViewTechnicians.Columns.Add("Email", "Email");
+                dataGridViewTechnicians.Columns.Add("IsNew", String.Empty);
+                dataGridViewRepairOrders.Columns.Add("OrderID", "Номер");
+                dataGridViewRepairOrders.Columns.Add("ClientID", "Номер клиента");
+                dataGridViewRepairOrders.Columns.Add("TechnicianID", "Номер техника");
+                dataGridViewRepairOrders.Columns.Add("OrderDate", "Дата заказа");
+                dataGridViewRepairOrders.Columns.Add("Description", "Описание");
+                dataGridViewRepairOrders.Columns.Add("Status", "Статус");
+                dataGridViewRepairOrders.Columns.Add("IsNew", String.Empty);
+                dataGridViewSoftwareInstallation.Columns.Add("InstallationID", "Номер");
+                dataGridViewSoftwareInstallation.Columns.Add("ClientID", "Номер клиента");
+                dataGridViewSoftwareInstallation.Columns.Add("TechnicianID", "Номер техника");
+                dataGridViewSoftwareInstallation.Columns.Add("InstallationDate", "Дата установки");
+                dataGridViewSoftwareInstallation.Columns.Add("SoftwareName", "Название ПО");
+                dataGridViewSoftwareInstallation.Columns.Add("LicenseKey", "Лицензионный ключ");
+                dataGridViewSoftwareInstallation.Columns.Add("IsNew", String.Empty);
             }
             catch (Exception ex)
             {
@@ -92,33 +100,26 @@ namespace test_DataBase
             {
                 textBoxClientIDClients.Text = "";
                 textBoxFirstNameClients.Text = "";
-                textBoxFacultyID.Text = "";
-                textBoxFacultyName.Text = "";
-                textBoxGroupID.Text = "";
-                textBoxGroupName.Text = "";
+                textBoxLastNameClients.Text = "";
+                textBoxPhoneNumberClients.Text = "";
+                textBoxEmailClients.Text = "";
+                textBoxTechnicianID.Text = "";
+                textBoxFirstNameTechnicians.Text = "";
+                textBoxLastNameTechnicians.Text = "";
+                textBoxPhoneNumberTechnicians.Text = "";
+                textBoxEmailTechnicians.Text = "";
                 textBoxOrderID.Text = "";
-                textBoxOrderNumber.Text = "";
-                textBoxFacultyIDHousingOrders.Text = "";
-                textBoxStudentIDHousingOrders.Text = "";
+                textBoxClientIDRepairOrders.Text = "";
+                textBoxTechnicianIDRepairOrders.Text = "";
+                textBoxOrderDate.Text = "";
+                textBoxDescription.Text = "";
+                textBoxStatus.Text = "";
                 textBoxInstallationID.Text = "";
+                textBoxClientIDSoftwareInstallation.Text = "";
                 textBoxTechnicianIDSoftwareInstallation.Text = "";
-                textBoxPaidAmount.Text = "";
-                textBoxStudentIDHousingPayments.Text = "";
-                textBoxRoomAssignmentID.Text = "";
-                textBoxStudentIDRoomAssignment.Text = "";
-                textBoxRoomIDRoomAssignment.Text = "";
-                textBoxRoomID.Text = "";
-                textBoxRoomNumber.Text = "";
-                textBoxCapacity.Text = "";
-                textBoxNumberOfCabinets.Text = "";
-                textBoxNumberOfChairs.Text = "";
-                textBoxAdditionalInfo.Text = "";
-                textBoxDormitoryIDRooms.Text = "";
-                textBoxStudentID.Text = "";
-                textBoxFullName.Text = "";
-                textBoxGroupIDStudents.Text = "";
-                textBoxFacultyIDStudents.Text = "";
-                textBoxPassportNumber.Text = "";
+                textBoxInstallationDate.Text = "";
+                textBoxSoftwareName.Text = "";
+                textBoxLicenseKey.Text = "";
             }
             catch (Exception ex)
             {
@@ -137,36 +138,20 @@ namespace test_DataBase
             {
                 switch (dataGridView.Name)
                 {
-                    case "dataGridViewDormitories":
-                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), RowState.Modified);
+                    case "dataGridViewClients":
+                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), iDataRecord.GetString(2), iDataRecord.GetString(3), iDataRecord.GetString(4), RowState.Modified);
                         break;
 
-                    case "dataGridViewFaculties":
-                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), RowState.Modified);
+                    case "dataGridViewTechnicians":
+                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), iDataRecord.GetString(2), iDataRecord.GetString(3), iDataRecord.GetString(4), RowState.Modified);
                         break;
 
-                    case "dataGridViewGroups":
-                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), RowState.Modified);
+                    case "dataGridViewRepairOrders":
+                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetInt32(1), iDataRecord.GetInt32(2), iDataRecord.GetDateTime(3), iDataRecord.GetString(4), iDataRecord.GetString(5), RowState.Modified);
                         break;
 
-                    case "dataGridViewHousingOrders":
-                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), iDataRecord.GetInt32(2), iDataRecord.GetInt32(3), RowState.Modified);
-                        break;
-
-                    case "dataGridViewHousingPayments":
-                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetDateTime(1), iDataRecord.GetInt32(2), iDataRecord.GetInt32(3), RowState.Modified);
-                        break;
-
-                    case "dataGridViewRoomAssignment":
-                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetInt32(1), iDataRecord.GetInt32(2), RowState.Modified);
-                        break;
-
-                    case "dataGridViewRooms":
-                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), iDataRecord.GetInt32(2), iDataRecord.GetInt32(3), iDataRecord.GetInt32(4), iDataRecord.GetString(5), iDataRecord.GetInt32(6), RowState.Modified);
-                        break;
-
-                    case "dataGridViewStudents":
-                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), iDataRecord.GetInt32(2), iDataRecord.GetInt32(3), iDataRecord.GetString(4), RowState.Modified);
+                    case "dataGridViewSoftwareInstallation":
+                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetInt32(1), iDataRecord.GetInt32(2), iDataRecord.GetDateTime(3), iDataRecord.GetString(4), iDataRecord.GetString(5), RowState.Modified);
                         break;
                 }
             }
@@ -212,14 +197,10 @@ namespace test_DataBase
             try
             {
                 CreateColumns();
-                RefreshDataGrid(dataGridViewClients, "Dormitories");
-                RefreshDataGrid(dataGridViewFaculties, "Faculties");
-                RefreshDataGrid(dataGridViewGroups, "Groups");
-                RefreshDataGrid(dataGridViewHousingOrders, "HousingOrders");
-                RefreshDataGrid(dataGridViewHousingPayments, "HousingPayments");
-                RefreshDataGrid(dataGridViewRoomAssignment, "RoomAssignment");
-                RefreshDataGrid(dataGridViewRooms, "Rooms");
-                RefreshDataGrid(dataGridViewStudents, "Students");
+                RefreshDataGrid(dataGridViewClients, "Clients");
+                RefreshDataGrid(dataGridViewTechnicians, "Technicians");
+                RefreshDataGrid(dataGridViewRepairOrders, "RepairOrders");
+                RefreshDataGrid(dataGridViewSoftwareInstallation, "SoftwareInstallation");
             }
             catch (Exception ex)
             {
@@ -239,57 +220,38 @@ namespace test_DataBase
                 DataGridViewRow dataGridViewRow = dataGridView.Rows[selectedRow];
                 switch (dataGridView.Name)
                 {
-                    case "dataGridViewDormitories":
+                    case "dataGridViewClients":
                         textBoxClientIDClients.Text = dataGridViewRow.Cells[0].Value.ToString();
                         textBoxFirstNameClients.Text = dataGridViewRow.Cells[1].Value.ToString();
+                        textBoxLastNameClients.Text = dataGridViewRow.Cells[2].Value.ToString();
+                        textBoxPhoneNumberClients.Text = dataGridViewRow.Cells[3].Value.ToString();
+                        textBoxEmailClients.Text = dataGridViewRow.Cells[4].Value.ToString();
                         break;
 
-                    case "dataGridViewFaculties":
-                        textBoxFacultyID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxFacultyName.Text = dataGridViewRow.Cells[1].Value.ToString();
+                    case "dataGridViewTechnicians":
+                        textBoxTechnicianID.Text = dataGridViewRow.Cells[0].Value.ToString();
+                        textBoxFirstNameTechnicians.Text = dataGridViewRow.Cells[1].Value.ToString();
+                        textBoxLastNameTechnicians.Text = dataGridViewRow.Cells[2].Value.ToString();
+                        textBoxPhoneNumberTechnicians.Text = dataGridViewRow.Cells[3].Value.ToString();
+                        textBoxEmailTechnicians.Text = dataGridViewRow.Cells[4].Value.ToString();
                         break;
 
-                    case "dataGridViewGroups":
-                        textBoxGroupID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxGroupName.Text = dataGridViewRow.Cells[1].Value.ToString();
-                        break;
-
-                    case "dataGridViewHousingOrders":
+                    case "dataGridViewRepairOrders":
                         textBoxOrderID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxOrderNumber.Text = dataGridViewRow.Cells[1].Value.ToString();
-                        textBoxFacultyIDHousingOrders.Text = dataGridViewRow.Cells[2].Value.ToString();
-                        textBoxStudentIDHousingOrders.Text = dataGridViewRow.Cells[3].Value.ToString();
+                        textBoxClientIDRepairOrders.Text = dataGridViewRow.Cells[1].Value.ToString();
+                        textBoxTechnicianIDRepairOrders.Text = dataGridViewRow.Cells[2].Value.ToString();
+                        textBoxOrderDate.Text = dataGridViewRow.Cells[3].Value.ToString();
+                        textBoxDescription.Text = dataGridViewRow.Cells[4].Value.ToString();
+                        textBoxStatus.Text = dataGridViewRow.Cells[5].Value.ToString();
                         break;
 
-                    case "dataGridViewHousingPayments":
+                    case "dataGridViewSoftwareInstallation":
                         textBoxInstallationID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxTechnicianIDSoftwareInstallation.Text = dataGridViewRow.Cells[1].Value.ToString();
-                        textBoxPaidAmount.Text = dataGridViewRow.Cells[2].Value.ToString();
-                        textBoxStudentIDHousingPayments.Text = dataGridViewRow.Cells[3].Value.ToString();
-                        break;
-
-                    case "dataGridViewRoomAssignment":
-                        textBoxRoomAssignmentID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxStudentIDRoomAssignment.Text = dataGridViewRow.Cells[1].Value.ToString();
-                        textBoxRoomIDRoomAssignment.Text = dataGridViewRow.Cells[2].Value.ToString();
-                        break;
-
-                    case "dataGridViewRooms":
-                        textBoxRoomID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxRoomNumber.Text = dataGridViewRow.Cells[1].Value.ToString();
-                        textBoxCapacity.Text = dataGridViewRow.Cells[2].Value.ToString();
-                        textBoxNumberOfCabinets.Text = dataGridViewRow.Cells[3].Value.ToString();
-                        textBoxNumberOfChairs.Text = dataGridViewRow.Cells[4].Value.ToString();
-                        textBoxAdditionalInfo.Text = dataGridViewRow.Cells[5].Value.ToString();
-                        textBoxDormitoryIDRooms.Text = dataGridViewRow.Cells[6].Value.ToString();
-                        break;
-
-                    case "dataGridViewStudents":
-                        textBoxStudentID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxFullName.Text = dataGridViewRow.Cells[1].Value.ToString();
-                        textBoxGroupIDStudents.Text = dataGridViewRow.Cells[2].Value.ToString();
-                        textBoxFacultyIDStudents.Text = dataGridViewRow.Cells[3].Value.ToString();
-                        textBoxPassportNumber.Text = dataGridViewRow.Cells[4].Value.ToString();
+                        textBoxClientIDSoftwareInstallation.Text = dataGridViewRow.Cells[1].Value.ToString();
+                        textBoxTechnicianIDSoftwareInstallation.Text = dataGridViewRow.Cells[2].Value.ToString();
+                        textBoxInstallationDate.Text = dataGridViewRow.Cells[3].Value.ToString();
+                        textBoxSoftwareName.Text = dataGridViewRow.Cells[4].Value.ToString();
+                        textBoxLicenseKey.Text = dataGridViewRow.Cells[5].Value.ToString();
                         break;
                 }
             }
@@ -310,100 +272,52 @@ namespace test_DataBase
                 dataGridView.Rows.Clear();
                 switch (dataGridView.Name)
                 {
-                    case "dataGridViewDormitories":
-                        string searchStringDormitories = $"select * from Dormitories where concat (DormitoryID, DormitoryName) like '%" + textBoxSearchClients.Text + "%'";
-                        SqlCommand sqlCommandDormitories = new SqlCommand(searchStringDormitories, dataBase.GetConnection());
+                    case "dataGridViewClients":
+                        string searchStringClients = $"select * from Clients where concat (ClientID, FirstName, LastName, PhoneNumber, Email) like '%" + textBoxSearchClients.Text + "%'";
+                        SqlCommand sqlCommandClients = new SqlCommand(searchStringClients, dataBase.GetConnection());
                         dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderDormitories = sqlCommandDormitories.ExecuteReader();
-                        while (sqlDataReaderDormitories.Read())
+                        SqlDataReader sqlDataReaderClients = sqlCommandClients.ExecuteReader();
+                        while (sqlDataReaderClients.Read())
                         {
-                            ReadSingleRow(dataGridView, sqlDataReaderDormitories);
+                            ReadSingleRow(dataGridView, sqlDataReaderClients);
                         }
-                        sqlDataReaderDormitories.Close();
+                        sqlDataReaderClients.Close();
                         break;
 
-                    case "dataGridViewFaculties":
-                        string searchStringFaculties = $"select * from Faculties where concat (FacultyID, FacultyName) like '%" + textBoxSearchFaculties.Text + "%'";
-                        SqlCommand sqlCommandFaculties = new SqlCommand(searchStringFaculties, dataBase.GetConnection());
+                    case "dataGridViewTechnicians":
+                        string searchStringTechnicians = $"select * from Technicians where concat (TechnicianID, FirstName, LastName, PhoneNumber, Email) like '%" + textBoxSearchTechnicians.Text + "%'";
+                        SqlCommand sqlCommandTechnicians = new SqlCommand(searchStringTechnicians, dataBase.GetConnection());
                         dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderFaculties = sqlCommandFaculties.ExecuteReader();
-                        while (sqlDataReaderFaculties.Read())
+                        SqlDataReader sqlDataReaderTechnicians = sqlCommandTechnicians.ExecuteReader();
+                        while (sqlDataReaderTechnicians.Read())
                         {
-                            ReadSingleRow(dataGridView, sqlDataReaderFaculties);
+                            ReadSingleRow(dataGridView, sqlDataReaderTechnicians);
                         }
-                        sqlDataReaderFaculties.Close();
+                        sqlDataReaderTechnicians.Close();
                         break;
 
-                    case "dataGridViewGroups":
-                        string searchStringGroups = $"select * from Groups where concat (GroupID, GroupName) like '%" + textBoxSearchGroups.Text + "%'";
-                        SqlCommand sqlCommandGroups = new SqlCommand(searchStringGroups, dataBase.GetConnection());
+                    case "dataGridViewRepairOrders":
+                        string searchStringRepairOrders = $"select * from RepairOrders where concat (OrderID, ClientID, TechnicianID, OrderDate, Description, Status) like '%" + textBoxSearchRepairOrders.Text + "%'";
+                        SqlCommand sqlCommandRepairOrders = new SqlCommand(searchStringRepairOrders, dataBase.GetConnection());
                         dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderGroups = sqlCommandGroups.ExecuteReader();
-                        while (sqlDataReaderGroups.Read())
+                        SqlDataReader sqlDataReaderRepairOrders = sqlCommandRepairOrders.ExecuteReader();
+                        while (sqlDataReaderRepairOrders.Read())
                         {
-                            ReadSingleRow(dataGridView, sqlDataReaderGroups);
+                            ReadSingleRow(dataGridView, sqlDataReaderRepairOrders);
                         }
-                        sqlDataReaderGroups.Close();
+                        sqlDataReaderRepairOrders.Close();
                         break;
 
-                    case "dataGridViewHousingOrders":
-                        string searchStringHousingOrders = $"select * from HousingOrders where concat (OrderID, OrderNumber, FacultyID, StudentID) like '%" + textBoxSearchHousingOrders.Text + "%'";
-                        SqlCommand sqlCommandHousingOrders = new SqlCommand(searchStringHousingOrders, dataBase.GetConnection());
+                    case "dataGridViewSoftwareInstallation":
+                        string searchStringSoftwareInstallation = $"select * from SoftwareInstallation where concat (IstallationID, ClientID, TechnicianID, InstallationDate, SoftwareName, LicenseKey) like '%" + textBoxSearchSoftwareInstallation.Text + "%'";
+                        SqlCommand sqlCommandSoftwareInstallation = new SqlCommand(searchStringSoftwareInstallation, dataBase.GetConnection());
                         dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderHousingOrders = sqlCommandHousingOrders.ExecuteReader();
-                        while (sqlDataReaderHousingOrders.Read())
+                        SqlDataReader sqlDataReaderSoftwareInstallation = sqlCommandSoftwareInstallation.ExecuteReader();
+                        while (sqlDataReaderSoftwareInstallation.Read())
                         {
-                            ReadSingleRow(dataGridView, sqlDataReaderHousingOrders);
+                            ReadSingleRow(dataGridView, sqlDataReaderSoftwareInstallation);
                         }
-                        sqlDataReaderHousingOrders.Close();
-                        break;
-
-                    case "dataGridViewHousingPayments":
-                        string searchStringHousingPayments = $"select * from HousingPayments where concat (PaymentID, PaymentDate, PaidAmount, StudentID) like '%" + textBoxSearchHousingPayments.Text + "%'";
-                        SqlCommand sqlCommandHousingPayments = new SqlCommand(searchStringHousingPayments, dataBase.GetConnection());
-                        dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderHousingPayments = sqlCommandHousingPayments.ExecuteReader();
-                        while (sqlDataReaderHousingPayments.Read())
-                        {
-                            ReadSingleRow(dataGridView, sqlDataReaderHousingPayments);
-                        }
-                        sqlDataReaderHousingPayments.Close();
-                        break;
-
-                    case "dataGridViewRoomAssignment":
-                        string searchStringRoomAssignment = $"select * from RoomAssignment where concat (RoomAssignmentID, StudentID, RoomID) like '%" + textBoxSearchRoomAssignment.Text + "%'";
-                        SqlCommand sqlCommandRoomAssignment = new SqlCommand(searchStringRoomAssignment, dataBase.GetConnection());
-                        dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderRoomAssignment = sqlCommandRoomAssignment.ExecuteReader();
-                        while (sqlDataReaderRoomAssignment.Read())
-                        {
-                            ReadSingleRow(dataGridView, sqlDataReaderRoomAssignment);
-                        }
-                        sqlDataReaderRoomAssignment.Close();
-                        break;
-
-                    case "dataGridViewRooms":
-                        string searchStringRooms = $"select * from Rooms where concat (RoomID, RoomNumber, Capacity, NumberOfCabinets, NumberOfChairs, AdditionalInfo, DormitoryID) like '%" + textBoxSearchRooms.Text + "%'";
-                        SqlCommand sqlCommandRooms = new SqlCommand(searchStringRooms, dataBase.GetConnection());
-                        dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderRooms = sqlCommandRooms.ExecuteReader();
-                        while (sqlDataReaderRooms.Read())
-                        {
-                            ReadSingleRow(dataGridView, sqlDataReaderRooms);
-                        }
-                        sqlDataReaderRooms.Close();
-                        break;
-
-                    case "dataGridViewStudents":
-                        string searchStringStudents = $"select * from Students where concat (StudentID, FullName, GroupID, FacultyID, PassportNumber) like '%" + textBoxSearchStudents.Text + "%'";
-                        SqlCommand sqlCommandStudents = new SqlCommand(searchStringStudents, dataBase.GetConnection());
-                        dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderStudents = sqlCommandStudents.ExecuteReader();
-                        while (sqlDataReaderStudents.Read())
-                        {
-                            ReadSingleRow(dataGridView, sqlDataReaderStudents);
-                        }
-                        sqlDataReaderStudents.Close();
+                        sqlDataReaderSoftwareInstallation.Close();
                         break;
                 }
             }
@@ -425,76 +339,40 @@ namespace test_DataBase
                 dataGridView.Rows[index].Visible = false;
                 switch (dataGridView.Name)
                 {
-                    case "dataGridViewDormitories":
-                        if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
-                        {
-                            dataGridView.Rows[index].Cells[2].Value = RowState.Deleted;
-                            return;
-                        }
-                        dataGridView.Rows[index].Cells[2].Value = RowState.Deleted;
-                        break;
-
-                    case "dataGridViewFaculties":
-                        if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
-                        {
-                            dataGridView.Rows[index].Cells[2].Value = RowState.Deleted;
-                            return;
-                        }
-                        dataGridView.Rows[index].Cells[2].Value = RowState.Deleted;
-                        break;
-
-                    case "dataGridViewGroups":
-                        if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
-                        {
-                            dataGridView.Rows[index].Cells[2].Value = RowState.Deleted;
-                            return;
-                        }
-                        dataGridView.Rows[index].Cells[2].Value = RowState.Deleted;
-                        break;
-
-                    case "dataGridViewHousingOrders":
-                        if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
-                        {
-                            dataGridView.Rows[index].Cells[4].Value = RowState.Deleted;
-                            return;
-                        }
-                        dataGridView.Rows[index].Cells[4].Value = RowState.Deleted;
-                        break;
-
-                    case "dataGridViewHousingPayments":
-                        if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
-                        {
-                            dataGridView.Rows[index].Cells[4].Value = RowState.Deleted;
-                            return;
-                        }
-                        dataGridView.Rows[index].Cells[4].Value = RowState.Deleted;
-                        break;
-
-                    case "dataGridViewRoomAssignment":
-                        if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
-                        {
-                            dataGridView.Rows[index].Cells[3].Value = RowState.Deleted;
-                            return;
-                        }
-                        dataGridView.Rows[index].Cells[3].Value = RowState.Deleted;
-                        break;
-
-                    case "dataGridViewRooms":
-                        if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
-                        {
-                            dataGridView.Rows[index].Cells[7].Value = RowState.Deleted;
-                            return;
-                        }
-                        dataGridView.Rows[index].Cells[7].Value = RowState.Deleted;
-                        break;
-
-                    case "dataGridViewStudents":
+                    case "dataGridViewClients":
                         if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
                         {
                             dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
                             return;
                         }
                         dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
+                        break;
+
+                    case "dataGridViewTechnicians":
+                        if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
+                        {
+                            dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
+                            return;
+                        }
+                        dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
+                        break;
+
+                    case "dataGridViewRepairOrders":
+                        if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
+                        {
+                            dataGridView.Rows[index].Cells[6].Value = RowState.Deleted;
+                            return;
+                        }
+                        dataGridView.Rows[index].Cells[6].Value = RowState.Deleted;
+                        break;
+
+                    case "dataGridViewSoftwareInstallation":
+                        if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
+                        {
+                            dataGridView.Rows[index].Cells[6].Value = RowState.Deleted;
+                            return;
+                        }
+                        dataGridView.Rows[index].Cells[6].Value = RowState.Deleted;
                         break;
                 }
             }
@@ -517,198 +395,107 @@ namespace test_DataBase
                 {
                     switch (dataGridView.Name)
                     {
-                        case "dataGridViewDormitories":
-                            var rowStateDormitories = (RowState)dataGridView.Rows[index].Cells[2].Value;
-                            if (rowStateDormitories == RowState.Existed)
+                        case "dataGridViewClients":
+                            var rowStateClients = (RowState)dataGridView.Rows[index].Cells[5].Value;
+                            if (rowStateClients == RowState.Existed)
                             {
                                 continue;
                             }
-                            if (rowStateDormitories == RowState.Deleted)
+                            if (rowStateClients == RowState.Deleted)
                             {
-                                var dormitoryID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Dormitories where DormitoryID = {dormitoryID}";
+                                var clientID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
+                                var deleteQuery = $"delete from Clients where ClientID = {clientID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
-                            if (rowStateDormitories == RowState.Modified)
+                            if (rowStateClients == RowState.Modified)
                             {
-                                var dormitoryID = dataGridView.Rows[index].Cells[0].Value.ToString();
-                                var dormitoryName = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var changeQuery = $"update Dormitories set DormitoryName = '{dormitoryName}' where DormitoryID = '{dormitoryID}'";
+                                var clientID = dataGridView.Rows[index].Cells[0].Value.ToString();
+                                var firstName = dataGridView.Rows[index].Cells[1].Value.ToString();
+                                var lastName = dataGridView.Rows[index].Cells[2].Value.ToString();
+                                var phoneNumber = dataGridView.Rows[index].Cells[3].Value.ToString();
+                                var email = dataGridView.Rows[index].Cells[4].Value.ToString();
+                                var changeQuery = $"update Clients set FirstName = '{firstName}', LastName = '{lastName}', PhoneNumber = '{phoneNumber}' Email = '{email}', where ClientID = '{clientID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             break;
 
-                        case "dataGridViewFaculties":
-                            var rowStateFaculties = (RowState)dataGridView.Rows[index].Cells[2].Value;
-                            if (rowStateFaculties == RowState.Existed)
+                        case "dataGridViewTechnicians":
+                            var rowStateTechnicians = (RowState)dataGridView.Rows[index].Cells[5].Value;
+                            if (rowStateTechnicians == RowState.Existed)
                             {
                                 continue;
                             }
-                            if (rowStateFaculties == RowState.Deleted)
+                            if (rowStateTechnicians == RowState.Deleted)
                             {
-                                var facultyID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Faculties where FacultyID = {facultyID}";
+                                var technicianID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
+                                var deleteQuery = $"delete from Technicians where TechnicianID = {technicianID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
-                            if (rowStateFaculties == RowState.Modified)
+                            if (rowStateTechnicians == RowState.Modified)
                             {
-                                var facultyID = dataGridView.Rows[index].Cells[0].Value.ToString();
-                                var facultyName = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var changeQuery = $"update Faculties set FacultyName = '{facultyName}' where FacultyID = '{facultyID}'";
+                                var technicianID = dataGridView.Rows[index].Cells[0].Value.ToString();
+                                var firstName = dataGridView.Rows[index].Cells[1].Value.ToString();
+                                var lastName = dataGridView.Rows[index].Cells[2].Value.ToString();
+                                var phoneNumber = dataGridView.Rows[index].Cells[3].Value.ToString();
+                                var email = dataGridView.Rows[index].Cells[4].Value.ToString();
+                                var changeQuery = $"update Technicians set FirstName = '{firstName}', LastName = '{lastName}', PhoneNumber = '{phoneNumber}' Email = '{email}', where TechnicianID = '{technicianID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             break;
 
-                        case "dataGridViewGroups":
-                            var rowStateGroups = (RowState)dataGridView.Rows[index].Cells[2].Value;
-                            if (rowStateGroups == RowState.Existed)
+                        case "dataGridViewRepairOrders":
+                            var rowStateRepairOrders = (RowState)dataGridView.Rows[index].Cells[6].Value;
+                            if (rowStateRepairOrders == RowState.Existed)
                             {
                                 continue;
                             }
-                            if (rowStateGroups == RowState.Deleted)
-                            {
-                                var groupID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Groups where GroupID = {groupID}";
-                                var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
-                                sqlCommand.ExecuteNonQuery();
-                            }
-                            if (rowStateGroups == RowState.Modified)
-                            {
-                                var groupID = dataGridView.Rows[index].Cells[0].Value.ToString();
-                                var GroupName = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var changeQuery = $"update Groups set GroupName = '{GroupName}' where GroupID = '{groupID}'";
-                                var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
-                                sqlCommand.ExecuteNonQuery();
-                            }
-                            break;
-
-                        case "dataGridViewHousingOrders":
-                            var rowStateHousingOrders = (RowState)dataGridView.Rows[index].Cells[4].Value;
-                            if (rowStateHousingOrders == RowState.Existed)
-                            {
-                                continue;
-                            }
-                            if (rowStateHousingOrders == RowState.Deleted)
+                            if (rowStateRepairOrders == RowState.Deleted)
                             {
                                 var orderID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from HousingOrders where OrderID = {orderID}";
+                                var deleteQuery = $"delete from RepairOrders where OrderID = {orderID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
-                            if (rowStateHousingOrders == RowState.Modified)
+                            if (rowStateRepairOrders == RowState.Modified)
                             {
                                 var orderID = dataGridView.Rows[index].Cells[0].Value.ToString();
-                                var orderNumber = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var facultyID = dataGridView.Rows[index].Cells[2].Value.ToString();
-                                var studentID = dataGridView.Rows[index].Cells[3].Value.ToString();
-                                var changeQuery = $"update HousingOrders set OrderNumber = '{orderNumber}', FacultyID = '{facultyID}', StudentID = '{studentID}' where OrderID = '{orderID}'";
+                                var clientID = dataGridView.Rows[index].Cells[1].Value.ToString();
+                                var technicianID = dataGridView.Rows[index].Cells[2].Value.ToString();
+                                var orderDate = dataGridView.Rows[index].Cells[3].Value.ToString();
+                                var description = dataGridView.Rows[index].Cells[4].Value.ToString();
+                                var status = dataGridView.Rows[index].Cells[5].Value.ToString();
+                                var changeQuery = $"update RepairOrders set ClientID = '{clientID}', TechnicianID = '{technicianID}', OrderDate = '{orderDate}', Description = '{description}', Status = '{status}', where OrderID = '{orderID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             break;
 
-                        case "dataGridViewHousingPayments":
-                            var rowStateHousingPayments = (RowState)dataGridView.Rows[index].Cells[4].Value;
-                            if (rowStateHousingPayments == RowState.Existed)
+                        case "dataGridViewSoftwareInstallation":
+                            var rowStateSoftwareInstallation = (RowState)dataGridView.Rows[index].Cells[6].Value;
+                            if (rowStateSoftwareInstallation == RowState.Existed)
                             {
                                 continue;
                             }
-                            if (rowStateHousingPayments == RowState.Deleted)
+                            if (rowStateSoftwareInstallation == RowState.Deleted)
                             {
-                                var paymentID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from HousingPayments where PaymentID = {paymentID}";
+                                var installationID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
+                                var deleteQuery = $"delete from SoftwareInstallation where InstallationID = {installationID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
-                            if (rowStateHousingPayments == RowState.Modified)
+                            if (rowStateSoftwareInstallation == RowState.Modified)
                             {
-                                var paymentID = dataGridView.Rows[index].Cells[0].Value.ToString();
-                                var paymentDate = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var paidAmount = dataGridView.Rows[index].Cells[2].Value.ToString();
-                                var studentID = dataGridView.Rows[index].Cells[3].Value.ToString();
-                                var changeQuery = $"update HousingPayments set PaymentDate = '{paymentDate}', PaidAmount = '{paidAmount}', StudentID = '{studentID}' where PaymentID = '{paymentID}'";
-                                var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
-                                sqlCommand.ExecuteNonQuery();
-                            }
-                            break;
-
-                        case "dataGridViewRoomAssignment":
-                            var rowStateRoomAssignment = (RowState)dataGridView.Rows[index].Cells[3].Value;
-                            if (rowStateRoomAssignment == RowState.Existed)
-                            {
-                                continue;
-                            }
-                            if (rowStateRoomAssignment == RowState.Deleted)
-                            {
-                                var roomAssignmentID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from RoomAssignment where RoomAssignmentID = {roomAssignmentID}";
-                                var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
-                                sqlCommand.ExecuteNonQuery();
-                            }
-                            if (rowStateRoomAssignment == RowState.Modified)
-                            {
-                                var roomAssignmentID = dataGridView.Rows[index].Cells[0].Value.ToString();
-                                var studentID = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var roomID = dataGridView.Rows[index].Cells[2].Value.ToString();
-                                var changeQuery = $"update RoomAssignment set StudentID = '{studentID}', RoomID = '{roomID}' where RoomAssignmentID = '{roomAssignmentID}'";
-                                var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
-                                sqlCommand.ExecuteNonQuery();
-                            }
-                            break;
-
-                        case "dataGridViewRooms":
-                            var rowStateRooms = (RowState)dataGridView.Rows[index].Cells[7].Value;
-                            if (rowStateRooms == RowState.Existed)
-                            {
-                                continue;
-                            }
-                            if (rowStateRooms == RowState.Deleted)
-                            {
-                                var roomID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Rooms where RoomID = {roomID}";
-                                var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
-                                sqlCommand.ExecuteNonQuery();
-                            }
-                            if (rowStateRooms == RowState.Modified)
-                            {
-                                var roomID = dataGridView.Rows[index].Cells[0].Value.ToString();
-                                var roomNumber = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var capacity = dataGridView.Rows[index].Cells[2].Value.ToString();
-                                var numberOfCabinets = dataGridView.Rows[index].Cells[3].Value.ToString();
-                                var numberOfChairs = dataGridView.Rows[index].Cells[4].Value.ToString();
-                                var additionalInfo = dataGridView.Rows[index].Cells[5].Value.ToString();
-                                var dormitoryID = dataGridView.Rows[index].Cells[6].Value.ToString();
-                                var changeQuery = $"update Rooms set RoomNumber = '{roomNumber}', Capacity = '{capacity}', NumberOfCabinets = '{numberOfCabinets}', NumberOfChairs = '{numberOfChairs}', AdditionalInfo = '{additionalInfo}', DormitoryID = '{dormitoryID}' where RoomID = '{roomID}'";
-                                var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
-                                sqlCommand.ExecuteNonQuery();
-                            }
-                            break;
-
-                        case "dataGridViewStudents":
-                            var rowStateStudents = (RowState)dataGridView.Rows[index].Cells[5].Value;
-                            if (rowStateStudents == RowState.Existed)
-                            {
-                                continue;
-                            }
-                            if (rowStateStudents == RowState.Deleted)
-                            {
-                                var studentID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Students where StudentID = {studentID}";
-                                var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
-                                sqlCommand.ExecuteNonQuery();
-                            }
-                            if (rowStateStudents == RowState.Modified)
-                            {
-                                var studentID = dataGridView.Rows[index].Cells[0].Value.ToString();
-                                var fullName = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var groupID = dataGridView.Rows[index].Cells[2].Value.ToString();
-                                var facultyID = dataGridView.Rows[index].Cells[3].Value.ToString();
-                                var passportNumber = dataGridView.Rows[index].Cells[4].Value.ToString();
-                                var changeQuery = $"update Students set FullName = '{fullName}', GroupID = '{groupID}', FacultyID = '{facultyID}', PassportNumber = '{passportNumber}' where StudentID = '{studentID}'";
+                                var installationID = dataGridView.Rows[index].Cells[0].Value.ToString();
+                                var clientID = dataGridView.Rows[index].Cells[1].Value.ToString();
+                                var technicianID = dataGridView.Rows[index].Cells[2].Value.ToString();
+                                var installationDate = dataGridView.Rows[index].Cells[3].Value.ToString();
+                                var softwareName = dataGridView.Rows[index].Cells[4].Value.ToString();
+                                var licenseKey = dataGridView.Rows[index].Cells[5].Value.ToString();
+                                var changeQuery = $"update SoftwareInstallation set ClientID = '{clientID}', TechnicianID = '{technicianID}', InstallationDate = '{installationDate}', SoftwareName = '{softwareName}', LicenseKey = '{licenseKey}' where InstallationID = {installationID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -737,74 +524,47 @@ namespace test_DataBase
                 var selectedRowIndex = dataGridView.CurrentCell.RowIndex;
                 switch (dataGridView.Name)
                 {
-                    case "dataGridViewDormitories":
-                        var dormitoryID = textBoxClientIDClients.Text;
-                        var dormitoryName = textBoxFirstNameClients.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(dormitoryID, dormitoryName);
-                        dataGridView.Rows[selectedRowIndex].Cells[2].Value = RowState.Modified;
-                        break;
-
-                    case "dataGridViewFaculties":
-                        var facultyID = textBoxFacultyID.Text;
-                        var facultyName = textBoxFacultyName.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(facultyID, facultyName);
-                        dataGridView.Rows[selectedRowIndex].Cells[2].Value = RowState.Modified;
-                        break;
-
-                    case "dataGridViewGroups":
-                        var groupID = textBoxGroupID.Text;
-                        var groupName = textBoxGroupName.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(groupID, groupName);
-                        dataGridView.Rows[selectedRowIndex].Cells[2].Value = RowState.Modified;
-                        break;
-
-                    case "dataGridViewHousingOrders":
-                        var orderID = textBoxOrderID.Text;
-                        var orderNumber = textBoxOrderNumber.Text;
-                        var facultyIDHousingOrders = textBoxFacultyIDHousingOrders.Text;
-                        var studentIDHousingOrders = textBoxStudentIDHousingOrders.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(orderID, orderNumber, facultyIDHousingOrders, studentIDHousingOrders);
-                        dataGridView.Rows[selectedRowIndex].Cells[4].Value = RowState.Modified;
-                        break;
-
-                    case "dataGridViewHousingPayments":
-                        var paymentID = textBoxInstallationID.Text;
-                        var paymentDate = textBoxTechnicianIDSoftwareInstallation.Text;
-                        var paidAmount = textBoxPaidAmount.Text;
-                        var studentIDHousingPayments = textBoxStudentIDHousingPayments.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(paymentID, paymentDate, paidAmount, studentIDHousingPayments);
-                        dataGridView.Rows[selectedRowIndex].Cells[4].Value = RowState.Modified;
-                        break;
-
-                    case "dataGridViewRoomAssignment":
-                        var roomAssignmentID = textBoxRoomAssignmentID.Text;
-                        var studentIDRoomAssignment = textBoxStudentIDRoomAssignment.Text;
-                        var roomIDRoomAssignment = textBoxRoomIDRoomAssignment.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(roomAssignmentID, studentIDRoomAssignment, roomIDRoomAssignment);
-                        dataGridView.Rows[selectedRowIndex].Cells[3].Value = RowState.Modified;
-                        break;
-
-                    case "dataGridViewRooms":
-                        var roomID = textBoxRoomID.Text;
-                        var roomNumber = textBoxRoomNumber.Text;
-                        var capacity = textBoxCapacity.Text;
-                        var numberOfCabinets = textBoxNumberOfCabinets.Text;
-                        var numberOfChairs = textBoxNumberOfChairs.Text;
-                        var additionalInfo = textBoxAdditionalInfo.Text;
-                        var dormitoryIDRooms = textBoxDormitoryIDRooms.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(roomID, roomNumber, capacity, numberOfCabinets, numberOfChairs, additionalInfo, dormitoryIDRooms);
-                        dataGridView.Rows[selectedRowIndex].Cells[7].Value = RowState.Modified;
-                        break;
-
-                    case "dataGridViewStudents":
-                        var studentID = textBoxStudentID.Text;
-                        var fullName = textBoxFullName.Text;
-                        var groupIDStudents = textBoxGroupIDStudents.Text;
-                        var facultyIDStudents = textBoxFacultyIDStudents.Text;
-                        var passportNumber = textBoxPassportNumber.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(studentID, fullName, groupIDStudents, facultyIDStudents, passportNumber);
+                    case "dataGridViewClients":
+                        var clientID = textBoxClientIDClients.Text;
+                        var firstName = textBoxFirstNameClients.Text;
+                        var lastName = textBoxLastNameClients.Text;
+                        var phoneNumber = textBoxPhoneNumberClients.Text;
+                        var email = textBoxEmailClients.Text;
+                        dataGridView.Rows[selectedRowIndex].SetValues(clientID, firstName, lastName, phoneNumber, email);
                         dataGridView.Rows[selectedRowIndex].Cells[5].Value = RowState.Modified;
                         break;
+
+                    case "dataGridViewTechnicians":
+                        var technicianID = textBoxTechnicianID.Text;
+                        var firstNameTechnicians = textBoxFirstNameTechnicians.Text;
+                        var lastNameTechnicians = textBoxLastNameTechnicians.Text;
+                        var phoneNumberTechnicians = textBoxPhoneNumberTechnicians.Text;
+                        var emailTechnicians = textBoxEmailTechnicians.Text;
+                        dataGridView.Rows[selectedRowIndex].SetValues(technicianID, firstNameTechnicians, lastNameTechnicians, phoneNumberTechnicians, emailTechnicians);
+                        dataGridView.Rows[selectedRowIndex].Cells[5].Value = RowState.Modified;
+                        break;
+
+                    case "dataGridViewRepairOrders":
+                        var orderID = textBoxOrderID.Text;
+                        var clientIDRepairOrders = textBoxClientIDRepairOrders.Text;
+                        var technicianIDRepairOrders = textBoxTechnicianIDRepairOrders.Text;
+                        var orderDate = textBoxOrderDate.Text;
+                        var description = textBoxDescription.Text;
+                        var status = textBoxStatus.Text;
+                        dataGridView.Rows[selectedRowIndex].SetValues(orderID, clientIDRepairOrders, technicianIDRepairOrders, orderDate, description, status);
+                        dataGridView.Rows[selectedRowIndex].Cells[6].Value = RowState.Modified;
+                        break;
+
+                    case "dataGridViewSoftwareInstallation":
+                        var installationID = textBoxInstallationID.Text;
+                        var clientIDSoftwareInstallation = textBoxClientIDSoftwareInstallation.Text;
+                        var technicianIDSoftwareInstallation = textBoxTechnicianIDSoftwareInstallation.Text;
+                        var installationDate = textBoxInstallationDate.Text;
+                        var softwareName = textBoxSoftwareName.Text;
+                        var licenseKey = textBoxLicenseKey.Text;
+                        dataGridView.Rows[selectedRowIndex].SetValues(installationID, clientIDSoftwareInstallation, technicianIDSoftwareInstallation, installationDate, softwareName, licenseKey);
+                        dataGridView.Rows[selectedRowIndex].Cells[6].Value = RowState.Modified;
+                        break;
                 }
             }
             catch (Exception ex)
@@ -814,18 +574,50 @@ namespace test_DataBase
         }
 
         /// <summary>
-        /// DataGridViewDormitories_CellClick вызывается при нажатии на ячейку
+        /// ExportToWord вызывается при экспорте данных в Word
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewDormitories_CellClick(object sender, DataGridViewCellEventArgs e)
+        /// <param name="dataGridView"></param>
+        private void ExportToWord(DataGridView dataGridView)
         {
             try
             {
-                selectedRow = e.RowIndex;
-                if (e.RowIndex >= 0)
+                var wordApp = new Microsoft.Office.Interop.Word.Application();
+                wordApp.Visible = true;
+                Microsoft.Office.Interop.Word.Document doc = wordApp.Documents.Add();
+                Paragraph title = doc.Paragraphs.Add();
+                switch (dataGridView.Name)
                 {
-                    DataGridView_CellClick(dataGridViewClients, selectedRow);
+                    case "dataGridViewClients":
+                        title.Range.Text = "Данные клиентов";
+                        break;
+
+                    case "dataGridViewTechnicians":
+                        title.Range.Text = "Данные техников";
+                        break;
+
+                    case "dataGridViewRepairOrders":
+                        title.Range.Text = "Данные заказов";
+                        break;
+
+                    case "dataGridViewSoftwareInstallation":
+                        title.Range.Text = "Данные установок ПО";
+                        break;
+                }
+                title.Range.Font.Bold = 1;
+                title.Range.Font.Size = 14;
+                title.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
+                title.Range.InsertParagraphAfter();
+                Table table = doc.Tables.Add(title.Range, dataGridView.RowCount + 1, dataGridView.ColumnCount - 1);
+                for (int col = 0; col < dataGridView.ColumnCount - 1; col++)
+                {
+                    table.Cell(1, col + 1).Range.Text = dataGridView.Columns[col].HeaderText;
+                }
+                for (int row = 0; row < dataGridView.RowCount; row++)
+                {
+                    for (int col = 0; col < dataGridView.ColumnCount - 1; col++)
+                    {
+                        table.Cell(row + 2, col + 1).Range.Text = dataGridView[col, row].Value.ToString();
+                    }
                 }
             }
             catch (Exception ex)
@@ -835,19 +627,58 @@ namespace test_DataBase
         }
 
         /// <summary>
-        /// DataGridViewFaculties_CellClick вызывается при нажатии на ячейку
+        /// ExportToExcel вызывается при экспорте данных в Excel
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewFaculties_CellClick(object sender, DataGridViewCellEventArgs e)
+        /// <param name="dataGridView"></param>
+        private void ExportToExcel(DataGridView dataGridView)
         {
             try
             {
-                selectedRow = e.RowIndex;
-                if (e.RowIndex >= 0)
+                var excelApp = new Excel.Application();
+                excelApp.Visible = true;
+                Excel.Workbook workbook = excelApp.Workbooks.Add();
+                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1];
+                string title = "";
+                switch (dataGridView.Name)
                 {
-                    DataGridView_CellClick(dataGridViewFaculties, selectedRow);
+                    case "dataGridViewClients":
+                        title = "Данные клиентов";
+                        break;
+
+                    case "dataGridViewTechnicians":
+                        title = "Данные техников";
+                        break;
+
+                    case "dataGridViewRepairOrders":
+                        title = "Данные заказов";
+                        break;
+
+                    case "dataGridViewSoftwareInstallation":
+                        title = "Данные установок ПО";
+                        break;
                 }
+                Excel.Range titleRange = worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, dataGridView.ColumnCount - 1]];
+                titleRange.Merge();
+                titleRange.Value = title;
+                titleRange.Font.Bold = true;
+                titleRange.Font.Size = 14;
+                titleRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                for (int col = 0; col < dataGridView.ColumnCount; col++)
+                {
+                    worksheet.Cells[2, col + 1] = dataGridView.Columns[col].HeaderText;
+                }
+                for (int row = 0; row < dataGridView.RowCount; row++)
+                {
+                    for (int col = 0; col < dataGridView.ColumnCount - 1; col++)
+                    {
+                        worksheet.Cells[row + 3, col + 1] = dataGridView[col, row].Value.ToString();
+                        Excel.Range dataRange = worksheet.Range[worksheet.Cells[2, 1], worksheet.Cells[dataGridView.RowCount + 2, dataGridView.ColumnCount]];
+                        dataRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                        dataRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                    }
+                }
+                worksheet.Columns.AutoFit();
+                worksheet.Rows.AutoFit();
             }
             catch (Exception ex)
             {
@@ -856,124 +687,56 @@ namespace test_DataBase
         }
 
         /// <summary>
-        /// DataGridViewGroups_CellClick вызывается при нажатии на ячейку
+        /// ExportToPDF вызывается при экспорте данных в PDF
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewGroups_CellClick(object sender, DataGridViewCellEventArgs e)
+        /// <param name="dataGridView"></param>
+        private void ExportToPDF(DataGridView dataGridView)
         {
             try
             {
-                selectedRow = e.RowIndex;
-                if (e.RowIndex >= 0)
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "output.pdf");
+                var pdfWriter = new PdfWriter(filePath);
+                var pdfDocument = new PdfDocument(pdfWriter);
+                var pdfDoc = new iText.Layout.Document(pdfDocument);
+                PdfFont timesFont = PdfFontFactory.CreateFont("c:/windows/fonts/times.ttf", PdfEncodings.IDENTITY_H, true);
+                string title = "";
+                switch (dataGridView.Name)
                 {
-                    DataGridView_CellClick(dataGridViewGroups, selectedRow);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+                    case "dataGridViewClients":
+                        title = "Данные клиентов";
+                        break;
 
-        /// <summary>
-        /// DataGridViewHousingOrders_CellClick вызывается при нажатии на ячейку
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewHousingOrders_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                selectedRow = e.RowIndex;
-                if (e.RowIndex >= 0)
-                {
-                    DataGridView_CellClick(dataGridViewHousingOrders, selectedRow);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+                    case "dataGridViewTechnicians":
+                        title = "Данные техников";
+                        break;
 
-        /// <summary>
-        /// DataGridViewHousingPayments_CellClick вызывается при нажатии на ячейку
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewHousingPayments_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                selectedRow = e.RowIndex;
-                if (e.RowIndex >= 0)
-                {
-                    DataGridView_CellClick(dataGridViewHousingPayments, selectedRow);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+                    case "dataGridViewRepairOrders":
+                        title = "Данные заказов";
+                        break;
 
-        /// <summary>
-        /// DataGridViewRoomAssignment_CellClick вызывается при нажатии на ячейку
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewRoomAssignment_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                selectedRow = e.RowIndex;
-                if (e.RowIndex >= 0)
-                {
-                    DataGridView_CellClick(dataGridViewRoomAssignment, selectedRow);
+                    case "dataGridViewSoftwareInstallation":
+                        title = "Данные установок ПО";
+                        break;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// DataGridViewRooms_CellClick вызывается при нажатии на ячейку
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewRooms_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                selectedRow = e.RowIndex;
-                if (e.RowIndex >= 0)
+                pdfDoc.Add(new iText.Layout.Element.Paragraph(title).SetFont(timesFont).SetTextAlignment(TextAlignment.CENTER));
+                iText.Layout.Element.Table table = new iText.Layout.Element.Table(dataGridView.Columns.Count - 1);
+                table.UseAllAvailableWidth();
+                var columnsList = dataGridView.Columns.Cast<DataGridViewColumn>().ToList();
+                foreach (DataGridViewColumn column in columnsList.Take(dataGridView.Columns.Count - 1))
                 {
-                    DataGridView_CellClick(dataGridViewRooms, selectedRow);
+                    iText.Layout.Element.Cell headerCell = new iText.Layout.Element.Cell().Add(new iText.Layout.Element.Paragraph(column.HeaderText).SetFont(timesFont));
+                    table.AddHeaderCell(headerCell);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// DataGridViewStudents_CellClick вызывается при нажатии на ячейку
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewStudents_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                selectedRow = e.RowIndex;
-                if (e.RowIndex >= 0)
+                foreach (DataGridViewRow row in dataGridView.Rows)
                 {
-                    DataGridView_CellClick(dataGridViewStudents, selectedRow);
+                    foreach (DataGridViewCell cell in row.Cells.Cast<DataGridViewCell>().Take(dataGridView.Columns.Count - 1))
+                    {
+                        table.AddCell(new iText.Layout.Element.Cell().Add(new iText.Layout.Element.Paragraph(cell.Value.ToString()).SetFont(timesFont)));
+                    }
                 }
+                pdfDoc.Add(table);
+                pdfDoc.Close();
+                MessageBox.Show("PDF успешно экспортирован.");
             }
             catch (Exception ex)
             {
@@ -990,718 +753,10 @@ namespace test_DataBase
         {
             try
             {
-                RefreshDataGrid(dataGridViewClients, "Dormitories");
-                RefreshDataGrid(dataGridViewFaculties, "Faculties");
-                RefreshDataGrid(dataGridViewGroups, "Groups");
-                RefreshDataGrid(dataGridViewHousingOrders, "HousingOrders");
-                RefreshDataGrid(dataGridViewHousingPayments, "HousingPayments");
-                RefreshDataGrid(dataGridViewRoomAssignment, "RoomAssignment");
-                RefreshDataGrid(dataGridViewRooms, "Rooms");
-                RefreshDataGrid(dataGridViewStudents, "Students");
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonNewDormitories_Click вызывается при нажатии на кнопку "Новая запись"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonNewDormitories_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddFormClients addForm = new AddFormClients();
-                addForm.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonNewFaculties_Click вызывается при нажатии на кнопку "Новая запись"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonNewFaculties_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddFormTechnicians addForm = new AddFormTechnicians();
-                addForm.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonNewGroups_Click вызывается при нажатии на кнопку "Новая запись"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonNewGroups_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddFormRepairOrders addForm = new AddFormRepairOrders();
-                addForm.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonNewHousingOrders_Click вызывается при нажатии на кнопку "Новая запись"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonNewHousingOrders_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddFormSoftwareInstallation addForm = new AddFormSoftwareInstallation();
-                addForm.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonNewHousingPayments_Click вызывается при нажатии на кнопку "Новая запись"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonNewHousingPayments_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddFormHousingPayments addForm = new AddFormHousingPayments();
-                addForm.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonNewRoomAssignment_Click вызывается при нажатии на кнопку "Новая запись"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonNewRoomAssignment_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddFormRoomAssignment addForm = new AddFormRoomAssignment();
-                addForm.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonNewRooms_Click вызывается при нажатии на кнопку "Новая запись"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonNewRooms_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddFormRooms addForm = new AddFormRooms();
-                addForm.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonNewStudents_Click вызывается при нажатии на кнопку "Новая запись"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonNewStudents_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddFormStudents addForm = new AddFormStudents();
-                addForm.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// TextBoxSearchDormitories_TextChanged вызывается при изменении текста
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBoxSearchDormitories_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Search(dataGridViewClients);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// TextBoxSearchFaculties_TextChanged вызывается при изменении текста
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBoxSearchFaculties_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Search(dataGridViewFaculties);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// TextBoxSearchGroups_TextChanged вызывается при изменении текста
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBoxSearchGroups_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Search(dataGridViewGroups);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// TextBoxSearchHousingOrders_TextChanged вызывается при изменении текста
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBoxSearchHousingOrders_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Search(dataGridViewHousingOrders);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// TextBoxSearchHousingPayments_TextChanged вызывается при изменении текста
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBoxSearchHousingPayments_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Search(dataGridViewHousingPayments);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// TextBoxSearchRoomAssignment_TextChanged вызывается при изменении текста
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBoxSearchRoomAssignment_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Search(dataGridViewRoomAssignment);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// TextBoxSearchRooms_TextChanged вызывается при изменении текста
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBoxSearchRooms_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Search(dataGridViewRooms);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// TextBoxSearchStudents_TextChanged вызывается при изменении текста
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBoxSearchStudents_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Search(dataGridViewStudents);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonDeleteDormitories_Click вызывается при нажатии на кнопку "Удалить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonDeleteDormitories_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DeleteRow(dataGridViewClients);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonDeleteFaculties_Click вызывается при нажатии на кнопку "Удалить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonDeleteFaculties_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DeleteRow(dataGridViewFaculties);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonDeleteGroups_Click вызывается при нажатии на кнопку "Удалить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonDeleteGroups_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DeleteRow(dataGridViewGroups);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonDeleteHousingOrders_Click вызывается при нажатии на кнопку "Удалить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonDeleteHousingOrders_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DeleteRow(dataGridViewHousingOrders);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonDeleteHousingPayments_Click вызывается при нажатии на кнопку "Удалить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonDeleteHousingPayments_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DeleteRow(dataGridViewHousingPayments);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonDeleteRoomAssignment_Click вызывается при нажатии на кнопку "Удалить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonDeleteRoomAssignment_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DeleteRow(dataGridViewRoomAssignment);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonDeleteRooms_Click вызывается при нажатии на кнопку "Удалить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonDeleteRooms_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DeleteRow(dataGridViewRooms);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonDeleteStudents_Click вызывается при нажатии на кнопку "Удалить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonDeleteStudents_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DeleteRow(dataGridViewStudents);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonSaveDormitories_Click вызывается при нажатии на кнопку "Сохранить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSaveDormitories_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UpdateBase(dataGridViewClients);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonSaveFaculties_Click вызывается при нажатии на кнопку "Сохранить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSaveFaculties_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UpdateBase(dataGridViewFaculties);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonSaveGroups_Click вызывается при нажатии на кнопку "Сохранить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSaveGroups_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UpdateBase(dataGridViewGroups);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonSaveHousingOrders_Click вызывается при нажатии на кнопку "Сохранить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSaveHousingOrders_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UpdateBase(dataGridViewHousingOrders);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonSaveHousingPayments_Click вызывается при нажатии на кнопку "Сохранить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSaveHousingPayments_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UpdateBase(dataGridViewHousingPayments);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonSaveRoomAssignment_Click вызывается при нажатии на кнопку "Сохранить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSaveRoomAssignment_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UpdateBase(dataGridViewRoomAssignment);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonSaveRooms_Click вызывается при нажатии на кнопку "Сохранить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSaveRooms_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UpdateBase(dataGridViewRooms);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonSaveStudents_Click вызывается при нажатии на кнопку "Сохранить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSaveStudents_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UpdateBase(dataGridViewStudents);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonChangeDormitories_Click вызывается при нажатии на кнопку "Изменить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonChangeDormitories_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Change(dataGridViewClients);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonChangeFaculties_Click вызывается при нажатии на кнопку "Изменить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonChangeFaculties_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Change(dataGridViewFaculties);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonChangeGroups_Click вызывается при нажатии на кнопку "Изменить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonChangeGroups_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Change(dataGridViewGroups);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonChangeHousingOrders_Click вызывается при нажатии на кнопку "Изменить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonChangeHousingOrders_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Change(dataGridViewHousingOrders);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonChangeHousingPayments_Click вызывается при нажатии на кнопку "Изменить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonChangeHousingPayments_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Change(dataGridViewHousingPayments);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonChangeRoomAssignment_Click вызывается при нажатии на кнопку "Изменить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonChangeRoomAssignment_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Change(dataGridViewRoomAssignment);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonChangeRooms_Click вызывается при нажатии на кнопку "Изменить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonChangeRooms_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Change(dataGridViewRooms);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonChangeStudents_Click вызывается при нажатии на кнопку "Изменить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonChangeStudents_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Change(dataGridViewStudents);
+                RefreshDataGrid(dataGridViewClients, "Clients");
+                RefreshDataGrid(dataGridViewTechnicians, "Technicians");
+                RefreshDataGrid(dataGridViewRepairOrders, "RepairOrders");
+                RefreshDataGrid(dataGridViewSoftwareInstallation, "SoftwareInstallation");
                 ClearFields();
             }
             catch (Exception ex)
@@ -1720,6 +775,473 @@ namespace test_DataBase
             try
             {
                 ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormClients addForm = new AddFormClients();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewTechnicians_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormTechnicians addForm = new AddFormTechnicians();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewRepairOrders_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormRepairOrders addForm = new AddFormRepairOrders();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewSoftwareInstallation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormSoftwareInstallation addForm = new AddFormSoftwareInstallation();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewClients);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteTechnicians_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewTechnicians);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteRepairOrders_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewRepairOrders);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteSoftwareInstallation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewSoftwareInstallation);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewClients);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeTechnicians_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewTechnicians);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeRepairOrders_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewRepairOrders);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeSoftwareInstallation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewRepairOrders);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateBase(dataGridViewClients);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveTechnicians_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (admin)
+                {
+                    UpdateBase(dataGridViewTechnicians);
+                }
+                else
+                {
+                    MessageBox.Show("Отказано в доступе");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveRepairOrders_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateBase(dataGridViewRepairOrders);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveSoftwareInstallation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateBase(dataGridViewSoftwareInstallation);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewClients);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordTechnicians_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewTechnicians);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordRepairOrders_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewRepairOrders);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordSoftwareInstallation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewSoftwareInstallation);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewClients);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelTechnicians_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewTechnicians);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelRepairOrders_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewRepairOrders);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelSoftwareInstallation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewSoftwareInstallation);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewClients);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFTechnicians_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewTechnicians);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFRepairOrders_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewRepairOrders);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFSoftwareInstallation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewSoftwareInstallation);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewClients_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridView_CellClick(dataGridViewClients, selectedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewTechnicians_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridView_CellClick(dataGridViewTechnicians, selectedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewRepairOrders_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridView_CellClick(dataGridViewRepairOrders, selectedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewSoftwareInstallation_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridView_CellClick(dataGridViewSoftwareInstallation, selectedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBoxSearchClients_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(dataGridViewClients);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBoxSearchTechnicians_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(dataGridViewTechnicians);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBoxSearchRepairOrders_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(dataGridViewRepairOrders);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBoxSearchSoftwareInstallation_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(dataGridViewSoftwareInstallation);
             }
             catch (Exception ex)
             {

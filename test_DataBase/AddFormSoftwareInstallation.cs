@@ -24,10 +24,12 @@ namespace test_DataBase
             try
             {
                 dataBase.OpenConnection();
-                var orderNumber = textBoxOrderNumber.Text;
-                if (int.TryParse(textBoxFacultyID.Text, out int facultyID) && int.TryParse(textBoxStudentID.Text, out int studentID))
+                var installationDate = textBoxInstallationDate.Text;
+                var softwareName = textBoxSoftwareName.Text;
+                var licenseKey = textBoxLicenseKey.Text;
+                if (int.TryParse(textBoxClientIDSoftwareInstallation.Text, out int clientIDSoftwareInstallation) && int.TryParse(textBoxTechnicianIDSoftwareInstallation.Text, out int technicianIDSoftwareInstallation))
                 {
-                    var addQuery = $"insert into HousingOrders (OrderNumber, FacultyID, StudentID) values ('{orderNumber}', '{facultyID}', '{studentID}')";
+                    var addQuery = $"insert into SoftwareInstallation (ClientID, TechnicianID, InstallationDate, SoftwareName, LicenseKey) values ('{clientIDSoftwareInstallation}', '{technicianIDSoftwareInstallation}', '{installationDate}', '{softwareName}', '{licenseKey}')";
                     var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());
                     sqlCommand.ExecuteNonQuery();
                     MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);

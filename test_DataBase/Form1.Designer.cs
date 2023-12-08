@@ -210,7 +210,7 @@
             this.tabPage1.Controls.Add(this.panelTitle);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(761, 874);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Клиенты";
@@ -238,6 +238,7 @@
             this.buttonPDFClients.TabIndex = 4;
             this.buttonPDFClients.Text = "Вывод в PDF";
             this.buttonPDFClients.UseVisualStyleBackColor = true;
+            this.buttonPDFClients.Click += new System.EventHandler(this.ButtonPDFClients_Click);
             // 
             // buttonSaveClients
             // 
@@ -247,7 +248,7 @@
             this.buttonSaveClients.TabIndex = 3;
             this.buttonSaveClients.Text = "Сохранить";
             this.buttonSaveClients.UseVisualStyleBackColor = true;
-            this.buttonSaveClients.Click += new System.EventHandler(this.ButtonSaveDormitories_Click);
+            this.buttonSaveClients.Click += new System.EventHandler(this.ButtonSaveClients_Click);
             // 
             // buttonExcelClients
             // 
@@ -257,6 +258,7 @@
             this.buttonExcelClients.TabIndex = 5;
             this.buttonExcelClients.Text = "Вывод в Excel";
             this.buttonExcelClients.UseVisualStyleBackColor = true;
+            this.buttonExcelClients.Click += new System.EventHandler(this.ButtonExcelClients_Click);
             // 
             // buttonChangeClients
             // 
@@ -266,7 +268,7 @@
             this.buttonChangeClients.TabIndex = 2;
             this.buttonChangeClients.Text = "Изменить";
             this.buttonChangeClients.UseVisualStyleBackColor = true;
-            this.buttonChangeClients.Click += new System.EventHandler(this.ButtonChangeDormitories_Click);
+            this.buttonChangeClients.Click += new System.EventHandler(this.ButtonChangeClients_Click);
             // 
             // buttonWordClients
             // 
@@ -276,6 +278,7 @@
             this.buttonWordClients.TabIndex = 6;
             this.buttonWordClients.Text = "Вывод в Word";
             this.buttonWordClients.UseVisualStyleBackColor = true;
+            this.buttonWordClients.Click += new System.EventHandler(this.ButtonWordClients_Click);
             // 
             // buttonDeleteClients
             // 
@@ -285,7 +288,7 @@
             this.buttonDeleteClients.TabIndex = 1;
             this.buttonDeleteClients.Text = "Удалить";
             this.buttonDeleteClients.UseVisualStyleBackColor = true;
-            this.buttonDeleteClients.Click += new System.EventHandler(this.ButtonDeleteDormitories_Click);
+            this.buttonDeleteClients.Click += new System.EventHandler(this.ButtonDeleteClients_Click);
             // 
             // buttonNewClients
             // 
@@ -295,7 +298,7 @@
             this.buttonNewClients.TabIndex = 0;
             this.buttonNewClients.Text = "Новая запись";
             this.buttonNewClients.UseVisualStyleBackColor = true;
-            this.buttonNewClients.Click += new System.EventHandler(this.ButtonNewDormitories_Click);
+            this.buttonNewClients.Click += new System.EventHandler(this.ButtonNewClients_Click);
             // 
             // labelControl
             // 
@@ -431,7 +434,7 @@
             this.dataGridViewClients.RowHeadersWidth = 62;
             this.dataGridViewClients.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewClients.TabIndex = 1;
-            this.dataGridViewClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewDormitories_CellClick);
+            this.dataGridViewClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewClients_CellClick);
             // 
             // panelTitle
             // 
@@ -484,7 +487,7 @@
             this.textBoxSearchClients.Name = "textBoxSearchClients";
             this.textBoxSearchClients.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchClients.TabIndex = 1;
-            this.textBoxSearchClients.TextChanged += new System.EventHandler(this.TextBoxSearchDormitories_TextChanged);
+            this.textBoxSearchClients.TextChanged += new System.EventHandler(this.TextBoxSearchClients_TextChanged);
             // 
             // labelTitle
             // 
@@ -518,7 +521,7 @@
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(761, 874);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Техники";
@@ -546,6 +549,7 @@
             this.buttonPDFTechnicians.TabIndex = 4;
             this.buttonPDFTechnicians.Text = "Вывод в PDF";
             this.buttonPDFTechnicians.UseVisualStyleBackColor = true;
+            this.buttonPDFTechnicians.Click += new System.EventHandler(this.ButtonPDFTechnicians_Click);
             // 
             // buttonSaveTechnicians
             // 
@@ -555,6 +559,7 @@
             this.buttonSaveTechnicians.TabIndex = 3;
             this.buttonSaveTechnicians.Text = "Сохранить";
             this.buttonSaveTechnicians.UseVisualStyleBackColor = true;
+            this.buttonSaveTechnicians.Click += new System.EventHandler(this.ButtonSaveTechnicians_Click);
             // 
             // buttonExcelTechnicians
             // 
@@ -564,6 +569,7 @@
             this.buttonExcelTechnicians.TabIndex = 5;
             this.buttonExcelTechnicians.Text = "Вывод в Excel";
             this.buttonExcelTechnicians.UseVisualStyleBackColor = true;
+            this.buttonExcelTechnicians.Click += new System.EventHandler(this.ButtonExcelTechnicians_Click);
             // 
             // buttonChangeTechnicians
             // 
@@ -573,6 +579,7 @@
             this.buttonChangeTechnicians.TabIndex = 2;
             this.buttonChangeTechnicians.Text = "Изменить";
             this.buttonChangeTechnicians.UseVisualStyleBackColor = true;
+            this.buttonChangeTechnicians.Click += new System.EventHandler(this.ButtonChangeTechnicians_Click);
             // 
             // buttonWordTechnicians
             // 
@@ -582,6 +589,7 @@
             this.buttonWordTechnicians.TabIndex = 6;
             this.buttonWordTechnicians.Text = "Вывод в Word";
             this.buttonWordTechnicians.UseVisualStyleBackColor = true;
+            this.buttonWordTechnicians.Click += new System.EventHandler(this.ButtonWordTechnicians_Click);
             // 
             // buttonDeleteTechnicians
             // 
@@ -591,6 +599,7 @@
             this.buttonDeleteTechnicians.TabIndex = 1;
             this.buttonDeleteTechnicians.Text = "Удалить";
             this.buttonDeleteTechnicians.UseVisualStyleBackColor = true;
+            this.buttonDeleteTechnicians.Click += new System.EventHandler(this.ButtonDeleteTechnicians_Click);
             // 
             // buttonNewTechnicians
             // 
@@ -600,6 +609,7 @@
             this.buttonNewTechnicians.TabIndex = 0;
             this.buttonNewTechnicians.Text = "Новая запись";
             this.buttonNewTechnicians.UseVisualStyleBackColor = true;
+            this.buttonNewTechnicians.Click += new System.EventHandler(this.ButtonNewTechnicians_Click);
             // 
             // label1
             // 
@@ -735,6 +745,7 @@
             this.dataGridViewTechnicians.RowHeadersWidth = 62;
             this.dataGridViewTechnicians.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewTechnicians.TabIndex = 1;
+            this.dataGridViewTechnicians.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewTechnicians_CellClick);
             // 
             // panel3
             // 
@@ -767,6 +778,7 @@
             this.buttonClearTechnicians.Size = new System.Drawing.Size(67, 67);
             this.buttonClearTechnicians.TabIndex = 3;
             this.buttonClearTechnicians.UseVisualStyleBackColor = true;
+            this.buttonClearTechnicians.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // buttonRefreshTechnicians
             // 
@@ -777,6 +789,7 @@
             this.buttonRefreshTechnicians.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshTechnicians.TabIndex = 2;
             this.buttonRefreshTechnicians.UseVisualStyleBackColor = true;
+            this.buttonRefreshTechnicians.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
             // textBoxSearchTechnicians
             // 
@@ -785,6 +798,7 @@
             this.textBoxSearchTechnicians.Name = "textBoxSearchTechnicians";
             this.textBoxSearchTechnicians.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchTechnicians.TabIndex = 1;
+            this.textBoxSearchTechnicians.TextChanged += new System.EventHandler(this.TextBoxSearchTechnicians_TextChanged);
             // 
             // label5
             // 
@@ -805,7 +819,7 @@
             this.tabPage3.Controls.Add(this.panel6);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(761, 874);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Заказы на рем.";
@@ -833,6 +847,7 @@
             this.buttonPDFRepairOrders.TabIndex = 4;
             this.buttonPDFRepairOrders.Text = "Вывод в PDF";
             this.buttonPDFRepairOrders.UseVisualStyleBackColor = true;
+            this.buttonPDFRepairOrders.Click += new System.EventHandler(this.ButtonPDFRepairOrders_Click);
             // 
             // buttonSaveRepairOrders
             // 
@@ -842,6 +857,7 @@
             this.buttonSaveRepairOrders.TabIndex = 3;
             this.buttonSaveRepairOrders.Text = "Сохранить";
             this.buttonSaveRepairOrders.UseVisualStyleBackColor = true;
+            this.buttonSaveRepairOrders.Click += new System.EventHandler(this.ButtonSaveRepairOrders_Click);
             // 
             // buttonExcelRepairOrders
             // 
@@ -851,6 +867,7 @@
             this.buttonExcelRepairOrders.TabIndex = 5;
             this.buttonExcelRepairOrders.Text = "Вывод в Excel";
             this.buttonExcelRepairOrders.UseVisualStyleBackColor = true;
+            this.buttonExcelRepairOrders.Click += new System.EventHandler(this.ButtonExcelRepairOrders_Click);
             // 
             // buttonChangeRepairOrders
             // 
@@ -860,6 +877,7 @@
             this.buttonChangeRepairOrders.TabIndex = 2;
             this.buttonChangeRepairOrders.Text = "Изменить";
             this.buttonChangeRepairOrders.UseVisualStyleBackColor = true;
+            this.buttonChangeRepairOrders.Click += new System.EventHandler(this.ButtonChangeRepairOrders_Click);
             // 
             // buttonWordRepairOrders
             // 
@@ -869,6 +887,7 @@
             this.buttonWordRepairOrders.TabIndex = 6;
             this.buttonWordRepairOrders.Text = "Вывод в Word";
             this.buttonWordRepairOrders.UseVisualStyleBackColor = true;
+            this.buttonWordRepairOrders.Click += new System.EventHandler(this.ButtonWordRepairOrders_Click);
             // 
             // buttonDeleteRepairOrders
             // 
@@ -878,6 +897,7 @@
             this.buttonDeleteRepairOrders.TabIndex = 1;
             this.buttonDeleteRepairOrders.Text = "Удалить";
             this.buttonDeleteRepairOrders.UseVisualStyleBackColor = true;
+            this.buttonDeleteRepairOrders.Click += new System.EventHandler(this.ButtonDeleteRepairOrders_Click);
             // 
             // buttonNewRepairOrders
             // 
@@ -887,6 +907,7 @@
             this.buttonNewRepairOrders.TabIndex = 0;
             this.buttonNewRepairOrders.Text = "Новая запись";
             this.buttonNewRepairOrders.UseVisualStyleBackColor = true;
+            this.buttonNewRepairOrders.Click += new System.EventHandler(this.ButtonNewRepairOrders_Click);
             // 
             // label6
             // 
@@ -1041,6 +1062,7 @@
             this.dataGridViewRepairOrders.RowHeadersWidth = 62;
             this.dataGridViewRepairOrders.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewRepairOrders.TabIndex = 1;
+            this.dataGridViewRepairOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewRepairOrders_CellClick);
             // 
             // panel6
             // 
@@ -1073,6 +1095,7 @@
             this.buttonClearRepairOrders.Size = new System.Drawing.Size(67, 67);
             this.buttonClearRepairOrders.TabIndex = 3;
             this.buttonClearRepairOrders.UseVisualStyleBackColor = true;
+            this.buttonClearRepairOrders.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // buttonRefreshRepairOrders
             // 
@@ -1083,6 +1106,7 @@
             this.buttonRefreshRepairOrders.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshRepairOrders.TabIndex = 2;
             this.buttonRefreshRepairOrders.UseVisualStyleBackColor = true;
+            this.buttonRefreshRepairOrders.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
             // textBoxSearchRepairOrders
             // 
@@ -1091,6 +1115,7 @@
             this.textBoxSearchRepairOrders.Name = "textBoxSearchRepairOrders";
             this.textBoxSearchRepairOrders.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchRepairOrders.TabIndex = 1;
+            this.textBoxSearchRepairOrders.TextChanged += new System.EventHandler(this.TextBoxSearchRepairOrders_TextChanged);
             // 
             // label10
             // 
@@ -1111,7 +1136,7 @@
             this.tabPage4.Controls.Add(this.panel9);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(761, 874);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Установка ПО";
@@ -1139,6 +1164,7 @@
             this.buttonPDFSoftwareInstallation.TabIndex = 4;
             this.buttonPDFSoftwareInstallation.Text = "Вывод в PDF";
             this.buttonPDFSoftwareInstallation.UseVisualStyleBackColor = true;
+            this.buttonPDFSoftwareInstallation.Click += new System.EventHandler(this.ButtonPDFSoftwareInstallation_Click);
             // 
             // buttonSaveSoftwareInstallation
             // 
@@ -1148,6 +1174,7 @@
             this.buttonSaveSoftwareInstallation.TabIndex = 3;
             this.buttonSaveSoftwareInstallation.Text = "Сохранить";
             this.buttonSaveSoftwareInstallation.UseVisualStyleBackColor = true;
+            this.buttonSaveSoftwareInstallation.Click += new System.EventHandler(this.ButtonSaveSoftwareInstallation_Click);
             // 
             // buttonExcelSoftwareInstallation
             // 
@@ -1157,6 +1184,7 @@
             this.buttonExcelSoftwareInstallation.TabIndex = 5;
             this.buttonExcelSoftwareInstallation.Text = "Вывод в Excel";
             this.buttonExcelSoftwareInstallation.UseVisualStyleBackColor = true;
+            this.buttonExcelSoftwareInstallation.Click += new System.EventHandler(this.ButtonExcelSoftwareInstallation_Click);
             // 
             // buttonChangeSoftwareInstallation
             // 
@@ -1166,6 +1194,7 @@
             this.buttonChangeSoftwareInstallation.TabIndex = 2;
             this.buttonChangeSoftwareInstallation.Text = "Изменить";
             this.buttonChangeSoftwareInstallation.UseVisualStyleBackColor = true;
+            this.buttonChangeSoftwareInstallation.Click += new System.EventHandler(this.ButtonChangeSoftwareInstallation_Click);
             // 
             // buttonWordSoftwareInstallation
             // 
@@ -1175,6 +1204,7 @@
             this.buttonWordSoftwareInstallation.TabIndex = 6;
             this.buttonWordSoftwareInstallation.Text = "Вывод в Word";
             this.buttonWordSoftwareInstallation.UseVisualStyleBackColor = true;
+            this.buttonWordSoftwareInstallation.Click += new System.EventHandler(this.ButtonWordSoftwareInstallation_Click);
             // 
             // buttonDeleteSoftwareInstallation
             // 
@@ -1184,6 +1214,7 @@
             this.buttonDeleteSoftwareInstallation.TabIndex = 1;
             this.buttonDeleteSoftwareInstallation.Text = "Удалить";
             this.buttonDeleteSoftwareInstallation.UseVisualStyleBackColor = true;
+            this.buttonDeleteSoftwareInstallation.Click += new System.EventHandler(this.ButtonDeleteSoftwareInstallation_Click);
             // 
             // buttonNewSoftwareInstallation
             // 
@@ -1193,6 +1224,7 @@
             this.buttonNewSoftwareInstallation.TabIndex = 0;
             this.buttonNewSoftwareInstallation.Text = "Новая запись";
             this.buttonNewSoftwareInstallation.UseVisualStyleBackColor = true;
+            this.buttonNewSoftwareInstallation.Click += new System.EventHandler(this.ButtonNewSoftwareInstallation_Click);
             // 
             // label11
             // 
@@ -1347,6 +1379,7 @@
             this.dataGridViewSoftwareInstallation.RowHeadersWidth = 62;
             this.dataGridViewSoftwareInstallation.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewSoftwareInstallation.TabIndex = 1;
+            this.dataGridViewSoftwareInstallation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewSoftwareInstallation_CellClick);
             // 
             // panel9
             // 
@@ -1379,6 +1412,7 @@
             this.buttonClearSoftwareInstallation.Size = new System.Drawing.Size(67, 67);
             this.buttonClearSoftwareInstallation.TabIndex = 3;
             this.buttonClearSoftwareInstallation.UseVisualStyleBackColor = true;
+            this.buttonClearSoftwareInstallation.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // buttonRefreshSoftwareInstallation
             // 
@@ -1389,6 +1423,7 @@
             this.buttonRefreshSoftwareInstallation.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshSoftwareInstallation.TabIndex = 2;
             this.buttonRefreshSoftwareInstallation.UseVisualStyleBackColor = true;
+            this.buttonRefreshSoftwareInstallation.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
             // textBoxSearchSoftwareInstallation
             // 
@@ -1397,6 +1432,7 @@
             this.textBoxSearchSoftwareInstallation.Name = "textBoxSearchSoftwareInstallation";
             this.textBoxSearchSoftwareInstallation.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchSoftwareInstallation.TabIndex = 1;
+            this.textBoxSearchSoftwareInstallation.TextChanged += new System.EventHandler(this.TextBoxSearchSoftwareInstallation_TextChanged);
             // 
             // label15
             // 

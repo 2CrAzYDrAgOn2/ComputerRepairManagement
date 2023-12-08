@@ -42,8 +42,10 @@ CREATE TABLE SoftwareInstallation (
 CREATE TABLE Registration (
 	UserID INT PRIMARY KEY IDENTITY(1,1),
 	UserLogin VARCHAR(50),
-	UserPassword VARCHAR(50)
+	UserPassword VARCHAR(50),
+	IsAdmin bit
 );
+
 
 INSERT INTO Clients (FirstName, LastName, PhoneNumber, Email)
 VALUES
@@ -65,9 +67,10 @@ VALUES
     (1, 1, '2023-03-10', 'Microsoft Office', 'ABCDE-12345-FGHIJ'),
     (2, 2, '2023-03-20', 'Adobe Photoshop', 'FGHIJ-67890-KLMNO');
 
-INSERT INTO Registration (UserLogin, UserPassword)
+INSERT INTO Registration (UserLogin, UserPassword, IsAdmin)
 VALUES
-	('admin', 'admin');
+	('admin', 'admin', 1),
+	('user', 'user', 0);
 
 SELECT * FROM Clients;
 SELECT * FROM Technicians;
