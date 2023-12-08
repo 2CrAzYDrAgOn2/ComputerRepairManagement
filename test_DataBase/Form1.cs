@@ -415,7 +415,7 @@ namespace test_DataBase
                                 var lastName = dataGridView.Rows[index].Cells[2].Value.ToString();
                                 var phoneNumber = dataGridView.Rows[index].Cells[3].Value.ToString();
                                 var email = dataGridView.Rows[index].Cells[4].Value.ToString();
-                                var changeQuery = $"update Clients set FirstName = '{firstName}', LastName = '{lastName}', PhoneNumber = '{phoneNumber}' Email = '{email}', where ClientID = '{clientID}'";
+                                var changeQuery = $"update Clients set FirstName = '{firstName}', LastName = '{lastName}', PhoneNumber = '{phoneNumber}', Email = '{email}' where ClientID = '{clientID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -441,7 +441,7 @@ namespace test_DataBase
                                 var lastName = dataGridView.Rows[index].Cells[2].Value.ToString();
                                 var phoneNumber = dataGridView.Rows[index].Cells[3].Value.ToString();
                                 var email = dataGridView.Rows[index].Cells[4].Value.ToString();
-                                var changeQuery = $"update Technicians set FirstName = '{firstName}', LastName = '{lastName}', PhoneNumber = '{phoneNumber}' Email = '{email}', where TechnicianID = '{technicianID}'";
+                                var changeQuery = $"update Technicians set FirstName = '{firstName}', LastName = '{lastName}', PhoneNumber = '{phoneNumber}', Email = '{email}' where TechnicianID = '{technicianID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -468,7 +468,7 @@ namespace test_DataBase
                                 var orderDate = dataGridView.Rows[index].Cells[3].Value.ToString();
                                 var description = dataGridView.Rows[index].Cells[4].Value.ToString();
                                 var status = dataGridView.Rows[index].Cells[5].Value.ToString();
-                                var changeQuery = $"update RepairOrders set ClientID = '{clientID}', TechnicianID = '{technicianID}', OrderDate = '{orderDate}', Description = '{description}', Status = '{status}', where OrderID = '{orderID}'";
+                                var changeQuery = $"update RepairOrders set ClientID = '{clientID}', TechnicianID = '{technicianID}', OrderDate = '{orderDate}', Description = '{description}', Status = '{status}' where OrderID = '{orderID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -495,7 +495,7 @@ namespace test_DataBase
                                 var installationDate = dataGridView.Rows[index].Cells[3].Value.ToString();
                                 var softwareName = dataGridView.Rows[index].Cells[4].Value.ToString();
                                 var licenseKey = dataGridView.Rows[index].Cells[5].Value.ToString();
-                                var changeQuery = $"update SoftwareInstallation set ClientID = '{clientID}', TechnicianID = '{technicianID}', InstallationDate = '{installationDate}', SoftwareName = '{softwareName}', LicenseKey = '{licenseKey}' where InstallationID = {installationID}'";
+                                var changeQuery = $"update SoftwareInstallation set ClientID = '{clientID}', TechnicianID = '{technicianID}', InstallationDate = '{installationDate}', SoftwareName = '{softwareName}', LicenseKey = '{licenseKey}' where InstallationID = '{installationID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -799,8 +799,15 @@ namespace test_DataBase
         {
             try
             {
-                AddFormTechnicians addForm = new AddFormTechnicians();
-                addForm.Show();
+                if (admin)
+                {
+                    AddFormTechnicians addForm = new AddFormTechnicians();
+                    addForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостаточно прав");
+                }
             }
             catch (Exception ex)
             {
@@ -929,7 +936,7 @@ namespace test_DataBase
         {
             try
             {
-                Change(dataGridViewRepairOrders);
+                Change(dataGridViewSoftwareInstallation);
                 ClearFields();
             }
             catch (Exception ex)
@@ -960,7 +967,7 @@ namespace test_DataBase
                 }
                 else
                 {
-                    MessageBox.Show("Отказано в доступе");
+                    MessageBox.Show("У вас недостаточно прав");
                 }
             }
             catch (Exception ex)
