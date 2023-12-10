@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.textBoxTourID = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.textBoxEmailTechnicians = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -71,14 +70,6 @@
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
-            // 
-            // textBoxTourID
-            // 
-            this.textBoxTourID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxTourID.Location = new System.Drawing.Point(251, 352);
-            this.textBoxTourID.Name = "textBoxTourID";
-            this.textBoxTourID.Size = new System.Drawing.Size(391, 33);
-            this.textBoxTourID.TabIndex = 39;
             // 
             // label22
             // 
@@ -161,7 +152,6 @@
             this.Controls.Add(this.textBoxLastNameTechnicians);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxFirstNameTechnicians);
-            this.Controls.Add(this.textBoxTourID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.buttonSave);
@@ -176,7 +166,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.TextBox textBoxTourID;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox textBoxEmailTechnicians;
         private System.Windows.Forms.Label label18;
