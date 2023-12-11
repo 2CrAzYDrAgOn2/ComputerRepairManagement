@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using static iText.Svg.SvgConstants;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -548,7 +549,7 @@ namespace test_DataBase
                         var orderID = textBoxOrderID.Text;
                         var clientIDRepairOrders = textBoxClientIDRepairOrders.Text;
                         var technicianIDRepairOrders = textBoxTechnicianIDRepairOrders.Text;
-                        var orderDate = textBoxOrderDate.Text;
+                        var orderDate = textBoxOrderDate.Value;
                         var description = textBoxDescription.Text;
                         var status = textBoxStatus.Text;
                         dataGridView.Rows[selectedRowIndex].SetValues(orderID, clientIDRepairOrders, technicianIDRepairOrders, orderDate, description, status);
@@ -559,7 +560,7 @@ namespace test_DataBase
                         var installationID = textBoxInstallationID.Text;
                         var clientIDSoftwareInstallation = textBoxClientIDSoftwareInstallation.Text;
                         var technicianIDSoftwareInstallation = textBoxTechnicianIDSoftwareInstallation.Text;
-                        var installationDate = textBoxInstallationDate.Text;
+                        var installationDate = textBoxInstallationDate.Value;
                         var softwareName = textBoxSoftwareName.Text;
                         var licenseKey = textBoxLicenseKey.Text;
                         dataGridView.Rows[selectedRowIndex].SetValues(installationID, clientIDSoftwareInstallation, technicianIDSoftwareInstallation, installationDate, softwareName, licenseKey);

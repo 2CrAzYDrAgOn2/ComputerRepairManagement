@@ -37,10 +37,10 @@
             this.textBoxSoftwareName = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBoxInstallationDate = new System.Windows.Forms.TextBox();
             this.textBoxTechnicianIDSoftwareInstallation = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxClientIDSoftwareInstallation = new System.Windows.Forms.TextBox();
+            this.textBoxInstallationDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -125,14 +125,6 @@
             this.label28.TabIndex = 46;
             this.label28.Text = "Номер техника:";
             // 
-            // textBoxInstallationDate
-            // 
-            this.textBoxInstallationDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxInstallationDate.Location = new System.Drawing.Point(246, 433);
-            this.textBoxInstallationDate.Name = "textBoxInstallationDate";
-            this.textBoxInstallationDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxInstallationDate.TabIndex = 45;
-            // 
             // textBoxTechnicianIDSoftwareInstallation
             // 
             this.textBoxTechnicianIDSoftwareInstallation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -158,18 +150,28 @@
             this.textBoxClientIDSoftwareInstallation.Size = new System.Drawing.Size(391, 33);
             this.textBoxClientIDSoftwareInstallation.TabIndex = 42;
             // 
+            // textBoxInstallationDate
+            // 
+            this.textBoxInstallationDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxInstallationDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxInstallationDate.Location = new System.Drawing.Point(246, 433);
+            this.textBoxInstallationDate.Name = "textBoxInstallationDate";
+            this.textBoxInstallationDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxInstallationDate.TabIndex = 52;
+            this.textBoxInstallationDate.Value = new System.DateTime(2023, 12, 12, 0, 45, 56, 0);
+            // 
             // AddFormSoftwareInstallation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 729);
+            this.Controls.Add(this.textBoxInstallationDate);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.textBoxLicenseKey);
             this.Controls.Add(this.textBoxSoftwareName);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label28);
-            this.Controls.Add(this.textBoxInstallationDate);
             this.Controls.Add(this.textBoxTechnicianIDSoftwareInstallation);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBoxClientIDSoftwareInstallation);
@@ -193,9 +195,9 @@
         private System.Windows.Forms.TextBox textBoxSoftwareName;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBoxInstallationDate;
         private System.Windows.Forms.TextBox textBoxTechnicianIDSoftwareInstallation;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxClientIDSoftwareInstallation;
+        private System.Windows.Forms.DateTimePicker textBoxInstallationDate;
     }
 }

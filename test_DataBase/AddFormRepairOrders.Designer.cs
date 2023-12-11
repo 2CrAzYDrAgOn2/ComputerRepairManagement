@@ -37,10 +37,10 @@
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBoxOrderDate = new System.Windows.Forms.TextBox();
             this.textBoxTechnicianIDRepairOrders = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxClientIDRepairOrders = new System.Windows.Forms.TextBox();
+            this.textBoxOrderDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -125,14 +125,6 @@
             this.label24.TabIndex = 46;
             this.label24.Text = "Номер техника:";
             // 
-            // textBoxOrderDate
-            // 
-            this.textBoxOrderDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxOrderDate.Location = new System.Drawing.Point(247, 432);
-            this.textBoxOrderDate.Name = "textBoxOrderDate";
-            this.textBoxOrderDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxOrderDate.TabIndex = 45;
-            // 
             // textBoxTechnicianIDRepairOrders
             // 
             this.textBoxTechnicianIDRepairOrders.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -158,18 +150,28 @@
             this.textBoxClientIDRepairOrders.Size = new System.Drawing.Size(391, 33);
             this.textBoxClientIDRepairOrders.TabIndex = 42;
             // 
+            // textBoxOrderDate
+            // 
+            this.textBoxOrderDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxOrderDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxOrderDate.Location = new System.Drawing.Point(247, 432);
+            this.textBoxOrderDate.Name = "textBoxOrderDate";
+            this.textBoxOrderDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxOrderDate.TabIndex = 52;
+            this.textBoxOrderDate.Value = new System.DateTime(2023, 12, 12, 0, 45, 56, 0);
+            // 
             // AddFormRepairOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 729);
+            this.Controls.Add(this.textBoxOrderDate);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.textBoxStatus);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.textBoxOrderDate);
             this.Controls.Add(this.textBoxTechnicianIDRepairOrders);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxClientIDRepairOrders);
@@ -193,9 +195,9 @@
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBoxOrderDate;
         private System.Windows.Forms.TextBox textBoxTechnicianIDRepairOrders;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxClientIDRepairOrders;
+        private System.Windows.Forms.DateTimePicker textBoxOrderDate;
     }
 }

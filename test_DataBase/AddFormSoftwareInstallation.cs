@@ -24,7 +24,7 @@ namespace test_DataBase
             try
             {
                 dataBase.OpenConnection();
-                var installationDate = textBoxInstallationDate.Text;
+                var installationDate = textBoxInstallationDate.Value;
                 var softwareName = textBoxSoftwareName.Text;
                 var licenseKey = textBoxLicenseKey.Text;
                 if (int.TryParse(textBoxClientIDSoftwareInstallation.Text, out int clientIDSoftwareInstallation) && int.TryParse(textBoxTechnicianIDSoftwareInstallation.Text, out int technicianIDSoftwareInstallation))

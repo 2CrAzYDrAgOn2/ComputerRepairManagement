@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panelControl = new System.Windows.Forms.Panel();
             this.buttonPDFClients = new System.Windows.Forms.Button();
@@ -43,7 +40,6 @@
             this.labelControl = new System.Windows.Forms.Label();
             this.panelRecord = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBoxPhoneNumberClients = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBoxEmailClients = new System.Windows.Forms.TextBox();
@@ -55,7 +51,6 @@
             this.labelRecord = new System.Windows.Forms.Label();
             this.dataGridViewClients = new System.Windows.Forms.DataGridView();
             this.panelTitle = new System.Windows.Forms.Panel();
-            this.buttonSearchClients = new System.Windows.Forms.Button();
             this.buttonClearClients = new System.Windows.Forms.Button();
             this.buttonRefreshClients = new System.Windows.Forms.Button();
             this.textBoxSearchClients = new System.Windows.Forms.TextBox();
@@ -76,7 +71,6 @@
             this.textBoxEmailTechnicians = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBoxPhoneNumberTechnicians = new System.Windows.Forms.TextBox();
             this.textBoxLastNameTechnicians = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -85,7 +79,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewTechnicians = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonSearchTechnicians = new System.Windows.Forms.Button();
             this.buttonClearTechnicians = new System.Windows.Forms.Button();
             this.buttonRefreshTechnicians = new System.Windows.Forms.Button();
             this.textBoxSearchTechnicians = new System.Windows.Forms.TextBox();
@@ -107,7 +100,6 @@
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBoxOrderDate = new System.Windows.Forms.TextBox();
             this.textBoxTechnicianIDRepairOrders = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -116,7 +108,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridViewRepairOrders = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.buttonSearchRepairOrders = new System.Windows.Forms.Button();
             this.buttonClearRepairOrders = new System.Windows.Forms.Button();
             this.buttonRefreshRepairOrders = new System.Windows.Forms.Button();
             this.textBoxSearchRepairOrders = new System.Windows.Forms.TextBox();
@@ -138,7 +129,6 @@
             this.textBoxSoftwareName = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBoxInstallationDate = new System.Windows.Forms.TextBox();
             this.textBoxTechnicianIDSoftwareInstallation = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -147,12 +137,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridViewSoftwareInstallation = new System.Windows.Forms.DataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.buttonSearchSoftwareInstallation = new System.Windows.Forms.Button();
             this.buttonClearSoftwareInstallation = new System.Windows.Forms.Button();
             this.buttonRefreshSoftwareInstallation = new System.Windows.Forms.Button();
             this.textBoxSearchSoftwareInstallation = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
+            this.textBoxPhoneNumberClients = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxPhoneNumberTechnicians = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxOrderDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxInstallationDate = new System.Windows.Forms.DateTimePicker();
             this.tabPage1.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelRecord.SuspendLayout();
@@ -175,31 +167,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSoftwareInstallation)).BeginInit();
             this.panel9.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem,
-            this.информацияToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(768, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // файлToolStripMenuItem
-            // 
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 22);
-            this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // информацияToolStripMenuItem
-            // 
-            this.информацияToolStripMenuItem.Name = "информацияToolStripMenuItem";
-            this.информацияToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
-            this.информацияToolStripMenuItem.Text = "Информация";
             // 
             // tabPage1
             // 
@@ -312,8 +279,8 @@
             // 
             // panelRecord
             // 
-            this.panelRecord.Controls.Add(this.label19);
             this.panelRecord.Controls.Add(this.textBoxPhoneNumberClients);
+            this.panelRecord.Controls.Add(this.label19);
             this.panelRecord.Controls.Add(this.label16);
             this.panelRecord.Controls.Add(this.label17);
             this.panelRecord.Controls.Add(this.textBoxEmailClients);
@@ -336,14 +303,6 @@
             this.label19.Size = new System.Drawing.Size(55, 13);
             this.label19.TabIndex = 14;
             this.label19.Text = "Телефон:";
-            // 
-            // textBoxPhoneNumberClients
-            // 
-            this.textBoxPhoneNumberClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhoneNumberClients.Location = new System.Drawing.Point(130, 176);
-            this.textBoxPhoneNumberClients.Name = "textBoxPhoneNumberClients";
-            this.textBoxPhoneNumberClients.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPhoneNumberClients.TabIndex = 12;
             // 
             // label16
             // 
@@ -438,7 +397,6 @@
             // 
             // panelTitle
             // 
-            this.panelTitle.Controls.Add(this.buttonSearchClients);
             this.panelTitle.Controls.Add(this.buttonClearClients);
             this.panelTitle.Controls.Add(this.buttonRefreshClients);
             this.panelTitle.Controls.Add(this.textBoxSearchClients);
@@ -448,21 +406,11 @@
             this.panelTitle.Size = new System.Drawing.Size(751, 73);
             this.panelTitle.TabIndex = 0;
             // 
-            // buttonSearchClients
-            // 
-            this.buttonSearchClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchClients.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchClients.Location = new System.Drawing.Point(526, 3);
-            this.buttonSearchClients.Name = "buttonSearchClients";
-            this.buttonSearchClients.Size = new System.Drawing.Size(67, 67);
-            this.buttonSearchClients.TabIndex = 4;
-            this.buttonSearchClients.UseVisualStyleBackColor = true;
-            // 
             // buttonClearClients
             // 
             this.buttonClearClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClearClients.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearClients.Location = new System.Drawing.Point(380, 3);
+            this.buttonClearClients.Location = new System.Drawing.Point(453, 3);
             this.buttonClearClients.Name = "buttonClearClients";
             this.buttonClearClients.Size = new System.Drawing.Size(67, 67);
             this.buttonClearClients.TabIndex = 3;
@@ -473,7 +421,7 @@
             // 
             this.buttonRefreshClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRefreshClients.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshClients.Location = new System.Drawing.Point(453, 3);
+            this.buttonRefreshClients.Location = new System.Drawing.Point(526, 3);
             this.buttonRefreshClients.Name = "buttonRefreshClients";
             this.buttonRefreshClients.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshClients.TabIndex = 2;
@@ -505,7 +453,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(769, 900);
@@ -623,11 +571,11 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBoxPhoneNumberTechnicians);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.textBoxEmailTechnicians);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.textBoxPhoneNumberTechnicians);
             this.panel2.Controls.Add(this.textBoxLastNameTechnicians);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
@@ -673,14 +621,6 @@
             this.label20.Size = new System.Drawing.Size(59, 13);
             this.label20.TabIndex = 10;
             this.label20.Text = "Фамилия:";
-            // 
-            // textBoxPhoneNumberTechnicians
-            // 
-            this.textBoxPhoneNumberTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhoneNumberTechnicians.Location = new System.Drawing.Point(130, 176);
-            this.textBoxPhoneNumberTechnicians.Name = "textBoxPhoneNumberTechnicians";
-            this.textBoxPhoneNumberTechnicians.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPhoneNumberTechnicians.TabIndex = 9;
             // 
             // textBoxLastNameTechnicians
             // 
@@ -749,7 +689,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.buttonSearchTechnicians);
             this.panel3.Controls.Add(this.buttonClearTechnicians);
             this.panel3.Controls.Add(this.buttonRefreshTechnicians);
             this.panel3.Controls.Add(this.textBoxSearchTechnicians);
@@ -759,21 +698,11 @@
             this.panel3.Size = new System.Drawing.Size(751, 73);
             this.panel3.TabIndex = 0;
             // 
-            // buttonSearchTechnicians
-            // 
-            this.buttonSearchTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchTechnicians.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchTechnicians.Location = new System.Drawing.Point(526, 3);
-            this.buttonSearchTechnicians.Name = "buttonSearchTechnicians";
-            this.buttonSearchTechnicians.Size = new System.Drawing.Size(67, 67);
-            this.buttonSearchTechnicians.TabIndex = 4;
-            this.buttonSearchTechnicians.UseVisualStyleBackColor = true;
-            // 
             // buttonClearTechnicians
             // 
             this.buttonClearTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClearTechnicians.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearTechnicians.Location = new System.Drawing.Point(380, 3);
+            this.buttonClearTechnicians.Location = new System.Drawing.Point(453, 3);
             this.buttonClearTechnicians.Name = "buttonClearTechnicians";
             this.buttonClearTechnicians.Size = new System.Drawing.Size(67, 67);
             this.buttonClearTechnicians.TabIndex = 3;
@@ -784,7 +713,7 @@
             // 
             this.buttonRefreshTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRefreshTechnicians.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshTechnicians.Location = new System.Drawing.Point(453, 3);
+            this.buttonRefreshTechnicians.Location = new System.Drawing.Point(526, 3);
             this.buttonRefreshTechnicians.Name = "buttonRefreshTechnicians";
             this.buttonRefreshTechnicians.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshTechnicians.TabIndex = 2;
@@ -921,13 +850,13 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.textBoxOrderDate);
             this.panel5.Controls.Add(this.label25);
             this.panel5.Controls.Add(this.label26);
             this.panel5.Controls.Add(this.textBoxStatus);
             this.panel5.Controls.Add(this.textBoxDescription);
             this.panel5.Controls.Add(this.label23);
             this.panel5.Controls.Add(this.label24);
-            this.panel5.Controls.Add(this.textBoxOrderDate);
             this.panel5.Controls.Add(this.textBoxTechnicianIDRepairOrders);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.label8);
@@ -990,14 +919,6 @@
             this.label24.Size = new System.Drawing.Size(87, 13);
             this.label24.TabIndex = 10;
             this.label24.Text = "Номер техника:";
-            // 
-            // textBoxOrderDate
-            // 
-            this.textBoxOrderDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxOrderDate.Location = new System.Drawing.Point(130, 176);
-            this.textBoxOrderDate.Name = "textBoxOrderDate";
-            this.textBoxOrderDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxOrderDate.TabIndex = 9;
             // 
             // textBoxTechnicianIDRepairOrders
             // 
@@ -1066,7 +987,6 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.buttonSearchRepairOrders);
             this.panel6.Controls.Add(this.buttonClearRepairOrders);
             this.panel6.Controls.Add(this.buttonRefreshRepairOrders);
             this.panel6.Controls.Add(this.textBoxSearchRepairOrders);
@@ -1076,21 +996,11 @@
             this.panel6.Size = new System.Drawing.Size(751, 73);
             this.panel6.TabIndex = 0;
             // 
-            // buttonSearchRepairOrders
-            // 
-            this.buttonSearchRepairOrders.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchRepairOrders.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchRepairOrders.Location = new System.Drawing.Point(526, 3);
-            this.buttonSearchRepairOrders.Name = "buttonSearchRepairOrders";
-            this.buttonSearchRepairOrders.Size = new System.Drawing.Size(67, 67);
-            this.buttonSearchRepairOrders.TabIndex = 4;
-            this.buttonSearchRepairOrders.UseVisualStyleBackColor = true;
-            // 
             // buttonClearRepairOrders
             // 
             this.buttonClearRepairOrders.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClearRepairOrders.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearRepairOrders.Location = new System.Drawing.Point(380, 3);
+            this.buttonClearRepairOrders.Location = new System.Drawing.Point(453, 3);
             this.buttonClearRepairOrders.Name = "buttonClearRepairOrders";
             this.buttonClearRepairOrders.Size = new System.Drawing.Size(67, 67);
             this.buttonClearRepairOrders.TabIndex = 3;
@@ -1101,7 +1011,7 @@
             // 
             this.buttonRefreshRepairOrders.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRefreshRepairOrders.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshRepairOrders.Location = new System.Drawing.Point(453, 3);
+            this.buttonRefreshRepairOrders.Location = new System.Drawing.Point(526, 3);
             this.buttonRefreshRepairOrders.Name = "buttonRefreshRepairOrders";
             this.buttonRefreshRepairOrders.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshRepairOrders.TabIndex = 2;
@@ -1238,13 +1148,13 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.textBoxInstallationDate);
             this.panel8.Controls.Add(this.label21);
             this.panel8.Controls.Add(this.label29);
             this.panel8.Controls.Add(this.textBoxLicenseKey);
             this.panel8.Controls.Add(this.textBoxSoftwareName);
             this.panel8.Controls.Add(this.label27);
             this.panel8.Controls.Add(this.label28);
-            this.panel8.Controls.Add(this.textBoxInstallationDate);
             this.panel8.Controls.Add(this.textBoxTechnicianIDSoftwareInstallation);
             this.panel8.Controls.Add(this.label12);
             this.panel8.Controls.Add(this.label13);
@@ -1307,14 +1217,6 @@
             this.label28.Size = new System.Drawing.Size(87, 13);
             this.label28.TabIndex = 10;
             this.label28.Text = "Номер техника:";
-            // 
-            // textBoxInstallationDate
-            // 
-            this.textBoxInstallationDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxInstallationDate.Location = new System.Drawing.Point(130, 176);
-            this.textBoxInstallationDate.Name = "textBoxInstallationDate";
-            this.textBoxInstallationDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxInstallationDate.TabIndex = 9;
             // 
             // textBoxTechnicianIDSoftwareInstallation
             // 
@@ -1383,7 +1285,6 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.buttonSearchSoftwareInstallation);
             this.panel9.Controls.Add(this.buttonClearSoftwareInstallation);
             this.panel9.Controls.Add(this.buttonRefreshSoftwareInstallation);
             this.panel9.Controls.Add(this.textBoxSearchSoftwareInstallation);
@@ -1393,21 +1294,11 @@
             this.panel9.Size = new System.Drawing.Size(751, 73);
             this.panel9.TabIndex = 0;
             // 
-            // buttonSearchSoftwareInstallation
-            // 
-            this.buttonSearchSoftwareInstallation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchSoftwareInstallation.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchSoftwareInstallation.Location = new System.Drawing.Point(526, 3);
-            this.buttonSearchSoftwareInstallation.Name = "buttonSearchSoftwareInstallation";
-            this.buttonSearchSoftwareInstallation.Size = new System.Drawing.Size(67, 67);
-            this.buttonSearchSoftwareInstallation.TabIndex = 4;
-            this.buttonSearchSoftwareInstallation.UseVisualStyleBackColor = true;
-            // 
             // buttonClearSoftwareInstallation
             // 
             this.buttonClearSoftwareInstallation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClearSoftwareInstallation.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearSoftwareInstallation.Location = new System.Drawing.Point(380, 3);
+            this.buttonClearSoftwareInstallation.Location = new System.Drawing.Point(453, 3);
             this.buttonClearSoftwareInstallation.Name = "buttonClearSoftwareInstallation";
             this.buttonClearSoftwareInstallation.Size = new System.Drawing.Size(67, 67);
             this.buttonClearSoftwareInstallation.TabIndex = 3;
@@ -1418,7 +1309,7 @@
             // 
             this.buttonRefreshSoftwareInstallation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRefreshSoftwareInstallation.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshSoftwareInstallation.Location = new System.Drawing.Point(453, 3);
+            this.buttonRefreshSoftwareInstallation.Location = new System.Drawing.Point(526, 3);
             this.buttonRefreshSoftwareInstallation.Name = "buttonRefreshSoftwareInstallation";
             this.buttonRefreshSoftwareInstallation.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshSoftwareInstallation.TabIndex = 2;
@@ -1444,19 +1335,53 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Установка ПО";
             // 
+            // textBoxPhoneNumberClients
+            // 
+            this.textBoxPhoneNumberClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPhoneNumberClients.Location = new System.Drawing.Point(130, 176);
+            this.textBoxPhoneNumberClients.Mask = "+7  999 999-99-99";
+            this.textBoxPhoneNumberClients.Name = "textBoxPhoneNumberClients";
+            this.textBoxPhoneNumberClients.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPhoneNumberClients.TabIndex = 15;
+            // 
+            // textBoxPhoneNumberTechnicians
+            // 
+            this.textBoxPhoneNumberTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPhoneNumberTechnicians.Location = new System.Drawing.Point(130, 176);
+            this.textBoxPhoneNumberTechnicians.Mask = "+7  999 999-99-99";
+            this.textBoxPhoneNumberTechnicians.Name = "textBoxPhoneNumberTechnicians";
+            this.textBoxPhoneNumberTechnicians.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPhoneNumberTechnicians.TabIndex = 16;
+            // 
+            // textBoxOrderDate
+            // 
+            this.textBoxOrderDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxOrderDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxOrderDate.Location = new System.Drawing.Point(130, 176);
+            this.textBoxOrderDate.Name = "textBoxOrderDate";
+            this.textBoxOrderDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxOrderDate.TabIndex = 16;
+            this.textBoxOrderDate.Value = new System.DateTime(2023, 12, 12, 0, 45, 56, 0);
+            // 
+            // textBoxInstallationDate
+            // 
+            this.textBoxInstallationDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxInstallationDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxInstallationDate.Location = new System.Drawing.Point(130, 176);
+            this.textBoxInstallationDate.Name = "textBoxInstallationDate";
+            this.textBoxInstallationDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxInstallationDate.TabIndex = 17;
+            this.textBoxInstallationDate.Value = new System.DateTime(2023, 12, 12, 0, 45, 56, 0);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 926);
+            this.ClientSize = new System.Drawing.Size(766, 899);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Туристическая фирма";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panelControl.ResumeLayout(false);
@@ -1491,15 +1416,10 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem информацияToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.Button buttonSaveClients;
@@ -1515,7 +1435,6 @@
         private System.Windows.Forms.Label labelRecord;
         private System.Windows.Forms.DataGridView dataGridViewClients;
         private System.Windows.Forms.Panel panelTitle;
-        private System.Windows.Forms.Button buttonSearchClients;
         private System.Windows.Forms.Button buttonClearClients;
         private System.Windows.Forms.Button buttonRefreshClients;
         private System.Windows.Forms.TextBox textBoxSearchClients;
@@ -1542,7 +1461,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridViewTechnicians;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button buttonSearchTechnicians;
         private System.Windows.Forms.Button buttonClearTechnicians;
         private System.Windows.Forms.Button buttonRefreshTechnicians;
         private System.Windows.Forms.TextBox textBoxSearchTechnicians;
@@ -1565,7 +1483,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridViewRepairOrders;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button buttonSearchRepairOrders;
         private System.Windows.Forms.Button buttonClearRepairOrders;
         private System.Windows.Forms.Button buttonRefreshRepairOrders;
         private System.Windows.Forms.TextBox textBoxSearchRepairOrders;
@@ -1588,13 +1505,11 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dataGridViewSoftwareInstallation;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button buttonSearchSoftwareInstallation;
         private System.Windows.Forms.Button buttonClearSoftwareInstallation;
         private System.Windows.Forms.Button buttonRefreshSoftwareInstallation;
         private System.Windows.Forms.TextBox textBoxSearchSoftwareInstallation;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBoxPhoneNumberClients;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBoxEmailClients;
@@ -1603,7 +1518,6 @@
         private System.Windows.Forms.TextBox textBoxEmailTechnicians;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBoxPhoneNumberTechnicians;
         private System.Windows.Forms.TextBox textBoxLastNameTechnicians;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
@@ -1611,15 +1525,17 @@
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBoxOrderDate;
         private System.Windows.Forms.TextBox textBoxTechnicianIDRepairOrders;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBoxInstallationDate;
         private System.Windows.Forms.TextBox textBoxTechnicianIDSoftwareInstallation;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox textBoxLicenseKey;
         private System.Windows.Forms.TextBox textBoxSoftwareName;
+        private System.Windows.Forms.MaskedTextBox textBoxPhoneNumberClients;
+        private System.Windows.Forms.MaskedTextBox textBoxPhoneNumberTechnicians;
+        private System.Windows.Forms.DateTimePicker textBoxOrderDate;
+        private System.Windows.Forms.DateTimePicker textBoxInstallationDate;
     }
 }

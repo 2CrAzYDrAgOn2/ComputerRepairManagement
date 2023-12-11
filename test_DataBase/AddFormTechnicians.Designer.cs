@@ -35,10 +35,10 @@
             this.textBoxEmailTechnicians = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBoxPhoneNumberTechnicians = new System.Windows.Forms.TextBox();
             this.textBoxLastNameTechnicians = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxFirstNameTechnicians = new System.Windows.Forms.TextBox();
+            this.textBoxPhoneNumberTechnicians = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -106,14 +106,6 @@
             this.label20.TabIndex = 46;
             this.label20.Text = "Фамилия:";
             // 
-            // textBoxPhoneNumberTechnicians
-            // 
-            this.textBoxPhoneNumberTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhoneNumberTechnicians.Location = new System.Drawing.Point(251, 430);
-            this.textBoxPhoneNumberTechnicians.Name = "textBoxPhoneNumberTechnicians";
-            this.textBoxPhoneNumberTechnicians.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPhoneNumberTechnicians.TabIndex = 45;
-            // 
             // textBoxLastNameTechnicians
             // 
             this.textBoxLastNameTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -139,16 +131,25 @@
             this.textBoxFirstNameTechnicians.Size = new System.Drawing.Size(391, 33);
             this.textBoxFirstNameTechnicians.TabIndex = 42;
             // 
+            // textBoxPhoneNumberTechnicians
+            // 
+            this.textBoxPhoneNumberTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPhoneNumberTechnicians.Location = new System.Drawing.Point(251, 430);
+            this.textBoxPhoneNumberTechnicians.Mask = "+7  999 999-99-99";
+            this.textBoxPhoneNumberTechnicians.Name = "textBoxPhoneNumberTechnicians";
+            this.textBoxPhoneNumberTechnicians.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPhoneNumberTechnicians.TabIndex = 50;
+            // 
             // AddFormTechnicians
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 729);
+            this.Controls.Add(this.textBoxPhoneNumberTechnicians);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.textBoxEmailTechnicians);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.textBoxPhoneNumberTechnicians);
             this.Controls.Add(this.textBoxLastNameTechnicians);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxFirstNameTechnicians);
@@ -170,9 +171,9 @@
         private System.Windows.Forms.TextBox textBoxEmailTechnicians;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBoxPhoneNumberTechnicians;
         private System.Windows.Forms.TextBox textBoxLastNameTechnicians;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxFirstNameTechnicians;
+        private System.Windows.Forms.MaskedTextBox textBoxPhoneNumberTechnicians;
     }
 }

@@ -24,7 +24,7 @@ namespace test_DataBase
             try
             {
                 dataBase.OpenConnection();
-                var orderDate = textBoxOrderDate.Text;
+                var orderDate = textBoxOrderDate.Value;
                 var description = textBoxDescription.Text;
                 var status = textBoxStatus.Text;
                 if (int.TryParse(textBoxClientIDRepairOrders.Text, out int clientIDRepairOrders) && int.TryParse(textBoxTechnicianIDRepairOrders.Text, out int technicianIDRepairOrders))
