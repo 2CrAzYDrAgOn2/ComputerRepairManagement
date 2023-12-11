@@ -32,13 +32,13 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBoxEmailTechnicians = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.textBoxLastNameTechnicians = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxFirstNameTechnicians = new System.Windows.Forms.TextBox();
             this.textBoxPhoneNumberTechnicians = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxEmailTechnicians = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -79,14 +79,6 @@
             this.label22.Size = new System.Drawing.Size(35, 13);
             this.label22.TabIndex = 49;
             this.label22.Text = "Email:";
-            // 
-            // textBoxEmailTechnicians
-            // 
-            this.textBoxEmailTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmailTechnicians.Location = new System.Drawing.Point(251, 469);
-            this.textBoxEmailTechnicians.Name = "textBoxEmailTechnicians";
-            this.textBoxEmailTechnicians.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEmailTechnicians.TabIndex = 48;
             // 
             // label18
             // 
@@ -140,14 +132,24 @@
             this.textBoxPhoneNumberTechnicians.Size = new System.Drawing.Size(391, 33);
             this.textBoxPhoneNumberTechnicians.TabIndex = 50;
             // 
+            // textBoxEmailTechnicians
+            // 
+            this.textBoxEmailTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEmailTechnicians.Location = new System.Drawing.Point(251, 469);
+            this.textBoxEmailTechnicians.Mask = "AAAAAAA@AAA.com";
+            this.textBoxEmailTechnicians.Name = "textBoxEmailTechnicians";
+            this.textBoxEmailTechnicians.PromptChar = ' ';
+            this.textBoxEmailTechnicians.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEmailTechnicians.TabIndex = 51;
+            // 
             // AddFormTechnicians
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 729);
+            this.Controls.Add(this.textBoxEmailTechnicians);
             this.Controls.Add(this.textBoxPhoneNumberTechnicians);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.textBoxEmailTechnicians);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.textBoxLastNameTechnicians);
@@ -168,12 +170,12 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBoxEmailTechnicians;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBoxLastNameTechnicians;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxFirstNameTechnicians;
         private System.Windows.Forms.MaskedTextBox textBoxPhoneNumberTechnicians;
+        private System.Windows.Forms.MaskedTextBox textBoxEmailTechnicians;
     }
 }

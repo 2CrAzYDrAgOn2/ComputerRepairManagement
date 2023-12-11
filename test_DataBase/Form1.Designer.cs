@@ -39,10 +39,10 @@
             this.buttonNewClients = new System.Windows.Forms.Button();
             this.labelControl = new System.Windows.Forms.Label();
             this.panelRecord = new System.Windows.Forms.Panel();
+            this.textBoxPhoneNumberClients = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBoxEmailClients = new System.Windows.Forms.TextBox();
             this.textBoxLastNameClients = new System.Windows.Forms.TextBox();
             this.labelProdukciya = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
@@ -67,8 +67,8 @@
             this.buttonNewTechnicians = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxPhoneNumberTechnicians = new System.Windows.Forms.MaskedTextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBoxEmailTechnicians = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.textBoxLastNameTechnicians = new System.Windows.Forms.TextBox();
@@ -94,6 +94,7 @@
             this.buttonNewRepairOrders = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.textBoxOrderDate = new System.Windows.Forms.DateTimePicker();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.textBoxStatus = new System.Windows.Forms.TextBox();
@@ -123,6 +124,7 @@
             this.buttonNewSoftwareInstallation = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.textBoxInstallationDate = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.textBoxLicenseKey = new System.Windows.Forms.TextBox();
@@ -141,10 +143,8 @@
             this.buttonRefreshSoftwareInstallation = new System.Windows.Forms.Button();
             this.textBoxSearchSoftwareInstallation = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBoxPhoneNumberClients = new System.Windows.Forms.MaskedTextBox();
-            this.textBoxPhoneNumberTechnicians = new System.Windows.Forms.MaskedTextBox();
-            this.textBoxOrderDate = new System.Windows.Forms.DateTimePicker();
-            this.textBoxInstallationDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxEmailClients = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxEmailTechnicians = new System.Windows.Forms.MaskedTextBox();
             this.tabPage1.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelRecord.SuspendLayout();
@@ -279,11 +279,11 @@
             // 
             // panelRecord
             // 
+            this.panelRecord.Controls.Add(this.textBoxEmailClients);
             this.panelRecord.Controls.Add(this.textBoxPhoneNumberClients);
             this.panelRecord.Controls.Add(this.label19);
             this.panelRecord.Controls.Add(this.label16);
             this.panelRecord.Controls.Add(this.label17);
-            this.panelRecord.Controls.Add(this.textBoxEmailClients);
             this.panelRecord.Controls.Add(this.textBoxLastNameClients);
             this.panelRecord.Controls.Add(this.labelProdukciya);
             this.panelRecord.Controls.Add(this.labelNumber);
@@ -294,6 +294,15 @@
             this.panelRecord.Name = "panelRecord";
             this.panelRecord.Size = new System.Drawing.Size(524, 481);
             this.panelRecord.TabIndex = 2;
+            // 
+            // textBoxPhoneNumberClients
+            // 
+            this.textBoxPhoneNumberClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPhoneNumberClients.Location = new System.Drawing.Point(130, 176);
+            this.textBoxPhoneNumberClients.Mask = "+7  999 999-99-99";
+            this.textBoxPhoneNumberClients.Name = "textBoxPhoneNumberClients";
+            this.textBoxPhoneNumberClients.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPhoneNumberClients.TabIndex = 15;
             // 
             // label19
             // 
@@ -321,14 +330,6 @@
             this.label17.Size = new System.Drawing.Size(59, 13);
             this.label17.TabIndex = 10;
             this.label17.Text = "Фамилия:";
-            // 
-            // textBoxEmailClients
-            // 
-            this.textBoxEmailClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmailClients.Location = new System.Drawing.Point(130, 215);
-            this.textBoxEmailClients.Name = "textBoxEmailClients";
-            this.textBoxEmailClients.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEmailClients.TabIndex = 9;
             // 
             // textBoxLastNameClients
             // 
@@ -571,9 +572,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBoxEmailTechnicians);
             this.panel2.Controls.Add(this.textBoxPhoneNumberTechnicians);
             this.panel2.Controls.Add(this.label22);
-            this.panel2.Controls.Add(this.textBoxEmailTechnicians);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.textBoxLastNameTechnicians);
@@ -587,6 +588,15 @@
             this.panel2.Size = new System.Drawing.Size(524, 481);
             this.panel2.TabIndex = 2;
             // 
+            // textBoxPhoneNumberTechnicians
+            // 
+            this.textBoxPhoneNumberTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPhoneNumberTechnicians.Location = new System.Drawing.Point(130, 176);
+            this.textBoxPhoneNumberTechnicians.Mask = "+7  999 999-99-99";
+            this.textBoxPhoneNumberTechnicians.Name = "textBoxPhoneNumberTechnicians";
+            this.textBoxPhoneNumberTechnicians.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPhoneNumberTechnicians.TabIndex = 16;
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -595,14 +605,6 @@
             this.label22.Size = new System.Drawing.Size(35, 13);
             this.label22.TabIndex = 14;
             this.label22.Text = "Email:";
-            // 
-            // textBoxEmailTechnicians
-            // 
-            this.textBoxEmailTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmailTechnicians.Location = new System.Drawing.Point(130, 215);
-            this.textBoxEmailTechnicians.Name = "textBoxEmailTechnicians";
-            this.textBoxEmailTechnicians.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEmailTechnicians.TabIndex = 12;
             // 
             // label18
             // 
@@ -867,6 +869,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(524, 481);
             this.panel5.TabIndex = 2;
+            // 
+            // textBoxOrderDate
+            // 
+            this.textBoxOrderDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxOrderDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxOrderDate.Location = new System.Drawing.Point(130, 176);
+            this.textBoxOrderDate.Name = "textBoxOrderDate";
+            this.textBoxOrderDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxOrderDate.TabIndex = 16;
+            this.textBoxOrderDate.Value = new System.DateTime(2023, 12, 12, 0, 45, 56, 0);
             // 
             // label25
             // 
@@ -1166,6 +1178,16 @@
             this.panel8.Size = new System.Drawing.Size(524, 481);
             this.panel8.TabIndex = 2;
             // 
+            // textBoxInstallationDate
+            // 
+            this.textBoxInstallationDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxInstallationDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxInstallationDate.Location = new System.Drawing.Point(130, 176);
+            this.textBoxInstallationDate.Name = "textBoxInstallationDate";
+            this.textBoxInstallationDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxInstallationDate.TabIndex = 17;
+            this.textBoxInstallationDate.Value = new System.DateTime(2023, 12, 12, 0, 45, 56, 0);
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -1335,43 +1357,25 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Установка ПО";
             // 
-            // textBoxPhoneNumberClients
+            // textBoxEmailClients
             // 
-            this.textBoxPhoneNumberClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhoneNumberClients.Location = new System.Drawing.Point(130, 176);
-            this.textBoxPhoneNumberClients.Mask = "+7  999 999-99-99";
-            this.textBoxPhoneNumberClients.Name = "textBoxPhoneNumberClients";
-            this.textBoxPhoneNumberClients.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPhoneNumberClients.TabIndex = 15;
+            this.textBoxEmailClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEmailClients.Location = new System.Drawing.Point(131, 215);
+            this.textBoxEmailClients.Mask = "AAAAAAA@AAA.com";
+            this.textBoxEmailClients.Name = "textBoxEmailClients";
+            this.textBoxEmailClients.PromptChar = ' ';
+            this.textBoxEmailClients.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEmailClients.TabIndex = 16;
             // 
-            // textBoxPhoneNumberTechnicians
+            // textBoxEmailTechnicians
             // 
-            this.textBoxPhoneNumberTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhoneNumberTechnicians.Location = new System.Drawing.Point(130, 176);
-            this.textBoxPhoneNumberTechnicians.Mask = "+7  999 999-99-99";
-            this.textBoxPhoneNumberTechnicians.Name = "textBoxPhoneNumberTechnicians";
-            this.textBoxPhoneNumberTechnicians.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPhoneNumberTechnicians.TabIndex = 16;
-            // 
-            // textBoxOrderDate
-            // 
-            this.textBoxOrderDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxOrderDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBoxOrderDate.Location = new System.Drawing.Point(130, 176);
-            this.textBoxOrderDate.Name = "textBoxOrderDate";
-            this.textBoxOrderDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxOrderDate.TabIndex = 16;
-            this.textBoxOrderDate.Value = new System.DateTime(2023, 12, 12, 0, 45, 56, 0);
-            // 
-            // textBoxInstallationDate
-            // 
-            this.textBoxInstallationDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxInstallationDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBoxInstallationDate.Location = new System.Drawing.Point(130, 176);
-            this.textBoxInstallationDate.Name = "textBoxInstallationDate";
-            this.textBoxInstallationDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxInstallationDate.TabIndex = 17;
-            this.textBoxInstallationDate.Value = new System.DateTime(2023, 12, 12, 0, 45, 56, 0);
+            this.textBoxEmailTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEmailTechnicians.Location = new System.Drawing.Point(130, 215);
+            this.textBoxEmailTechnicians.Mask = "AAAAAAA@AAA.com";
+            this.textBoxEmailTechnicians.Name = "textBoxEmailTechnicians";
+            this.textBoxEmailTechnicians.PromptChar = ' ';
+            this.textBoxEmailTechnicians.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEmailTechnicians.TabIndex = 17;
             // 
             // Form1
             // 
@@ -1512,10 +1516,8 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBoxEmailClients;
         private System.Windows.Forms.TextBox textBoxLastNameClients;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBoxEmailTechnicians;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBoxLastNameTechnicians;
@@ -1537,5 +1539,7 @@
         private System.Windows.Forms.MaskedTextBox textBoxPhoneNumberTechnicians;
         private System.Windows.Forms.DateTimePicker textBoxOrderDate;
         private System.Windows.Forms.DateTimePicker textBoxInstallationDate;
+        private System.Windows.Forms.MaskedTextBox textBoxEmailClients;
+        private System.Windows.Forms.MaskedTextBox textBoxEmailTechnicians;
     }
 }
