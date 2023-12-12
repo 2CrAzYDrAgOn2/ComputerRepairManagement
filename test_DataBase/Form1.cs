@@ -9,8 +9,6 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static iText.Svg.SvgConstants;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace test_DataBase
@@ -405,7 +403,7 @@ namespace test_DataBase
                             if (rowStateClients == RowState.Deleted)
                             {
                                 var clientID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Clients where ClientID = {clientID}";
+                                var deleteQuery = $"delete from Clients where ClientID = '{clientID}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -431,7 +429,7 @@ namespace test_DataBase
                             if (rowStateTechnicians == RowState.Deleted)
                             {
                                 var technicianID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Technicians where TechnicianID = {technicianID}";
+                                var deleteQuery = $"delete from Technicians where TechnicianID = '{technicianID}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -457,7 +455,7 @@ namespace test_DataBase
                             if (rowStateRepairOrders == RowState.Deleted)
                             {
                                 var orderID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from RepairOrders where OrderID = {orderID}";
+                                var deleteQuery = $"delete from RepairOrders where OrderID = '{orderID}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -484,7 +482,7 @@ namespace test_DataBase
                             if (rowStateSoftwareInstallation == RowState.Deleted)
                             {
                                 var installationID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from SoftwareInstallation where InstallationID = {installationID}";
+                                var deleteQuery = $"delete from SoftwareInstallation where InstallationID = '{installationID}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
