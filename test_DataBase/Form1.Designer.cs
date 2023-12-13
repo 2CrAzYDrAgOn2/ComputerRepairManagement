@@ -39,6 +39,7 @@
             this.buttonNewClients = new System.Windows.Forms.Button();
             this.labelControl = new System.Windows.Forms.Label();
             this.panelRecord = new System.Windows.Forms.Panel();
+            this.textBoxEmailClients = new System.Windows.Forms.MaskedTextBox();
             this.textBoxPhoneNumberClients = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             this.buttonNewTechnicians = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxEmailTechnicians = new System.Windows.Forms.MaskedTextBox();
             this.textBoxPhoneNumberTechnicians = new System.Windows.Forms.MaskedTextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -143,8 +145,6 @@
             this.buttonRefreshSoftwareInstallation = new System.Windows.Forms.Button();
             this.textBoxSearchSoftwareInstallation = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBoxEmailClients = new System.Windows.Forms.MaskedTextBox();
-            this.textBoxEmailTechnicians = new System.Windows.Forms.MaskedTextBox();
             this.tabPage1.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelRecord.SuspendLayout();
@@ -294,6 +294,16 @@
             this.panelRecord.Name = "panelRecord";
             this.panelRecord.Size = new System.Drawing.Size(524, 481);
             this.panelRecord.TabIndex = 2;
+            // 
+            // textBoxEmailClients
+            // 
+            this.textBoxEmailClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEmailClients.Location = new System.Drawing.Point(131, 215);
+            this.textBoxEmailClients.Mask = "AAAAAAA@AAA.com";
+            this.textBoxEmailClients.Name = "textBoxEmailClients";
+            this.textBoxEmailClients.PromptChar = ' ';
+            this.textBoxEmailClients.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEmailClients.TabIndex = 16;
             // 
             // textBoxPhoneNumberClients
             // 
@@ -587,6 +597,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(524, 481);
             this.panel2.TabIndex = 2;
+            // 
+            // textBoxEmailTechnicians
+            // 
+            this.textBoxEmailTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEmailTechnicians.Location = new System.Drawing.Point(130, 215);
+            this.textBoxEmailTechnicians.Mask = "AAAAAAA@AAA.com";
+            this.textBoxEmailTechnicians.Name = "textBoxEmailTechnicians";
+            this.textBoxEmailTechnicians.PromptChar = ' ';
+            this.textBoxEmailTechnicians.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEmailTechnicians.TabIndex = 17;
             // 
             // textBoxPhoneNumberTechnicians
             // 
@@ -1357,26 +1377,6 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Установка ПО";
             // 
-            // textBoxEmailClients
-            // 
-            this.textBoxEmailClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmailClients.Location = new System.Drawing.Point(131, 215);
-            this.textBoxEmailClients.Mask = "AAAAAAA@AAA.com";
-            this.textBoxEmailClients.Name = "textBoxEmailClients";
-            this.textBoxEmailClients.PromptChar = ' ';
-            this.textBoxEmailClients.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEmailClients.TabIndex = 16;
-            // 
-            // textBoxEmailTechnicians
-            // 
-            this.textBoxEmailTechnicians.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmailTechnicians.Location = new System.Drawing.Point(130, 215);
-            this.textBoxEmailTechnicians.Mask = "AAAAAAA@AAA.com";
-            this.textBoxEmailTechnicians.Name = "textBoxEmailTechnicians";
-            this.textBoxEmailTechnicians.PromptChar = ' ';
-            this.textBoxEmailTechnicians.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEmailTechnicians.TabIndex = 17;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1384,7 +1384,7 @@
             this.ClientSize = new System.Drawing.Size(766, 899);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Туристическая фирма";
+            this.Text = "Ремонт компьютерной \nтехники, установки и поддержки ПО";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
